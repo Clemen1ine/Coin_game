@@ -1,23 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 1f;
-    public float collisonDffset = 0.05f;
-    public ContactFilter2D movementFilter;
-    
-    private Vector2 movementInput;
-    private Rigidbody2D rb;
-    private Animator animator;
-    private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
+    [SerializeField] private float moveSpeed = 5f;
 
-    void Start()
+    private Rigidbody2D rb2d;
+    private Vector2 movementInput;
+
+    private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        rb2d = GetComponent<Rigidbody2D>();
+    }
+
+    private void Update()
+    {
+        movementInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+    }
+
+    private bool TryMove(Vector2 direction)
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, moveSpeed * Time.fixedDeltaTime);
+
+        if (hit.collider == null)
+        {
+            rb2d.MovePosition(rb2d.position + direction * moveSpeed * Time.fixedDeltaTime);
+            return true;
+        }
+
+        return false;
     }
 
     private void FixedUpdate()
@@ -35,66 +47,6 @@ public class PlayerController : MonoBehaviour
                     success = TryMove(new Vector2(0, movementInput.y));
                 }
             }
-
-            animator.SetBool("isMoving", success);
-
-            // Set the animation speed for each axis based on the input values
-            animator.SetFloat("WalkSpeedX", movementInput.x);
-            animator.SetFloat("WalkSpeedY", movementInput.y);
-            animator.SetFloat("WalkSpeedZ", Mathf.Sqrt(Mathf.Pow(movementInput.x, 2) + Mathf.Pow(movementInput.y, 2)));
-
-            if (movementInput.x == 0 && movementInput.y == 0) // Idle animation
-            {
-                animator.SetFloat("IdleX", 0f);
-                animator.SetFloat("IdleY", 0f);
-                animator.SetFloat("IdleZ", 0f);
-            }
-            else if (Mathf.Abs(movementInput.x) > Mathf.Abs(movementInput.y)) // Horizontal animation
-            {
-                animator.SetFloat("IdleX", movementInput.x);
-                animator.SetFloat("IdleY", 0f);
-                animator.SetFloat("IdleZ", Mathf.Abs(movementInput.x));
-            }
-            else // Vertical animation
-            {
-                animator.SetFloat("IdleX", 0f);
-                animator.SetFloat("IdleY", movementInput.y);
-                animator.SetFloat("IdleZ", Mathf.Abs(movementInput.y));
-            }
         }
-        else
-        {
-            animator.SetBool("isMoving", false);
-
-            // Set all idle animations to 0
-            animator.SetFloat("IdleX", 0f);
-            animator.SetFloat("IdleY", 0f);
-            animator.SetFloat("IdleZ", 0f);
-        }
-    }
-
-    private bool TryMove(Vector2 direction){
-        
-        int count = rb.Cast(
-                
-                direction,
-                movementFilter,
-                castCollisions,
-                moveSpeed * Time.fixedDeltaTime + collisonDffset);
-
-        if (count == 0)
-            {
-                rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-    }
-    
-    void OnMove(InputValue movementValue)
-    {
-        movementInput = movementValue.Get<Vector2>();
     }
 }

@@ -1,9 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance; 
+    public GameObject coinPrefab;
+    public GameObject bigCoinPrefab;
+
 
     public int smallCoinScore = 1; 
     public int bigCoinScore = 2; 
