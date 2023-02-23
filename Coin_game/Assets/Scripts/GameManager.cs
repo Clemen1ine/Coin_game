@@ -33,7 +33,6 @@ public class GameManager : MonoBehaviour
 
     public void AddScore(int value) // of type coin, add count
     {
-        
         if (value == smallCoinScore)
         {
             smallCoinCount++;
