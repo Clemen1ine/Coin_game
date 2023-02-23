@@ -31,19 +31,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void AddScore(int value) // of type coin, add count
+    public void AddScore(int value)
     {
-        
         if (value == smallCoinScore)
         {
             smallCoinCount++;
             smallCoinCounter.text = "Small Coins: " + smallCoinCount;
+            Debug.Log("Small coin collected! Count: " + smallCoinCount);
         }
         else if (value == bigCoinScore)
         {
             bigCoinCount++;
             bigCoinCounter.text = "Big Coins: " + bigCoinCount;
+            Debug.Log("Big coin collected! Count: " + bigCoinCount);
         }
     }
+
 }
 

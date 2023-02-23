@@ -8,21 +8,25 @@ public class CoinPickup : MonoBehaviour
     public int bigCoinValue = 2; 
     public float bigCoinRadius = 2.0f; 
 
+    private bool canPickupBigCoin = false;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            canPickupBigCoin = true;
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            
             if (gameObject.tag == "SmallCoin")
             {
                 GameManager.instance.AddScore(smallCoinValue);
+                Destroy(gameObject);
             }
-            else if (gameObject.tag == "BigCoin")
-            {
-                GameManager.instance.AddScore(bigCoinValue);
-            }
-            
-            Destroy(gameObject);
         }
     }
 
@@ -30,15 +34,12 @@ public class CoinPickup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (Input.GetKey(KeyCode.E) && gameObject.tag == "BigCoin")
+            if (canPickupBigCoin && gameObject.tag == "BigCoin" && Vector2.Distance(transform.position, other.transform.position) <= bigCoinRadius)
             {
-                if (Vector2.Distance(transform.position, other.transform.position) <= bigCoinRadius)
-                {
-                    GameManager.instance.AddScore(bigCoinValue);
-                    
-                    Destroy(gameObject);
-                }
+                GameManager.instance.AddScore(bigCoinValue);
+                Destroy(gameObject);
             }
         }
     }
 }
+
