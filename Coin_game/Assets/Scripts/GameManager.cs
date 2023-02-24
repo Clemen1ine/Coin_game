@@ -1,5 +1,5 @@
-using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,9 +13,9 @@ public class GameManager : MonoBehaviour
 
     private int smallCoinCount = 0;
     private int bigCoinCount = 0;
+    private int totalCoinValue = 0;
 
-    public Text smallCoinCounter;
-    public Text bigCoinCounter;
+    public Text coinCounter;
 
     private bool showCounter = false;
     private float timeSinceLastPickup = 0f;
@@ -34,34 +34,33 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        HideCoinCounters();
+        HideCoinCounter();
     }
 
     private void Update()
     {
         if (timeSinceLastPickup > 3f)
         {
-            HideCoinCounters();
+            HideCoinCounter();
         }
         else if (showCounter)
         {
-            ShowCoinCounters();
+            ShowCoinCounter();
         }
 
         timeSinceLastPickup += Time.deltaTime;
     }
 
-    private void HideCoinCounters()
+    private void HideCoinCounter()
     {
-        smallCoinCounter.gameObject.SetActive(false);
-        bigCoinCounter.gameObject.SetActive(false);
+        coinCounter.gameObject.SetActive(false);
         showCounter = false;
     }
 
-    private void ShowCoinCounters()
+    private void ShowCoinCounter()
     {
-        smallCoinCounter.gameObject.SetActive(true);
-        bigCoinCounter.gameObject.SetActive(true);
+        coinCounter.text = "Coins: " + totalCoinValue.ToString();
+        coinCounter.gameObject.SetActive(true);
     }
 
     public void AddScore(int value)
@@ -69,19 +68,19 @@ public class GameManager : MonoBehaviour
         if (value == smallCoinScore)
         {
             smallCoinCount++;
-            smallCoinCounter.text = "Small Coins: " + smallCoinCount.ToString();
-            Debug.Log("Small coin collected! Count: " + smallCoinCount);
+            totalCoinValue += 1;
+            Debug.Log("Small coin collected! Value: " + smallCoinScore);
         }
         else if (value == bigCoinScore)
         {
             bigCoinCount++;
-            bigCoinCounter.text = "Big Coins: " + bigCoinCount.ToString();
-            Debug.Log("Big coin collected! Count: " + bigCoinCount);
+            totalCoinValue += 2;
+            Debug.Log("Big coin collected! Value: " + bigCoinScore);
         }
 
-        if (!showCounter)
+        if (!showCounter && totalCoinValue > 0)
         {
-            ShowCoinCounters();
+            ShowCoinCounter();
             showCounter = true;
         }
 
