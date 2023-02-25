@@ -23,16 +23,19 @@ public class PlayerController : MonoBehaviour
 
     private bool TryMove(Vector2 direction)
     {
-        // создаем луч, чтобы проверить наличие препятствия в направлении движения 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, moveSpeed * Time.fixedDeltaTime); 
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, moveSpeed * Time.fixedDeltaTime);
 
-        // если нет препятствий то двигаемся
-        if (hit.collider == null) 
+        if (hit.collider == null)
         {
             rb2d.MovePosition(rb2d.position + direction * moveSpeed * Time.fixedDeltaTime);
             return true;
         }
-        
+        else if (hit.collider.CompareTag("SmallCoin") || hit.collider.CompareTag("BigCoin"))
+        {
+            rb2d.MovePosition(rb2d.position + direction * moveSpeed * Time.fixedDeltaTime);
+            return true;
+        }
+
         return false;
     }
 
