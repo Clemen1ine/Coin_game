@@ -1,38 +1,75 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CoinSpawner : MonoBehaviour
 {
     public GameObject smallCoinPrefab;
     public GameObject bigCoinPrefab;
+    public int minSmallCoins = 40;
+    public int minBigCoins = 40;
     public int maxCoins = 150;
-    public float spawnRadius = 10f;
+    public float minDistance = 2f;
+    public float spawnRange = 10f;
 
-    private int smallCoinCount = 0;
-    private int bigCoinCount = 0;
+    private List<Vector3> spawnPositions = new List<Vector3>();
 
-    private void Update()
+    void Start()
     {
-        if (smallCoinCount < maxCoins)
+        SpawnCoins();
+    }
+
+    private void SpawnCoins()
+    {
+        // Spawn the minimum number of coins for each type
+        for (int i = 0; i < minSmallCoins; i++)
         {
-            Vector2 spawnPos = GetRandomSpawnPosition();
-            Instantiate(smallCoinPrefab, spawnPos, Quaternion.identity);
-            smallCoinCount++;
+            SpawnCoin(smallCoinPrefab);
         }
 
-        if (bigCoinCount < maxCoins / 2)
+        for (int i = 0; i < minBigCoins; i++)
         {
-            Vector2 spawnPos = GetRandomSpawnPosition();
-            Instantiate(bigCoinPrefab, spawnPos, Quaternion.identity);
-            bigCoinCount++;
+            SpawnCoin(bigCoinPrefab);
+        }
+
+        // Spawn the rest of the coins randomly
+        while (spawnPositions.Count < maxCoins)
+        {
+            Vector3 position = new Vector3(Random.Range(-spawnRange, spawnRange), Random.Range(-spawnRange, spawnRange), 0f);
+
+            // Check if the position is too close to any other spawn position
+            bool tooClose = false;
+            foreach (Vector3 spawnPos in spawnPositions)
+            {
+                if (Vector3.Distance(position, spawnPos) < minDistance)
+                {
+                    tooClose = true;
+                    break;
+                }
+            }
+
+            if (!tooClose)
+            {
+                // Randomly choose whether to spawn a small or big coin
+                GameObject coinPrefab = Random.Range(0, 2) == 0 ? smallCoinPrefab : bigCoinPrefab;
+
+                SpawnCoin(coinPrefab, position);
+            }
         }
     }
 
-    // Returns a random position within the spawn radius
-    private Vector2 GetRandomSpawnPosition()
+    private void SpawnCoin(GameObject coinPrefab, Vector3 position = default)
     {
-        float angle = Random.Range(0f, Mathf.PI * 2);
-        float distance = Random.Range(0f, spawnRadius);
-        Vector2 spawnPos = new Vector2(Mathf.Cos(angle) * distance, Mathf.Sin(angle) * distance);
-        return spawnPos;
+        // If position is not specified, randomly generate it within the spawn range
+        if (position == default)
+        {
+            position = new Vector3(Random.Range(-spawnRange, spawnRange), Random.Range(-spawnRange, spawnRange), 0f);
+        }
+
+        // Spawn the coin at the position
+        Instantiate(coinPrefab, position, Quaternion.identity);
+
+        // Add the position to the list of spawn positions
+        spawnPositions.Add(position);
     }
 }
