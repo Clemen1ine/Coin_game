@@ -35,6 +35,12 @@ public class CoinSpawner : MonoBehaviour
         // Spawn the rest of the coins randomly
         while (spawnPositions.Count < maxCoins)
         {
+            // Check if there are no more available positions to spawn a coin
+            if (spawnPositions.Count == maxCoins - 1)
+            {
+                break;
+            }
+
             Vector3 position = new Vector3(Random.Range(-spawnRange, spawnRange), Random.Range(-spawnRange, spawnRange), 0f);
 
             // Check if the position is too close to any other spawn position
@@ -57,6 +63,7 @@ public class CoinSpawner : MonoBehaviour
             }
         }
     }
+
 
     private void SpawnCoin(GameObject coinPrefab, Vector3 position = default)
     {
