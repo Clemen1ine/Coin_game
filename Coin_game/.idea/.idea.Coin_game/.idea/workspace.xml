@@ -2,9 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8f0f8b5-0022-4365-9417-f1a0b20ff392" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/Door.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/Door.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Block.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Block.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/prefab/Block.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/prefab/Block.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/prefab/Door.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/prefab/Door.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coin_game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coin_game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CoinPickup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CoinPickup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ART/Dangeon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ART/Dangeon.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/big_coin_0.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/big_coin_0.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/room_prefab.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/room_prefab.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/room_prefab.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/room_prefab.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
