@@ -8,6 +8,8 @@ TagManager:
   - BigCoin
   - Block
   - Door
+  - SpawnPoint
+  - Roome
   layers:
   - Default
   - TransparentFX

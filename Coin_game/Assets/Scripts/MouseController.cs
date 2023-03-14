@@ -4,62 +4,31 @@ using UnityEngine;
 
 public class MouseController : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 5f;
+    public float speed = 5f;
 
-    private Rigidbody2D rb2d;
-    private Vector2 movementInput;
+    private Rigidbody2D rb;
+    private Vector2 targetPosition;
 
-    private void Awake()
+    private void Start()
     {
-        rb2d = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
-        // Get the direction of the mouse from the player position
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 direction = (mousePos - transform.position).normalized;
-
-        // Update the movement input based on the mouse direction
-        movementInput = new Vector2(direction.x, direction.y);
-    }
-
-    private bool TryMove(Vector2 direction)
-    {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, moveSpeed * Time.fixedDeltaTime);
-
-        if (hit.collider == null)
+        if (Input.GetMouseButton(0))
         {
-            rb2d.MovePosition(rb2d.position + direction * moveSpeed * Time.fixedDeltaTime);
-            return true;
-        }
-        else if (hit.collider.CompareTag("SmallCoin") || hit.collider.CompareTag("BigCoin"))
-        {
-            rb2d.MovePosition(rb2d.position + direction * moveSpeed * Time.fixedDeltaTime);
-            return true;
+            targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
 
-        return false;
-    }
-
-    private void FixedUpdate()
-    {
-        // if the player has moved the mouse
-        if (movementInput != Vector2.zero)
+        if (Vector2.Distance(transform.position, targetPosition) > 0.1f)
         {
-            // try to move the character in the chosen direction
-            bool success = TryMove(movementInput);
-
-            // if failed to move in chosen direction, try to move in other directions
-            if (!success)
-            {
-                success = TryMove(new Vector2(movementInput.x, 0));
-
-                if (!success)
-                {
-                    success = TryMove(new Vector2(0, movementInput.y));
-                }
-            }
+            Vector2 direction = (targetPosition - (Vector2)transform.position).normalized;
+            rb.velocity = direction * speed;
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
         }
     }
 }
