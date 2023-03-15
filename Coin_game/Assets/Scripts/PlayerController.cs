@@ -4,20 +4,25 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    
     [SerializeField] private float moveSpeed = 5f;
 
     private Rigidbody2D rb2d; 
-    private Vector2 movementInput; 
+    private Vector2 movementInput;
+    private Animator animator;
+    private SwordAttack swordAttack;
+
+    private bool canMove = true;
 
     private void Awake()
     {
-        rb2d = GetComponent<Rigidbody2D>(); 
+        rb2d = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        swordAttack = GetComponentInChildren<SwordAttack>();
     }
 
     private void Update()
     {
-         // получаем ввод от игрока для передвижения персонажа
+        // получаем ввод от игрока для передвижения персонажа
         movementInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
     }
 
@@ -41,22 +46,56 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // если игрок ввел направление движения
-        if (movementInput != Vector2.zero) 
+        if (canMove)
         {
-            // попітка переместить персонажа в вабраном направлении
-            bool success = TryMove(movementInput); 
-
-            // если не удалось переместить персонажа в выбранном направлении, то перемещаем в другом
-            if (!success) 
+            // если игрок ввел направление движения
+            if (movementInput != Vector2.zero)
             {
-                success = TryMove(new Vector2(movementInput.x, 0));
+                // попытка переместить персонажа в выбранном направлении
+                bool success = TryMove(movementInput);
 
+                // если не удалось переместить персонажа в выбранном направлении, то перемещаем в другом
                 if (!success)
                 {
-                    success = TryMove(new Vector2(0, movementInput.y));
+                    success = TryMove(new Vector2(movementInput.x, 0));
+
+                    if (!success)
+                    {
+                        success = TryMove(new Vector2(0, movementInput.y));
+                    }
                 }
+
+                animator.SetBool("isMoving", success);
             }
+            else
+            {
+                animator.SetBool("isMoving", false);
+            }
+
+            swordAttack.attackDirection = SwordAttack.AttackDirection.front;
         }
+    }
+
+    void OnFire()
+    {
+        animator.SetTrigger("SwordAttack");
+    }
+
+    
+    public void LockMovement()
+    {
+        canMove = false;
+    }
+
+    public void PerformSwordAttack()
+    {
+        LockMovement();
+
+        swordAttack.AttackFront();
+    }
+
+    public void UnlockMovement()
+    {
+        canMove = true;
     }
 }
