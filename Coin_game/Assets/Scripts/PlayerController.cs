@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
             rb2d.MovePosition(rb2d.position + direction * moveSpeed * Time.fixedDeltaTime);
             return true;
         }
-        else if (hit.collider.CompareTag("SmallCoin") || hit.collider.CompareTag("BigCoin"))
+        else if (hit.collider.CompareTag("SmallCoin") || hit.collider.CompareTag("BigCoin") || hit.collider.CompareTag("Enemy"))
         {
             rb2d.MovePosition(rb2d.position + direction * moveSpeed * Time.fixedDeltaTime);
             return true;
@@ -81,7 +81,11 @@ public class PlayerController : MonoBehaviour
         animator.SetTrigger("SwordAttack");
     }
 
-    
+    public void EndAttack()
+    {
+        UnlockMovement();
+        swordAttack.StopAttack();
+    }
     public void LockMovement()
     {
         canMove = false;
@@ -89,8 +93,8 @@ public class PlayerController : MonoBehaviour
 
     public void PerformSwordAttack()
     {
+        print("attak");
         LockMovement();
-
         swordAttack.AttackFront();
     }
 

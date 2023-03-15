@@ -3,33 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c8f0f8b5-0022-4365-9417-f1a0b20ff392" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coin_game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coin_game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/AC_Player.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/AC_Player.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/Animation/Player_fight.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/Animation/Player_fight.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/Animation/Player_fight_bahaent.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/Animation/Player_fight_bahaent.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/Animation/Player_idel.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/Animation/Player_idel.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/Animation/Player_idel_behaend.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/Animation/Player_idel_behaend.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/Animation/Player_idle_front.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/Animation/Player_idle_front.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/Animation/Player_walk_on_us.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/Animation/Player_walk_on_us.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/Animation/fight_front.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/Animation/fight_front.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/Animation/player_die.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/Animation/player_die.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/Animation/player_walk_bahaend.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/Animation/player_walk_bahaend.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/Animation/player_walk_front.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/Animation/player_walk_front.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/Animation/Attack.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/Animation/Attack.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/try_fix.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/try_fix.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SwordAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SwordAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Enemy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CoinSpawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Door.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SwordAttack.cs" root0="FORCE_HIGHLIGHTING" />
@@ -112,6 +91,7 @@
       <workItem from="1677473070555" duration="714000" />
       <workItem from="1678736579186" duration="16214000" />
       <workItem from="1678792459555" duration="7881000" />
+      <workItem from="1678870590547" duration="6847000" />
     </task>
     <servers />
   </component>

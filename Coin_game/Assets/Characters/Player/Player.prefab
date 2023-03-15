@@ -40,10 +40,10 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1710163936025220114}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -71,6 +71,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2850838106e5bff4cb43f62eba44dc9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackDirection: 0
+  damage: 3
+  swordCollider: {fileID: 4722128025424457857}
 --- !u!1 &3588563514765707070
 GameObject:
   m_ObjectHideFlags: 0
