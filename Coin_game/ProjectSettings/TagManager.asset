@@ -10,6 +10,8 @@ TagManager:
   - Door
   - SpawnPoint
   - Roome
+  - Enemy
+  - SwordHitbox
   layers:
   - Default
   - TransparentFX

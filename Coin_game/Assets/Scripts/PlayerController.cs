@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
-
+    
+    public GameObject objectToMove;
     private Rigidbody2D rb2d; 
     private Vector2 movementInput;
     private Animator animator;
@@ -33,11 +34,25 @@ public class PlayerController : MonoBehaviour
         if (hit.collider == null)
         {
             rb2d.MovePosition(rb2d.position + direction * moveSpeed * Time.fixedDeltaTime);
+
+            // Move the object along with the player
+            if (objectToMove != null && objectToMove.transform.parent != transform)
+            {
+                objectToMove.transform.SetParent(transform);
+            }
+
             return true;
         }
         else if (hit.collider.CompareTag("SmallCoin") || hit.collider.CompareTag("BigCoin") || hit.collider.CompareTag("Enemy"))
         {
             rb2d.MovePosition(rb2d.position + direction * moveSpeed * Time.fixedDeltaTime);
+
+            // Move the object along with the player
+            if (objectToMove != null && objectToMove.transform.parent != transform)
+            {
+                objectToMove.transform.SetParent(transform);
+            }
+
             return true;
         }
 
@@ -101,5 +116,14 @@ public class PlayerController : MonoBehaviour
     public void UnlockMovement()
     {
         canMove = true;
+    }
+
+    public void MoveObjectWithPlayer(GameObject obj)
+    {
+        // Get the difference between the player's position and the object's position
+        Vector2 offset = obj.transform.position - transform.position;
+        
+        // Move the object along with the player
+        obj.transform.position = rb2d.position + offset;
     }
 }

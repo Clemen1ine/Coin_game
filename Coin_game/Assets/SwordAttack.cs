@@ -13,6 +13,7 @@ public class SwordAttack : MonoBehaviour
     public AttackDirection attackDirection;
     public float damage = 3;
     private Vector2 frontAttackOffset;
+    private Vector2 attackStartPosition;
     public Collider2D swordCollider;
 
     public void Start()
@@ -23,12 +24,13 @@ public class SwordAttack : MonoBehaviour
     public void AttackFront()
     {
         swordCollider.enabled = true;
-        transform.position = frontAttackOffset;
+        attackStartPosition = transform.position;
     }
 
     public void StopAttack()
     {
         swordCollider.enabled = false;
+        transform.position = attackStartPosition;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
