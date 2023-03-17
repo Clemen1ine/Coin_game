@@ -9,11 +9,13 @@ public class MouseController : MonoBehaviour
     public GameObject swordHitbox; 
 
     private Rigidbody2D rb;
+    private Animator animator;
     private Vector2 targetPosition;
     private Vector3 swordHitboxOffset; 
-
+    
     private void Start()
     {
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         swordHitboxOffset = swordHitbox.transform.localPosition; 
     }
@@ -29,12 +31,18 @@ public class MouseController : MonoBehaviour
         {
             Vector2 direction = (targetPosition - (Vector2)transform.position).normalized;
             rb.velocity = direction * speed;
+
+            // set the walking animation to true
+            animator.SetBool("isMoving", true);
         }
         else
         {
             rb.velocity = Vector2.zero;
+
+            // set the walking animation to false
+            animator.SetBool("isMoving", false);
         }
-        
+    
         swordHitbox.transform.position = transform.position + swordHitboxOffset;
     }
 }

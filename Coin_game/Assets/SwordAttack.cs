@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,24 +12,29 @@ public class SwordAttack : MonoBehaviour
     public AttackDirection attackDirection;
     public float damage = 3;
     private Vector2 frontAttackOffset;
-    private Vector2 attackStartPosition;
     public Collider2D swordCollider;
+
+    private Transform parentTransform;
 
     public void Start()
     {
-        frontAttackOffset = transform.position;
+        frontAttackOffset = transform.localPosition;
+        parentTransform = transform.parent;
     }
 
     public void AttackFront()
     {
         swordCollider.enabled = true;
-        attackStartPosition = transform.position;
     }
 
     public void StopAttack()
     {
         swordCollider.enabled = false;
-        transform.position = attackStartPosition;
+    }
+
+    private void LateUpdate()
+    {
+        transform.position = parentTransform.position + (Vector3)frontAttackOffset;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
