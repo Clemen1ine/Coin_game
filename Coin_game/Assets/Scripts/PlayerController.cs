@@ -34,8 +34,7 @@ public class PlayerController : MonoBehaviour
         if (hit.collider == null)
         {
             rb2d.MovePosition(rb2d.position + direction * moveSpeed * Time.fixedDeltaTime);
-
-            // Move the object along with the player
+            
             if (objectToMove != null && objectToMove.transform.parent != transform)
             {
                 objectToMove.transform.SetParent(transform);
@@ -46,8 +45,7 @@ public class PlayerController : MonoBehaviour
         else if (hit.collider.CompareTag("SmallCoin") || hit.collider.CompareTag("BigCoin") || hit.collider.CompareTag("Enemy"))
         {
             rb2d.MovePosition(rb2d.position + direction * moveSpeed * Time.fixedDeltaTime);
-
-            // Move the object along with the player
+            
             if (objectToMove != null && objectToMove.transform.parent != transform)
             {
                 objectToMove.transform.SetParent(transform);
@@ -120,10 +118,8 @@ public class PlayerController : MonoBehaviour
 
     public void MoveObjectWithPlayer(GameObject obj)
     {
-        // Get the difference between the player's position and the object's position
         Vector2 offset = obj.transform.position - transform.position;
         
-        // Move the object along with the player
         obj.transform.position = rb2d.position + offset;
     }
 }

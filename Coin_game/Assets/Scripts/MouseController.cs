@@ -5,18 +5,22 @@ using UnityEngine;
 public class MouseController : MonoBehaviour
 {
     public float speed = 5f;
+    public GameObject sword;
+    public GameObject swordHitbox; 
 
     private Rigidbody2D rb;
     private Vector2 targetPosition;
+    private Vector3 swordHitboxOffset; 
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        swordHitboxOffset = swordHitbox.transform.localPosition; 
     }
 
     private void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(1))
         {
             targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
@@ -30,5 +34,7 @@ public class MouseController : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
         }
+        
+        swordHitbox.transform.position = transform.position + swordHitboxOffset;
     }
 }
