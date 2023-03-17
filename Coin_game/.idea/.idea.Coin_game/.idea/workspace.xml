@@ -2,10 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8f0f8b5-0022-4365-9417-f1a0b20ff392" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Characters/Slime/Animation.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Characters/Slime/Animation/Slime_Damagen.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Characters/Slime/Animation/Slime_Damagen.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Characters/Slime/Animation/Slime_death.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Characters/Slime/Animation/Slime_death.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Characters/Slime/Animation/Slime_idle.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Characters/Slime/Animation/Slime_idle.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Characters/Slime/Animation/Slime_move.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Characters/Slime/Animation/Slime_move.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Characters/Slime/Slime.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Characters/Slime/Slime.controller.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coin_game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coin_game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MouseController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MouseController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Characters/Slime/Slime.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Slime/Slime.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +101,7 @@
       <workItem from="1678792459555" duration="7881000" />
       <workItem from="1678870590547" duration="6848000" />
       <workItem from="1678964952199" duration="5856000" />
-      <workItem from="1679055923269" duration="2988000" />
+      <workItem from="1679055923269" duration="4440000" />
     </task>
     <servers />
   </component>
