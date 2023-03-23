@@ -12,6 +12,12 @@ TagManager:
   - Roome
   - Enemy
   - SwordHitbox
+  - Exit
+  - Rooms
+  - Room
+  - Bound
+  - mainRoom
+  - MainRoom
   layers:
   - Default
   - TransparentFX

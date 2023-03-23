@@ -6,18 +6,15 @@ public class MouseController : MonoBehaviour
 {
     public float speed = 5f;
     public GameObject sword;
-    public GameObject swordHitbox; 
 
     private Rigidbody2D rb;
     private Animator animator;
     private Vector2 targetPosition;
-    private Vector3 swordHitboxOffset; 
-    
+
     private void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        swordHitboxOffset = swordHitbox.transform.localPosition; 
     }
 
     private void Update()
@@ -42,7 +39,5 @@ public class MouseController : MonoBehaviour
             // set the walking animation to false
             animator.SetBool("isMoving", false);
         }
-    
-        swordHitbox.transform.position = transform.position + swordHitboxOffset;
     }
 }

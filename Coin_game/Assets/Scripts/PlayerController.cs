@@ -23,8 +23,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        // получаем ввод от игрока для передвижения персонажа
         movementInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+        Debug.Log("Movement Input: " + movementInput);
     }
 
     private bool TryMove(Vector2 direction)
@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
 
             return true;
         }
-        else if (hit.collider.CompareTag("SmallCoin") || hit.collider.CompareTag("BigCoin") || hit.collider.CompareTag("Enemy"))
+        else if (hit.collider.CompareTag("SmallCoin") || hit.collider.CompareTag("BigCoin") || hit.collider.CompareTag("Enemy" ) || hit.collider.CompareTag("Bound"))
         {
             rb2d.MovePosition(rb2d.position + direction * moveSpeed * Time.fixedDeltaTime);
             

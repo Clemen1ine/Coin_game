@@ -366,7 +366,7 @@ Transform:
   - {fileID: 7741054967928614047}
   - {fileID: 8004033287570180399}
   m_Father: {fileID: 5958086671366400892}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &3744223418585164463
 BoxCollider2D:
@@ -773,7 +773,7 @@ Transform:
   - {fileID: 4513034547876958755}
   - {fileID: 1382828447742685781}
   m_Father: {fileID: 5958086671366400892}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!61 &8690107484718698107
 BoxCollider2D:
@@ -956,7 +956,7 @@ Transform:
   - {fileID: 1243230809170930994}
   - {fileID: 1392203508770887642}
   m_Father: {fileID: 5958086671366400892}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1309042468015690913
 GameObject:
@@ -1274,6 +1274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 2
+  spawned: 0
 --- !u!1 &1772151033053581974
 GameObject:
   m_ObjectHideFlags: 0
@@ -2843,7 +2844,7 @@ Transform:
   - {fileID: 8343074416034645470}
   - {fileID: 6909889329656135507}
   m_Father: {fileID: 5958086671366400892}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5760321905466234843
 GameObject:
@@ -3816,6 +3817,64 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
+  m_EdgeRadius: 0
+--- !u!1 &6699352389069149928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8224223882000612977}
+  - component: {fileID: 7206099071949662291}
+  m_Layer: 0
+  m_Name: ' roomBounds'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8224223882000612977
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6699352389069149928}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.66, y: 0.14, z: -0.9726813}
+  m_LocalScale: {x: 7.0463047, y: 7.0463047, z: 7.0463047}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5958086671366400892}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &7206099071949662291
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6699352389069149928}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.22915906, y: -0.018871903}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.6632131, y: 1.0916636}
   m_EdgeRadius: 0
 --- !u!1 &7089140132697311621
 GameObject:
@@ -5216,6 +5275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 0
+  spawned: 0
 --- !u!1 &8724234730968199065
 GameObject:
   m_ObjectHideFlags: 0
@@ -5225,9 +5285,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5958086671366400892}
+  - component: {fileID: -1747526841898057349}
   m_Layer: 0
   m_Name: DR
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5244,6 +5305,7 @@ Transform:
   m_LocalScale: {x: 0.14191836, y: 0.14191836, z: 0.14191836}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8224223882000612977}
   - {fileID: 5455430360219276355}
   - {fileID: 8304980629999849352}
   - {fileID: 4772518054659745599}
@@ -5251,3 +5313,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-1747526841898057349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8724234730968199065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ba3d0c9df3efcd43abcee6ca7405e1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

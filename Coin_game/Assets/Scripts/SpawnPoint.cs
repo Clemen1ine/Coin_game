@@ -14,11 +14,12 @@ public class SpawnPoint : MonoBehaviour
         Right,
         None
     }
-
+    
+    public bool spawned = false;
     private SpawnerRooms variants;
     private int rand;
-    private bool spawned = false;
-    private float waitTime = 3f;
+    
+    private float waitTime =4f;
 
     private void Start()
     {

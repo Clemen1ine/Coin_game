@@ -6,77 +6,88 @@ public class CoinSpawner : MonoBehaviour
 {
     public GameObject smallCoinPrefab;
     public GameObject bigCoinPrefab;
-    public int minSmallCoins = 40;
-    public int minBigCoins = 40;
-    public int maxCoins = 150;
-    public float minDistance = 2f;
-    public float spawnRange = 10f;
+    public int maxTotalCoins = 150;
+    public int maxSmallCoins = 100;
+    public int maxBigCoins = 50;
+    public int coinsPerRoom = 5;
 
     private List<Vector3> spawnPositions = new List<Vector3>();
 
+    private GameObject mainRoom;
+
     void Start()
     {
-        SpawnCoins();
+        float delay = 4f; 
+        Invoke("SpawnCoins", delay);
+        
+        mainRoom = GameObject.FindGameObjectWithTag("mainRoom");
     }
 
-    private void SpawnCoins()
+   private void SpawnCoins()
+{
+    spawnPositions.Clear();
+    
+    SpawnCoinsOfType(smallCoinPrefab, maxSmallCoins);
+    
+    SpawnCoinsOfType(bigCoinPrefab, maxBigCoins);
+    
+    int numRandomCoins = Mathf.Max(0, maxTotalCoins - maxSmallCoins - maxBigCoins);
+    
+    GameObject[] rooms = GameObject.FindGameObjectsWithTag("Room");
+    
+    foreach (GameObject room in rooms)
     {
-        // Spawn the minimum number of coins for each type
-        for (int i = 0; i < minSmallCoins; i++)
+        if (room == mainRoom) continue; 
+        
+        Bounds roomBounds = new Bounds(room.transform.position, new Vector3(room.transform.localScale.x, room.transform.localScale.y, 0));
+        
+        int coinsInRoom = Mathf.Min(coinsPerRoom, maxTotalCoins - spawnPositions.Count);
+        for (int i = 0; i < coinsInRoom; i++)
         {
-            SpawnCoin(smallCoinPrefab);
-        }
-
-        for (int i = 0; i < minBigCoins; i++)
-        {
-            SpawnCoin(bigCoinPrefab);
-        }
-
-        // Spawn the rest of the coins randomly
-        while (spawnPositions.Count < maxCoins)
-        {
-            // Check if there are no more available positions to spawn a coin
-            if (spawnPositions.Count == maxCoins - 1)
+            float x = Random.Range(roomBounds.min.x, roomBounds.max.x);
+            float y = Random.Range(roomBounds.min.y, roomBounds.max.y);
+            
+            if (numRandomCoins > 0)
             {
-                break;
-            }
-
-            Vector3 position = new Vector3(Random.Range(-spawnRange, spawnRange), Random.Range(-spawnRange, spawnRange), 0f);
-
-            // Check if the position is too close to any other spawn position
-            bool tooClose = false;
-            foreach (Vector3 spawnPos in spawnPositions)
-            {
-                if (Vector3.Distance(position, spawnPos) < minDistance)
-                {
-                    tooClose = true;
-                    break;
-                }
-            }
-
-            if (!tooClose)
-            {
-                // Randomly choose whether to spawn a small or big coin
                 GameObject coinPrefab = Random.Range(0, 2) == 0 ? smallCoinPrefab : bigCoinPrefab;
+                
+                SpawnCoin(coinPrefab, roomBounds, new Vector3(x, y, 0f));
 
-                SpawnCoin(coinPrefab, position);
+                numRandomCoins--;
+            }
+            else
+            {
+                GameObject coinPrefab = Random.Range(0, 2) == 0 ? smallCoinPrefab : bigCoinPrefab;
+                
+                SpawnCoin(coinPrefab, roomBounds, new Vector3(x, y, 0f));
             }
         }
     }
+}
 
 
-    private void SpawnCoin(GameObject coinPrefab, Vector3 position = default)
+
+   private void SpawnCoinsOfType(GameObject coinPrefab, int maxCoins)
     {
-        // If position is not specified, randomly generate it within the spawn range
-        if (position == default)
+        int numCoins = Mathf.Min(maxCoins, maxTotalCoins - spawnPositions.Count);
+        for (int i = 0; i < numCoins; i++)
         {
-            position = new Vector3(Random.Range(-spawnRange, spawnRange), Random.Range(-spawnRange, spawnRange), 0f);
+            SpawnCoin(coinPrefab);
         }
+    }
 
-        // Spawn the coin at the position
-        Instantiate(coinPrefab, position, Quaternion.identity);
-
-        // Add the position to the list of spawn positions
-        spawnPositions.Add(position);
+    private void SpawnCoin(GameObject coinPrefab, Bounds roomBounds = default, Vector3? position = null)
+    {
+        if (!position.HasValue && roomBounds != default)
+        {
+            position = new Vector3(Random.Range(roomBounds.min.x, roomBounds.max.x), Random.Range(roomBounds.min.y, roomBounds.max.y), 0f);
+        }
+        
+        if (position.HasValue && spawnPositions.Count < maxTotalCoins)
+        {
+            Instantiate(coinPrefab, position.Value, Quaternion.identity);
+            
+            spawnPositions.Add(position.Value);
+        }
     }
 }
