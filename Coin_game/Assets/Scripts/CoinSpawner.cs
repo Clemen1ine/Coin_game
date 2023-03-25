@@ -62,23 +62,48 @@ public class CoinSpawner : MonoBehaviour
     }
 }
 
-    private void SpawnCoin(GameObject coinPrefab, Bounds roomBounds = default, Vector3 position = default)
+    private void SpawnCoin(GameObject coinPrefab, Bounds roomBounds = default, Vector3 position = default, float minDistance = 0.2f)
     {
         // If position is not specified, randomly generate it within the room bounds
         if (position == default && roomBounds != default)
         {
-            // Generate a random point within the room bounds
-            float x = Random.Range(roomBounds.min.x, roomBounds.max.x);
-            float y = Random.Range(roomBounds.min.y, roomBounds.max.y);
-            Vector3 randomPoint = new Vector3(x, y, 0f);
+            int maxAttempts = 100;
+            int attempts = 0;
 
-            // Generate a random offset to shift the position of the coin
-            float xOffset = Random.Range(-0.5f, 0.5f) * coinPrefab.transform.localScale.x;
-            float yOffset = Random.Range(-0.5f, 0.5f) * coinPrefab.transform.localScale.y;
-            Vector3 offset = new Vector3(xOffset, yOffset, 0f);
+            do
+            {
+                // Generate a random point within the room bounds
+                float x = Random.Range(roomBounds.min.x, roomBounds.max.x);
+                float y = Random.Range(roomBounds.min.y, roomBounds.max.y);
+                Vector3 randomPoint = new Vector3(x, y, 0f);
 
-            // Set the position of the coin to the random point plus the random offset
-            position = randomPoint + offset;
+                // Generate a random offset to shift the position of the coin
+                float xOffset = Random.Range(-0.5f, 0.5f) * coinPrefab.transform.localScale.x;
+                float yOffset = Random.Range(-0.5f, 0.5f) * coinPrefab.transform.localScale.y;
+                Vector3 offset = new Vector3(xOffset, yOffset, 0f);
+
+                // Set the position of the coin to the random point plus the random offset
+                position = randomPoint + offset;
+
+                // Check if there are any other coins within minDistance of the position
+                bool tooClose = false;
+                foreach (Vector3 spawnPos in spawnPositions)
+                {
+                    if (Vector3.Distance(position, spawnPos) < minDistance)
+                    {
+                        tooClose = true;
+                        break;
+                    }
+                }
+
+                attempts++;
+
+                if (tooClose)
+                {
+                    position = default;
+                }
+
+            } while (position == default && attempts < maxAttempts);
         }
 
         // Spawn the coin at the position if the maximum number of coins has not been reached
@@ -90,6 +115,8 @@ public class CoinSpawner : MonoBehaviour
             spawnPositions.Add(position);
         }
     }
+
+
 
 
 private void SpawnCoinsOfType(GameObject coinPrefab, int maxCoins)
