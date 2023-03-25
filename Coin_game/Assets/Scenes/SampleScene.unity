@@ -940,7 +940,6 @@ MonoBehaviour:
   maxSmallCoins: 10
   maxBigCoins: 10
   coinsPerRoom: 5
-  minDistance: 0.1
 --- !u!4 &1214782677
 Transform:
   m_ObjectHideFlags: 0
