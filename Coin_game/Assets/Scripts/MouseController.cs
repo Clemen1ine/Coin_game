@@ -7,12 +7,14 @@ public class MouseController : MonoBehaviour
     public float speed = 5f;
     public GameObject sword;
 
+    private Rigidbody2D rb;
     private Animator animator;
     private Vector2 targetPosition;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
@@ -25,13 +27,15 @@ public class MouseController : MonoBehaviour
         if (Vector2.Distance(transform.position, targetPosition) > 0.1f)
         {
             Vector2 direction = (targetPosition - (Vector2)transform.position).normalized;
-            transform.position += (Vector3)direction * speed * Time.deltaTime;
+            rb.velocity = direction * speed;
 
             // set the walking animation to true
             animator.SetBool("isMoving", true);
         }
         else
         {
+            rb.velocity = Vector2.zero;
+
             // set the walking animation to false
             animator.SetBool("isMoving", false);
         }

@@ -41,13 +41,13 @@ public class PlayerController : MonoBehaviour
 
             return true;
         }
-        else if (hit.collider.CompareTag("SmallCoin") || hit.collider.CompareTag("BigCoin") || hit.collider.CompareTag("Enemy" ) || hit.collider.CompareTag("Bound"))
+        else if (hit.collider.CompareTag("SmallCoin") || hit.collider.CompareTag("BigCoin") || hit.collider.CompareTag("Enemy" ) || hit.collider.CompareTag("Bound") || hit.collider.CompareTag("Ignorecollider"));
         {
             rb2d.MovePosition(rb2d.position + direction * moveSpeed * Time.fixedDeltaTime);
             
             if (objectToMove != null && objectToMove.transform.parent != transform)
             {
-                objectToMove.transform.SetParent(transform);
+                objectToMove.transform.SetParent(transform);    
             }
 
             return true;

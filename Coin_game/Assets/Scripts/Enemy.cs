@@ -33,10 +33,9 @@ public class Enemy : MonoBehaviour
     public void Defeated()
     {
         animator.SetTrigger("Defeated");
-        RemoveEnemy();
     }
 
-    private void RemoveEnemy()
+    private void Removwenemy()
     {
         Destroy(gameObject);
         room.enemies.Remove(gameObject);
