@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2288493871697455948}
   m_Layer: 0
   m_Name: Door 1
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,7 +139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2922759153756997937, guid: e5b0531a82d372748a9f90e5386656a0, type: 3}
       propertyPath: m_Name
-      value: Door
+      value: Block_Door
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5b0531a82d372748a9f90e5386656a0, type: 3}
@@ -213,7 +213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2922759153756997937, guid: e5b0531a82d372748a9f90e5386656a0, type: 3}
       propertyPath: m_Name
-      value: Door (1)
+      value: Block_Door
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5b0531a82d372748a9f90e5386656a0, type: 3}

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class CoinSpawner : MonoBehaviour
 {
     public GameObject smallCoinPrefab;
@@ -115,10 +116,7 @@ public class CoinSpawner : MonoBehaviour
             spawnPositions.Add(position);
         }
     }
-
-
-
-
+    
 private void SpawnCoinsOfType(GameObject coinPrefab, int maxCoins)
     {
         int numCoins = Mathf.Min(maxCoins, maxTotalCoins - spawnPositions.Count);

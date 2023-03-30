@@ -10,10 +10,9 @@ public class GameManager : MonoBehaviour
 
     public int smallCoinScore = 1;
     public int bigCoinScore = 2;
-
+    public int totalCoinValue = 0;
     private int smallCoinCount = 0;
     private int bigCoinCount = 0;
-    private int totalCoinValue = 0;
 
     public Text coinCounter;
 
@@ -22,8 +21,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        // Проверка на наличие другого экземпляра GameManager
-        // Если другого экземпляра нет, то этот экземпляр становится единственным доступным через переменную instance
+        // Check for another instance of GameManager
         if (instance == null)
         {
             instance = this;
@@ -36,45 +34,47 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        // Начальное состояние: скрыть счетчик
+        // Load saved coin value from PlayerPrefs
+        if (PlayerPrefs.HasKey("TotalCoinValue"))
+        {
+            totalCoinValue = PlayerPrefs.GetInt("TotalCoinValue");
+        }
+
+        // Initialize coin counter UI
         HideCoinCounter();
     }
 
     private void Update()
     {
-        // Если прошло более 3 секунд после последнего сбора монет, скрыват счетчик 
+        // Hide coin counter if time since last pickup > 3 seconds
         if (timeSinceLastPickup > 3f)
         {
             HideCoinCounter();
         }
-        // Если showCounter=true, показівает счетчик монет
+        // Show coin counter if showCounter=true
         else if (showCounter)
         {
             ShowCoinCounter();
         }
 
-        // Обновляет время с последнего сбора монет
+        // Update time since last pickup
         timeSinceLastPickup += Time.deltaTime;
     }
 
     private void HideCoinCounter()
     {
-        // Скрыть счетчик монет 
         coinCounter.gameObject.SetActive(false);
         showCounter = false;
     }
 
     private void ShowCoinCounter()
     {
-        // Показать количество монет в счетчике
         coinCounter.text = "Coins: " + totalCoinValue.ToString();
         coinCounter.gameObject.SetActive(true);
     }
 
     public void AddScore(int value)
     {
-        // Обработать сбор монеты: увеличить количество монет определенного типа и общее количество монет
-        // а также обновить время с последнего сбора монет
         if (value == smallCoinScore)
         {
             smallCoinCount++;
@@ -88,14 +88,23 @@ public class GameManager : MonoBehaviour
             Debug.Log("Big coin collected! Value: " + bigCoinScore);
         }
 
-        // Если счетчик монет скрыт и общее количество монет больше 0, показать счетчик 
         if (!showCounter && totalCoinValue > 0)
         {
             ShowCoinCounter();
             showCounter = true;
         }
 
-        // Обновить время с последнего сбора монет
         timeSinceLastPickup = 0f;
+    }
+    
+    public int GetTotalCoinValue()
+    {
+        return totalCoinValue;
+    }
+
+    private void OnApplicationQuit()
+    {
+        // Save total coin value to PlayerPrefs when the application is closed
+        PlayerPrefs.SetInt("TotalCoinValue", totalCoinValue);
     }
 }
