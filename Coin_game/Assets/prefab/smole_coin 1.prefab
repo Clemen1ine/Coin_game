@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 974385517091872874}
   - component: {fileID: 7240505678240967213}
   - component: {fileID: 5860973586455297692}
-  m_Layer: 6
-  m_Name: smole_coin
+  m_Layer: 7
+  m_Name: smole_coin 1
   m_TagString: SmallCoin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

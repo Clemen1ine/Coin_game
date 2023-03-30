@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 90598044129351147}
   - component: {fileID: 4285920647288515639}
   - component: {fileID: 8798097148195479448}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: big_coin
   m_TagString: BigCoin
   m_Icon: {fileID: 0}

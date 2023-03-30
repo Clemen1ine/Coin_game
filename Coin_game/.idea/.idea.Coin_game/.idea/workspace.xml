@@ -2,22 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8f0f8b5-0022-4365-9417-f1a0b20ff392" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Characters/Player/InputSystem.inputsettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Characters/Player/InputSystem.inputsettings.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Changeroom.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Changeroom.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/prefab/Trigger.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/prefab/Trigger.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/prefab/smole_coin 1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/prefab/smole_coin 1.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coin_game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coin_game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MouseController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MouseController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/prefab/D.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/D.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/prefab/DL.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/DL.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/prefab/DR.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/DR.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefab/Door 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/Door 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefab/Exit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/Exit.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/prefab/L.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/L.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/prefab/LR.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/LR.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/prefab/R.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/R.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/Room .prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/Room .prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/prefab/T.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/T.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/prefab/TD.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/TD.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/prefab/TL.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/TL.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/prefab/TR.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/TR.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefab/big_coin.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/big_coin.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefab/big_coin.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/big_coin.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefab/smole_coin.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefab/smole_coin.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,6 +40,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AddRoom.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CoinSpawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Door.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -121,7 +135,7 @@
       <workItem from="1680004392562" duration="607000" />
       <workItem from="1680017989601" duration="1916000" />
       <workItem from="1680036123787" duration="3498000" />
-      <workItem from="1680074518204" duration="39268000" />
+      <workItem from="1680074518204" duration="45850000" />
     </task>
     <servers />
   </component>
