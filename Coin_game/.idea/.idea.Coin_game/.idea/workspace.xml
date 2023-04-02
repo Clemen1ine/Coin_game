@@ -2,36 +2,106 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8f0f8b5-0022-4365-9417-f1a0b20ff392" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Characters/Player/InputSystem.inputsettings.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Characters/Player/InputSystem.inputsettings.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Changeroom.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Changeroom.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/prefab/Trigger.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/prefab/Trigger.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/prefab/smole_coin 1.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/prefab/smole_coin 1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/LRDOWN.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/LRDOWN.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/dange.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/dange.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/flour1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/flour1.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/flour2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/flour2.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/flour3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/flour3.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/flour4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/flour4.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/flour5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/flour5.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/flour6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/flour6.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/left_door.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/left_door.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/midlle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/midlle.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/midlleDT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/midlleDT.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/midlleLR.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/midlleLR.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/right_door.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/right_door.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_0.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_0.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_10.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_10.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_11.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_11.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_12.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_12.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_13.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_13.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_14.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_14.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_15.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_15.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_16.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_16.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_17.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_17.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_18.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_18.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_2.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_2.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_3.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_3.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_4.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_4.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_5.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_5.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_6.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_6.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_7.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_7.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_8.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_8.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_9.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/dange_9.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/top_left.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/top_left.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coin_game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coin_game/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ART/Dangeon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ART/Dangeon.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/InputSystem.inputsettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/InputSystem.inputsettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Characters/Slime/Slime.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Slime/Slime.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/try_fix.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/try_fix.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Changeroom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Changeroom.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Door.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Door.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ExitTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ExitTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MouseController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MouseController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/prefab/D.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/D.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/prefab/DL.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/DL.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/prefab/DR.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/DR.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/Door 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/Door 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/Exit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/Exit.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefab/Door 1.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefab/Door 1.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/prefab/L.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/L.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/prefab/LR.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/LR.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/prefab/R.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/R.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefab/Room .prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefab/Room .prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/prefab/T.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/T.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/prefab/TD.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/TD.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/prefab/TL.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/TL.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/prefab/TR.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/TR.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/big_coin.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/big_coin.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/big_coin.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/big_coin.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/smole_coin.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/smole_coin.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefab/Trigger.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/Trigger.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +112,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AddRoom.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CoinSpawner.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Door.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -65,6 +134,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -135,7 +205,11 @@
       <workItem from="1680004392562" duration="607000" />
       <workItem from="1680017989601" duration="1916000" />
       <workItem from="1680036123787" duration="3498000" />
-      <workItem from="1680074518204" duration="45850000" />
+      <workItem from="1680074518204" duration="53508000" />
+      <workItem from="1680250710473" duration="10699000" />
+      <workItem from="1680349806667" duration="3012000" />
+      <workItem from="1680355746783" duration="24041000" />
+      <workItem from="1680455606064" duration="1175000" />
     </task>
     <servers />
   </component>

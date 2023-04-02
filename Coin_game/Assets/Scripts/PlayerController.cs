@@ -1,90 +1,74 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 5f;
-    
-    public GameObject objectToMove;
-    private Rigidbody2D rb2d; 
-    private Vector2 movementInput;
+    public float moveSpeed = 5f;
+    public LayerMask obstacleMask;
+    public float raycastDistance = 0.1f;
+
+    private Vector2 movementDirection;
+    private Rigidbody2D rb;
     private Animator animator;
     private SwordAttack swordAttack;
 
     private bool canMove = true;
 
-    private void Awake()
+    void Start()
     {
-        rb2d = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         swordAttack = GetComponentInChildren<SwordAttack>();
     }
 
-    private void Update()
+    void Update()
     {
-        movementInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-    }
+        // Read input from horizontal and vertical axis
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
 
-    private bool TryMove(Vector2 direction)
-    {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, moveSpeed * Time.fixedDeltaTime);
+        // Calculate movement direction from input
+        movementDirection = new Vector2(horizontal, vertical).normalized;
+
+        // Check for obstacles in movement direction using raycasts
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, movementDirection, raycastDistance, obstacleMask);
 
         if (hit.collider == null)
         {
-            rb2d.MovePosition(rb2d.position + direction * moveSpeed * Time.fixedDeltaTime);
-            
-            if (objectToMove != null && objectToMove.transform.parent != transform)
+            // If there are no obstacles in the way, move the player
+            rb.MovePosition(rb.position + movementDirection * moveSpeed * Time.deltaTime);
+
+            // Set walking animation if player is moving
+            if (movementDirection != Vector2.zero)
             {
-                objectToMove.transform.SetParent(transform);
-            }
-
-            return true;
-        }
-        else if (hit.collider.CompareTag("SmallCoin") || hit.collider.CompareTag("BigCoin") || hit.collider.CompareTag("Enemy" ) || hit.collider.CompareTag("Bound") || hit.collider.CompareTag("Ignorecollider"));
-        {
-            rb2d.MovePosition(rb2d.position + direction * moveSpeed * Time.fixedDeltaTime);
-            
-            if (objectToMove != null && objectToMove.transform.parent != transform)
-            {
-                objectToMove.transform.SetParent(transform);    
-            }
-
-            return true;
-        }
-
-        return false;
-    }
-
-    private void FixedUpdate()
-    {
-        if (canMove)
-        {
-            // если игрок ввел направление движения
-            if (movementInput != Vector2.zero)
-            {
-                // попытка переместить персонажа в выбранном направлении
-                bool success = TryMove(movementInput);
-
-                // если не удалось переместить персонажа в выбранном направлении, то перемещаем в другом
-                if (!success)
-                {
-                    success = TryMove(new Vector2(movementInput.x, 0));
-
-                    if (!success)
-                    {
-                        success = TryMove(new Vector2(0, movementInput.y));
-                    }
-                }
-
-                animator.SetBool("isMoving", success);
+                animator.SetBool("isMoving", true);
             }
             else
             {
                 animator.SetBool("isMoving", false);
             }
+        }
+        else
+        {
+            // If there is an obstacle, don't move and stop walking animation
+            rb.velocity = Vector2.zero;
+            animator.SetBool("isMoving", false);
+        }
 
-            swordAttack.attackDirection = SwordAttack.AttackDirection.front;
+        // Check for sword attack input
+        if (Input.GetKeyDown(KeyCode.Space) && canMove)
+        {
+            animator.SetTrigger("SwordAttack");
+            LockMovement();
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        // When the player collides with an obstacle, stop its movement and print a message
+        if (other.gameObject.layer == obstacleMask)
+        {
+            rb.velocity = Vector2.zero;
+            Debug.Log("Player crashed into " + other.gameObject.name);
         }
     }
 
@@ -96,7 +80,12 @@ public class PlayerController : MonoBehaviour
     public void EndAttack()
     {
         UnlockMovement();
-        swordAttack.StopAttack();
+
+        // Check if swordAttack has been initialized before calling StopAttack()
+        if (swordAttack != null)
+        {
+            swordAttack.StopAttack();
+        }
     }
     public void LockMovement()
     {
@@ -119,6 +108,6 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 offset = obj.transform.position - transform.position;
         
-        obj.transform.position = rb2d.position + offset;
+        obj.transform.position = rb.position + offset;
     }
 }

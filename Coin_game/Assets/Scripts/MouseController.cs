@@ -1,71 +1,115 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MouseController : MonoBehaviour
 {
-    public float speed = 5f;
-    public GameObject sword;
+    public float moveSpeed = 5f;
+    public LayerMask obstacleMask;
+    public float raycastDistance = 0.1f;
 
+    private Vector2 movementDirection;
     private Rigidbody2D rb;
     private Animator animator;
-    private Vector2 targetPosition;
-    private LayerMask layerMask;
+    private bool canMove = true;
+    private SwordAttack swordAttack;
 
-    private void Start()
+    void Start()
     {
-        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        
-        // Set up the layer mask to ignore collisions with a certain layer
-        layerMask = LayerMask.GetMask("Ignorecolliders");
+        animator = GetComponent<Animator>();
+        swordAttack = GetComponentInChildren<SwordAttack>();
     }
 
-    private void Update()
+    void Update()
     {
-        if (Input.GetMouseButton(1))
+        // Check if the right mouse button is pressed
+        if (Input.GetMouseButton(1) && canMove)
         {
-            targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        }
+            // Calculate the direction from the player's position to the cursor
+            Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            direction.Normalize();
 
-        if (Vector2.Distance(transform.position, targetPosition) > 0.1f)
-        {
-            Vector2 direction = (targetPosition - (Vector2)transform.position).normalized;
+            // Check for obstacles in movement direction using raycasts
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, raycastDistance, obstacleMask);
 
-            // check for obstacles using Physics2D.Raycast and ignore collisions with a certain layer
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 0.1f, ~layerMask);
-            if (hit.collider == null)
+            // Check the distance between the player and the cursor
+            float distance = Vector2.Distance(transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            if (distance <= 0.04f)
             {
-                rb.velocity = direction * speed;
+                // Stop moving and walking animation if the player is close to the cursor
+                rb.velocity = Vector2.zero;
+                animator.SetBool("isMoving", false);
+            }
+            else if (hit.collider == null)
+            {
+                // If there are no obstacles in the way, move the player
+                rb.MovePosition(rb.position + direction * moveSpeed * Time.deltaTime);
+
+                // Set walking animation if player is moving
+                if (direction != Vector2.zero)
+                {
+                    animator.SetBool("isMoving", true);
+                }
+                else
+                {
+                    animator.SetBool("isMoving", false);
+                }
             }
             else
             {
+                // If there is an obstacle, don't move and stop walking animation
                 rb.velocity = Vector2.zero;
+                animator.SetBool("isMoving", false);
             }
-
-            // set the walking animation to true
-            animator.SetBool("isMoving", true);
         }
         else
         {
-            rb.velocity = Vector2.zero;
-
-            // set the walking animation to false
+            // Stop walking animation if the player is not moving
             animator.SetBool("isMoving", false);
         }
+
+        // Check for sword attack input
+        if (Input.GetKeyDown(KeyCode.Mouse0) && canMove)
+        {
+            animator.SetTrigger("SwordAttack");
+            LockMovement();
+        }
     }
+
     
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D other)
     {
-        // Get the normal vector of the collision
-        Vector2 normal = collision.contacts[0].normal;
+        // When the player collides with an obstacle, stop its movement and print a message
+        if (other.gameObject.layer == obstacleMask)
+        {
+            rb.velocity = Vector2.zero;
+            Debug.Log("Mouse crashed into " + other.gameObject.name);
+        }
+    }
 
-        // Calculate a new movement direction based on the collision normal
-        Vector2 direction = Vector2.Reflect(rb.velocity.normalized, normal);
+    public void EndAttack()
+    {
+        UnlockMovement();
 
-        // Apply the new direction to the character's velocity
-        rb.velocity = direction * speed * 0.2f;
+        // Check if swordAttack has been initialized before calling StopAttack()
+        if (swordAttack != null)
+        {
+            swordAttack.StopAttack();
+        }
+    }
+
+    public void LockMovement()
+    {
+        canMove = false;
+    }
+
+    public void UnlockMovement()
+    {
+        canMove = true;
+    }
+
+    public void PerformSwordAttack()
+    {
+        LockMovement();
+        swordAttack.AttackFront();
     }
 }
-
-

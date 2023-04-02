@@ -18,6 +18,8 @@ TagManager:
   - Bound
   - mainRoom
   - MainRoom
+  - Wall
+  - Trigger
   layers:
   - Default
   - TransparentFX
@@ -27,7 +29,7 @@ TagManager:
   - UI
   - CoinLayer
   - Ignorecolliders
-  - 
+  - obstacleMask
   - 
   - 
   - 
@@ -54,6 +56,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 868005919
     locked: 0
   - name: Foreground
     uniqueID: 749514941
