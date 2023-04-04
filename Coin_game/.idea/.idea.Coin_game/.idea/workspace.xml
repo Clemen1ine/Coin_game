@@ -2,85 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8f0f8b5-0022-4365-9417-f1a0b20ff392" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Munescene.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Munescene.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SceneSwitcher.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SceneSwitcher.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coin_game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coin_game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Block.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Block.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Block.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Block.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Coin_big.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Coin_big.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Coin_small.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Coin_small.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Coins.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Coins.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/decor_16x16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/decor_16x16.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/decor_16x17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/decor_16x17.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/decor_8x8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/decor_8x8.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/fences.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/fences.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/floors.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/floors/carpet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/floors/carpet.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/floors/flooring.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/floors/flooring.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/floors/wooden.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/floors/wooden.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/grass.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/grass.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/plains.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/plains.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/plains1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/plains1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/seed 1_0.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/seed 1_0.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/seed 1_1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/seed 1_1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/seed 1_2.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/seed 1_2.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/seed 1_3.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/seed 1_3.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/seed 1_4.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/seed 1_4.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/seed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/seed.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/seed1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/seed1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/seed_0.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/seed_0.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/seed_1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/seed_1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/seed_2.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/seed_2.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/seed_3.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/seed_3.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/seed_4.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/seed_4.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/walls.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/walls/walls.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/walls/walls.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/walls/wooden_door.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/walls/wooden_door.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/walls/wooden_door_b.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/walls/wooden_door_b.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/water1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/water1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/water2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/water2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/water3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/water3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/water4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/water4.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/water5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/water5.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/water6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/water6.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/water_decorations.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/water_decorations.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/water_lillies.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/water_lillies.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +21,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AddRoom.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CoinSpawner.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ControlSwitcher.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ControlSwitcher.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Munescene.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />

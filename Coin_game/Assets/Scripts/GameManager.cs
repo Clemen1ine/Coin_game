@@ -22,8 +22,6 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        // Проверка на наличие другого экземпляра GameManager
-        // Если другого экземпляра нет, то этот экземпляр становится единственным доступным через переменную instance
         if (instance == null)
         {
             instance = this;
@@ -36,45 +34,41 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        // Начальное состояние: скрыть счетчик
         HideCoinCounter();
+
+        // Load the saved coin count
+        totalCoinValue = PlayerPrefs.GetInt("coinCount", 0);
+        coinCounter.text = "Coins: " + totalCoinValue.ToString();
     }
 
     private void Update()
     {
-        // Если прошло более 3 секунд после последнего сбора монет, скрыват счетчик 
         if (timeSinceLastPickup > 3f)
         {
             HideCoinCounter();
         }
-        // Если showCounter=true, показівает счетчик монет
         else if (showCounter)
         {
             ShowCoinCounter();
         }
 
-        // Обновляет время с последнего сбора монет
         timeSinceLastPickup += Time.deltaTime;
     }
 
     private void HideCoinCounter()
     {
-        // Скрыть счетчик монет 
         coinCounter.gameObject.SetActive(false);
         showCounter = false;
     }
 
     private void ShowCoinCounter()
     {
-        // Показать количество монет в счетчике
         coinCounter.text = "Coins: " + totalCoinValue.ToString();
         coinCounter.gameObject.SetActive(true);
     }
 
     public void AddScore(int value)
     {
-        // Обработать сбор монеты: увеличить количество монет определенного типа и общее количество монет
-        // а также обновить время с последнего сбора монет
         if (value == smallCoinScore)
         {
             smallCoinCount++;
@@ -88,14 +82,15 @@ public class GameManager : MonoBehaviour
             Debug.Log("Big coin collected! Value: " + bigCoinScore);
         }
 
-        // Если счетчик монет скрыт и общее количество монет больше 0, показать счетчик 
         if (!showCounter && totalCoinValue > 0)
         {
             ShowCoinCounter();
             showCounter = true;
         }
 
-        // Обновить время с последнего сбора монет
         timeSinceLastPickup = 0f;
+
+        // Save the coin count
+        PlayerPrefs.SetInt("coinCount", totalCoinValue);
     }
 }
