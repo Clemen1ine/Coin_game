@@ -1186,57 +1186,57 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      player_50: 984417190
-      player_15: 473855330
-      player_12: -2021070038
-      player_19: -899572052
-      player_26: -1998575991
-      player_41: -1780845306
-      player_25: 1756931719
-      player_37: 969665240
-      player_23: -1023448053
-      player_31: 1081020595
       player_0: -1657205728
-      player_24: 1328606946
-      player_36: -1428416271
-      player_40: -2063075165
-      player_3: -789758879
-      player_6: -1241508634
-      player_2: 923830501
-      player_29: 31818860
-      player_47: 495732181
-      player_34: -1456903450
-      player_17: 1654630974
-      player_13: -644745258
-      player_44: -1844039432
-      player_28: -492370045
-      player_11: -743746519
-      player_27: 695724532
       player_1: -1907512487
-      player_16: 428635866
-      player_8: -575148044
-      player_14: -222922592
-      player_21: -2118233559
-      player_35: -1236783485
-      player_4: -1468957536
-      player_5: 468142613
-      player_46: 1471705209
-      player_38: 1684491235
-      player_33: -1127486443
-      player_45: 402358999
-      player_9: 1739916766
-      player_30: 1866559225
-      player_39: 292012553
-      player_18: 363171263
-      player_48: -1494016445
       player_10: 150187864
-      player_22: 1448203990
-      player_49: 1994116651
+      player_11: -743746519
+      player_12: -2021070038
+      player_13: -644745258
+      player_14: -222922592
+      player_15: 473855330
+      player_16: 428635866
+      player_17: 1654630974
+      player_18: 363171263
+      player_19: -899572052
+      player_2: 923830501
       player_20: -1905970161
-      player_43: 2146261132
+      player_21: -2118233559
+      player_22: 1448203990
+      player_23: -1023448053
+      player_24: 1328606946
+      player_25: 1756931719
+      player_26: -1998575991
+      player_27: 695724532
+      player_28: -492370045
+      player_29: 31818860
+      player_3: -789758879
+      player_30: 1866559225
+      player_31: 1081020595
       player_32: -1229775612
+      player_33: -1127486443
+      player_34: -1456903450
+      player_35: -1236783485
+      player_36: -1428416271
+      player_37: 969665240
+      player_38: 1684491235
+      player_39: 292012553
+      player_4: -1468957536
+      player_40: -2063075165
+      player_41: -1780845306
       player_42: 315482811
+      player_43: 2146261132
+      player_44: -1844039432
+      player_45: 402358999
+      player_46: 1471705209
+      player_47: 495732181
+      player_48: -1494016445
+      player_49: 1994116651
+      player_5: 468142613
+      player_50: 984417190
+      player_6: -1241508634
       player_7: 107606827
+      player_8: -575148044
+      player_9: 1739916766
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

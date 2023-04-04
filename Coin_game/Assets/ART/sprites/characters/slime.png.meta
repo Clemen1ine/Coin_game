@@ -640,31 +640,31 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      slime_2: 1258427962
-      slime_16: 392216769
-      slime_5: -265870195
-      slime_9: -411180595
-      slime_19: 65923681
-      slime_7: -1277733641
-      slime_12: 328373477
-      slime_15: -820883656
-      slime_21: -1549955187
-      slime_1: -319839503
-      slime_24: -2020864780
-      slime_13: -1031421941
       slime_0: -582289405
-      slime_6: 1567230118
+      slime_1: -319839503
       slime_10: -181518150
+      slime_11: -1558892483
+      slime_12: 328373477
+      slime_13: -1031421941
       slime_14: -1110256943
-      slime_8: 2122910884
+      slime_15: -820883656
+      slime_16: 392216769
       slime_17: 227983869
       slime_18: 472245319
-      slime_22: -1735579236
-      slime_11: -1558892483
-      slime_3: -973058740
+      slime_19: 65923681
+      slime_2: 1258427962
       slime_20: 1060069100
-      slime_4: -462259256
+      slime_21: -1549955187
+      slime_22: -1735579236
       slime_23: -1843893541
+      slime_24: -2020864780
+      slime_3: -973058740
+      slime_4: -462259256
+      slime_5: -265870195
+      slime_6: 1567230118
+      slime_7: -1277733641
+      slime_8: 2122910884
+      slime_9: -411180595
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
