@@ -3,17 +3,33 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - SmallCoin
+  - BigCoin
+  - Block
+  - Door
+  - SpawnPoint
+  - Roome
+  - Enemy
+  - SwordHitbox
+  - Exit
+  - Rooms
+  - Room
+  - Bound
+  - mainRoom
+  - MainRoom
+  - Wall
+  - Trigger
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - PlayerLayer
   - Water
   - UI
-  - 
-  - 
-  - 
+  - CoinLayer
+  - Ignorecolliders
+  - obstacleMask
   - 
   - 
   - 
@@ -40,4 +56,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 868005919
+    locked: 0
+  - name: Foreground
+    uniqueID: 749514941
     locked: 0
