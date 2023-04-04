@@ -22,22 +22,17 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // Read input from horizontal and vertical axis
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
-
-        // Calculate movement direction from input
+        
         movementDirection = new Vector2(horizontal, vertical).normalized;
-
-        // Check for obstacles in movement direction using raycasts
+        
         RaycastHit2D hit = Physics2D.Raycast(transform.position, movementDirection, raycastDistance, obstacleMask);
 
         if (hit.collider == null)
         {
-            // If there are no obstacles in the way, move the player
             rb.MovePosition(rb.position + movementDirection * moveSpeed * Time.deltaTime);
-
-            // Set walking animation if player is moving
+            
             if (movementDirection != Vector2.zero)
             {
                 animator.SetBool("isMoving", true);
@@ -49,7 +44,6 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            // If there is an obstacle, don't move and stop walking animation
             rb.velocity = Vector2.zero;
             animator.SetBool("isMoving", false);
         }
@@ -64,7 +58,6 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        // When the player collides with an obstacle, stop its movement and print a message
         if (other.gameObject.layer == obstacleMask)
         {
             rb.velocity = Vector2.zero;
@@ -80,8 +73,7 @@ public class PlayerController : MonoBehaviour
     public void EndAttack()
     {
         UnlockMovement();
-
-        // Check if swordAttack has been initialized before calling StopAttack()
+        
         if (swordAttack != null)
         {
             swordAttack.StopAttack();

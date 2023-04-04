@@ -35,8 +35,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         HideCoinCounter();
-
-        // Load the saved coin count
+        
         totalCoinValue = PlayerPrefs.GetInt("coinCount", 0);
         coinCounter.text = "Coins: " + totalCoinValue.ToString();
     }
@@ -89,8 +88,7 @@ public class GameManager : MonoBehaviour
         }
 
         timeSinceLastPickup = 0f;
-
-        // Save the coin count
+        
         PlayerPrefs.SetInt("coinCount", totalCoinValue);
     }
 }
