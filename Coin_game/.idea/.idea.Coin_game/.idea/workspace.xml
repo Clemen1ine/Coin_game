@@ -10,9 +10,12 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+<<<<<<< Updated upstream
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
+=======
+>>>>>>> Stashed changes
   <component name="ProjectId" id="2M4WgE39R1m9oTaCSLUs7b35fWQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -28,7 +31,10 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+<<<<<<< Updated upstream
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+=======
+>>>>>>> Stashed changes
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -80,6 +86,7 @@
       <workItem from="1677282209698" duration="10977000" />
       <workItem from="1677376737900" duration="2730000" />
       <workItem from="1677473070555" duration="714000" />
+<<<<<<< Updated upstream
       <workItem from="1678736579186" duration="16214000" />
       <workItem from="1678792459555" duration="7881000" />
       <workItem from="1678870590547" duration="6848000" />
@@ -104,6 +111,8 @@
       <workItem from="1680349806667" duration="3012000" />
       <workItem from="1680355746783" duration="24041000" />
       <workItem from="1680455606064" duration="1175000" />
+=======
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
