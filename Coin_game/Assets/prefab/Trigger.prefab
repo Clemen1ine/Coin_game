@@ -72,4 +72,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraChangePos: {x: 0, y: 0, z: 0}
-  playerChangePos: {x: -0.998, y: 0, z: 0}
+  playerChangePos: {x: 0, y: 0, z: 0}
