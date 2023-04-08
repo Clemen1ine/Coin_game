@@ -3,28 +3,22 @@
   <component name="ChangeListManager">
     <list default="true" id="c8f0f8b5-0022-4365-9417-f1a0b20ff392" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coin_game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coin_game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/Characters/Player/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ART/Characters/Player/Player.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ART/Characters/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ART/Characters/Player/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AddRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AddRoom.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RB2Movement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RB2Movement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/D.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/D.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/DL.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/DL.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/DR.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/DR.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/L.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/L.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/LR.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/LR.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/R.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/R.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/T.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/T.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/TD.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/TD.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/TL.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/TL.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/TR.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/TR.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ControlSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ControlSwitcher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MouseController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MouseController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/mousemovement.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -135,7 +129,7 @@
       <workItem from="1680821006568" duration="1963000" />
       <workItem from="1680870044561" duration="2720000" />
       <workItem from="1680873638934" duration="1596000" />
-      <workItem from="1680880599928" duration="4728000" />
+      <workItem from="1680880599928" duration="8188000" />
     </task>
     <servers />
   </component>
