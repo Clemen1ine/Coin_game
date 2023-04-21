@@ -4702,7 +4702,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doors:
   - {fileID: 1020985894273114099}
-  enemyType: {fileID: 2786022931753627758, guid: 14626a993c6874e42925707545de97f5, type: 3}
+  enemyType: {fileID: 6782747873483955326, guid: 14626a993c6874e42925707545de97f5, type: 3}
   enemySpawners:
   - {fileID: 6139194268136429064}
   - {fileID: 5642657562950715914}

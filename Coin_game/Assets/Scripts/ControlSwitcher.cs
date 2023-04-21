@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class ControlSwitcher : MonoBehaviour
 {
-    public RB2Movement RB2Movement;
-    public mousemovement mousemovement;
+    public PlayerController RB2Movement;
+    public MouseMovement mousemovement;
 
     void Update()
     {

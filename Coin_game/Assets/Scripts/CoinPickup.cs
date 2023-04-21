@@ -8,64 +8,71 @@ public class CoinPickup : MonoBehaviour
     public int bigCoinValue = 2; 
     public float bigCoinRadius = 2.0f; 
 
-    private List<GameObject> bigCoinsInRange = new List<GameObject>(); // список больших монет, находящихся в радиусе обнаружения
+    private List<GameObject> bigCoinsInRange = new List<GameObject>(); 
+    private GameObject hintObject; 
 
-    // выполняется при столкновении с коллайдером
+    private void Start()
+    {
+        hintObject = transform.GetChild(0).gameObject;
+        hintObject.SetActive(false);
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) // если столкнулись с игроком
+        if (other.CompareTag("Player"))
         {
-            if (gameObject.tag == "SmallCoin") // если это небольшая монета
+            if (gameObject.tag == "SmallCoin")
             {
-                GameManager.instance.AddScore(smallCoinValue); // увеличиваем счет
-                Destroy(gameObject); // удаляем монету
+                GameManager.instance.AddScore(smallCoinValue);
+                Destroy(gameObject);
             }
-            else if (gameObject.tag == "BigCoin") // если это большая монета
+            else if (gameObject.tag == "BigCoin")
             {
-                bigCoinsInRange.Add(gameObject); // добавляем ее в список монет в радиусе обнаружения
+                bigCoinsInRange.Add(gameObject);
+                hintObject.SetActive(true);
             }
         }
     }
 
-    // выполняется при выходе из коллайдера
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) // если вышли из зоны столкновения с игроком
+        if (other.CompareTag("Player"))
         {
-            if (gameObject.tag == "BigCoin") // если это большая монета
+            if (gameObject.tag == "BigCoin")
             {
-                bigCoinsInRange.Remove(gameObject); // удаляем ее из списка монет в радиусе обнаружения
+                bigCoinsInRange.Remove(gameObject);
+                hintObject.SetActive(false);
             }
         }
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E)) // если была нажата клавиша "E"
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            PickUpBigCoinsInRange(); // подобрать монеты в радиусе обнаружения
+            PickUpBigCoinsInRange();
         }
     }
 
-    // подбирает монеты в радиусе обнаружения
     private void PickUpBigCoinsInRange()
     {
-        List<GameObject> coinsToDestroy = new List<GameObject>(); // список монет для удаления
+        List<GameObject> coinsToDestroy = new List<GameObject>();
 
-        foreach (GameObject coin in bigCoinsInRange) // список монет в радиусе обнаружения
+        foreach (GameObject coin in bigCoinsInRange)
         {
-            if (Vector2.Distance(transform.position, coin.transform.position) <= bigCoinRadius) // если монета находится в радиусе обнаружения
+            if (Vector2.Distance(transform.position, coin.transform.position) <= bigCoinRadius)
             {
-                coinsToDestroy.Add(coin); // добавляет в список монет для удаления
-                GameManager.instance.AddScore(bigCoinValue); // счет++
+                coinsToDestroy.Add(coin);
+                GameManager.instance.AddScore(bigCoinValue);
             }
         }
 
-        // удаляем монеты из списка монет в радиусе обнаружения
-        foreach (GameObject coin in coinsToDestroy) 
+        foreach (GameObject coin in coinsToDestroy)
         {
             bigCoinsInRange.Remove(coin);
             Destroy(coin);
         }
+
+        hintObject.SetActive(false);
     }
 }

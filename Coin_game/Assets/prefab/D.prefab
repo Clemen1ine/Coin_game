@@ -2335,7 +2335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doors:
   - {fileID: 8940142030850155889}
-  enemyType: {fileID: 2786022931753627758, guid: 14626a993c6874e42925707545de97f5, type: 3}
+  enemyType: {fileID: 6782747873483955326, guid: 14626a993c6874e42925707545de97f5, type: 3}
   enemySpawners:
   - {fileID: 4578453420585265540}
   - {fileID: 7222561441842768752}

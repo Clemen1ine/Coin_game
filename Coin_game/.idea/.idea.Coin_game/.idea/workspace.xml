@@ -2,15 +2,67 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8f0f8b5-0022-4365-9417-f1a0b20ff392" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/ART/Characters/Player/AnimationNew/Player_Attack_Down.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/Characters/Player/AnimationNew/Player_Attack_Down.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/Characters/Player/AnimationNew/Player_Attack_Left.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/Characters/Player/AnimationNew/Player_Attack_Left.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/Characters/Player/AnimationNew/Player_Attack_Right.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/Characters/Player/AnimationNew/Player_Attack_Right.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/Characters/Player/AnimationNew/Player_Attack_Up.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/Characters/Player/AnimationNew/Player_Attack_Up.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/Characters/Player/AnimationNew/Player_Death.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/Characters/Player/AnimationNew/Player_Death.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/E.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/E.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/FullHeart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/FullHeart.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/PartHeart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/PartHeart.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/emptyHert.aseprite" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/emptyHert.aseprite.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyHealthManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyHealthManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/HurtEnemy.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/HurtEnemy.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/HurtPlayer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/HurtPlayer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PauseMune.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PauseMune.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coin_game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coin_game/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ART/Characters/Player/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ART/Characters/Player/Player.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ART/Characters/Player/Player.controller.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ART/Characters/Player/Player.controller.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ART/Characters/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ART/Characters/Player/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ART/Characters/Player/player.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ART/Characters/Player/player.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ART/Characters/Player/player.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ART/Characters/Player/player.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ART/Characters/Slime/Slime.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ART/Characters/Slime/Slime.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ART/Characters/Slime/Slime.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ART/Characters/Slime/Slime.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ART/Characters/Slime/Slime.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ART/Characters/Slime/Slime.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ART/Characters/Slime/slime.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ART/Characters/Slime/slime.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ART/Characters/Slime/slime.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ART/Characters/Slime/slime.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/fix_bug.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/fix_bug.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CoinPickup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CoinPickup.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ControlSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ControlSwitcher.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MouseController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MouseController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RB2Movement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RB2Movement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/mousemovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/mousemovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefab/D.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/D.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefab/DL.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/DL.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefab/DR.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/DR.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefab/L.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/L.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefab/LR.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/LR.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefab/R.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/R.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefab/T.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/T.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefab/TD.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/TD.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefab/TL.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/TL.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefab/TR.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/TR.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefab/big_coin.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/big_coin.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +70,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/mousemovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyHealthManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Health.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HealthNew.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HurtEnemy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MouseMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PauseMune.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -129,7 +186,33 @@
       <workItem from="1680821006568" duration="1963000" />
       <workItem from="1680870044561" duration="2720000" />
       <workItem from="1680873638934" duration="1596000" />
-      <workItem from="1680880599928" duration="8188000" />
+      <workItem from="1680880599928" duration="10897000" />
+      <workItem from="1681079122951" duration="553000" />
+      <workItem from="1681128077590" duration="3873000" />
+      <workItem from="1681161714811" duration="5171000" />
+      <workItem from="1681268211562" duration="1366000" />
+      <workItem from="1681395618159" duration="2161000" />
+      <workItem from="1681414983500" duration="4460000" />
+      <workItem from="1681475700055" duration="1516000" />
+      <workItem from="1681491737080" duration="598000" />
+      <workItem from="1681504087923" duration="1680000" />
+      <workItem from="1681517844054" duration="4265000" />
+      <workItem from="1681583055648" duration="1653000" />
+      <workItem from="1681696129713" duration="8172000" />
+      <workItem from="1681733441340" duration="2372000" />
+      <workItem from="1681754840762" duration="9719000" />
+      <workItem from="1681815870771" duration="975000" />
+      <workItem from="1681855073085" duration="10921000" />
+      <workItem from="1681921333494" duration="8930000" />
+      <workItem from="1681933792230" duration="846000" />
+      <workItem from="1681943920169" duration="3585000" />
+      <workItem from="1681952920987" duration="3659000" />
+      <workItem from="1681962897287" duration="1109000" />
+      <workItem from="1682045397891" duration="343000" />
+      <workItem from="1682046009789" duration="2379000" />
+      <workItem from="1682084143961" duration="1535000" />
+      <workItem from="1682087908033" duration="7877000" />
+      <workItem from="1682104733128" duration="1411000" />
     </task>
     <servers />
   </component>

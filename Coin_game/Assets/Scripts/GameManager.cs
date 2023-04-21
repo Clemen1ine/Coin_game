@@ -72,13 +72,11 @@ public class GameManager : MonoBehaviour
         {
             smallCoinCount++;
             totalCoinValue += 1;
-            Debug.Log("Small coin collected! Value: " + smallCoinScore);
         }
         else if (value == bigCoinScore)
         {
             bigCoinCount++;
             totalCoinValue += 2;
-            Debug.Log("Big coin collected! Value: " + bigCoinScore);
         }
 
         if (!showCounter && totalCoinValue > 0)

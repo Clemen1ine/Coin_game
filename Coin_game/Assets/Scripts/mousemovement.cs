@@ -1,72 +1,109 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class mousemovement : MonoBehaviour
+public class MouseMovement : MonoBehaviour
 {
-    public float speed;
+    public float moveSpeed = 5f;
+    public Rigidbody2D rb;
+    public Animator animator;
 
-    private Rigidbody2D rb;
-    private Animator animator;
-    private SwordAttack swordAttack;
-
-    private bool canMove = true;
     private Vector2 destination;
+    private bool isMoving = false;
+    private float attackTime = .25f;
+    private float attackCounter = .25f;
+    private bool IsAttacking;
+    private Vector2 startPosition;
+    private float minimumAttackDistance = 0.1f;
+    private Vector2 moveDirection = Vector2.zero;
+    private float LastMoveX;
+    private float LastMoveY;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-        swordAttack = GetComponentInChildren<SwordAttack>();
+        startPosition = rb.position;
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1) && canMove)
+        if (Input.GetMouseButtonDown(0))
         {
-            destination = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            animator.SetBool("isMoving", true);
-        }
-
-        if (Input.GetMouseButtonDown(0) && canMove)
-        {
-            animator.SetTrigger("SwordAttack");
-            LockMovement();
-        }
-
-        if (Vector2.Distance(transform.position, destination) > 0.1f)
-        {
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePos.z = 0f;
+            destination = mousePos;
             Vector2 direction = (destination - (Vector2)transform.position).normalized;
-            rb.velocity = direction * speed;
+
+            // Set moveDirection based on the difference between current position and destination
+            moveDirection = (destination - rb.position).normalized;
+
+            // Set animator values based on moveDirection
+            animator.SetFloat("Horizontal", moveDirection.x);
+            animator.SetFloat("Vertical", moveDirection.y);
+            animator.SetFloat("Speed", 1f);
+
+            isMoving = true;
         }
-        else
+
+        if (isMoving && Vector2.Distance(rb.position, destination) < 0.1f)
+        {
+            isMoving = false;
+            animator.SetFloat("Speed", 0f);
+        }
+
+        if (IsAttacking)
         {
             rb.velocity = Vector2.zero;
-            animator.SetBool("isMoving", false);
+            attackCounter -= Time.deltaTime;
+            if (attackCounter <= 0)
+            {
+                animator.SetBool("IsAttacking", false);
+                IsAttacking = false;
+            }
         }
-    }
 
-    public void Attack()
-    {
-        animator.SetTrigger("SwordAttack");
-        LockMovement();
-    }
-
-    public void EndAttack()
-    {
-        UnlockMovement();
-
-        if (swordAttack != null)
+        if (Input.GetKeyDown(KeyCode.T))
         {
-            swordAttack.StopAttack();
+            if (Vector2.Distance(rb.position, startPosition) >= minimumAttackDistance)
+            {
+                attackCounter = attackTime;
+                animator.SetBool("IsAttacking", true);
+                IsAttacking = true;
+            }
+        }
+
+        if (isMoving)
+        {
+            // Update animator values based on moveDirection
+            animator.SetFloat("Horizontal", moveDirection.x);
+            animator.SetFloat("Vertical", moveDirection.y);
+
+            // Save the current moveDirection
+            LastMoveX = moveDirection.x;
+            LastMoveY = moveDirection.y;
+
+            // Move the rigidbody in the direction of moveDirection
+            rb.MovePosition(rb.position + moveDirection * moveSpeed * Time.deltaTime);
         }
     }
-
-    public void LockMovement()
+    
+    private void FixedUpdate()
     {
-        canMove = false;
-    }
+        if (isMoving)
+        {
+            Vector2 direction = (destination - (Vector2)transform.position).normalized;
+            Vector2 movement = new Vector2(
+                direction.x * moveSpeed * Time.fixedDeltaTime,
+                direction.y * moveSpeed * Time.fixedDeltaTime
+            );
+            rb.MovePosition(rb.position + movement);
 
-    public void UnlockMovement()
-    {
-        canMove = true;
+            // Set animator values based on LastMoveX and LastMoveY
+            if (LastMoveX != 0f) {
+                animator.SetFloat("Horizontal", LastMoveX);
+            }
+            if (LastMoveY != 0f) {
+                animator.SetFloat("Vertical", LastMoveY);
+            }
+        }
     }
 }
