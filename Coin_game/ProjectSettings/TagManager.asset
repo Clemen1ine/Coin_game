@@ -20,6 +20,7 @@ TagManager:
   - MainRoom
   - Wall
   - Trigger
+  - Inventory Manager
   layers:
   - Default
   - TransparentFX
@@ -28,8 +29,8 @@ TagManager:
   - Water
   - UI
   - CoinLayer
-  - Ignorecolliders
-  - obstacleMask
+  - MiniMap
+  - 
   - 
   - 
   - 

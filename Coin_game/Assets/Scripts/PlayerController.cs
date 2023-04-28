@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        startPosition = rb.position;
+        startPosition = rb.position;    
     }
 
     private void Update()

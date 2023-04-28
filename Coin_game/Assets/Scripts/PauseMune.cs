@@ -7,6 +7,7 @@ public class PauseMune : MonoBehaviour
 {
     public bool PauseGame;
     public GameObject PauseGameManu;
+    public GameObject MiniMap;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -25,6 +26,7 @@ public class PauseMune : MonoBehaviour
     public void Resume()
     {
         PauseGameManu.SetActive(false);
+        MiniMap.SetActive(true);
         Time.timeScale = 1f;
         PauseGame = false;
     }
@@ -32,6 +34,7 @@ public class PauseMune : MonoBehaviour
     public void Pause()
     {
         PauseGameManu.SetActive(true);
+        MiniMap.SetActive(false);
         Time.timeScale = 0f;
         PauseGame = true;
     }

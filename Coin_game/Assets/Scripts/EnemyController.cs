@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.UIElements;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -15,16 +13,19 @@ public class EnemyController : MonoBehaviour
 
     public Transform homePos;
 
+    private Rigidbody2D rb;
+
     private void Start()
     {
         homePos.parent = null;
         animator = GetComponent<Animator>();
         target = FindObjectOfType<PlayerController>().transform;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
-        if (Vector3.Distance(target.position, transform.position) <= maxRange && Vector3.Distance(target.position, transform.position) >= minRange )
+        if (Vector3.Distance(target.position, transform.position) <= maxRange && Vector3.Distance(target.position, transform.position) >= minRange)
         {
             FollowPlayer();
         }
@@ -39,17 +40,24 @@ public class EnemyController : MonoBehaviour
         animator.SetBool("isMoving", true);
         animator.SetFloat("moveX",(target.position.x - transform.position.x));
         animator.SetFloat("moveY",(target.position.y - transform.position.y)); 
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+        Vector2 direction = (target.position - transform.position).normalized;
+        rb.MovePosition(rb.position + direction * speed * Time.fixedDeltaTime);
     }
 
     public void GoHome()
     {
-        animator.SetFloat("moveX",(target.position.x - transform.position.x));
-        animator.SetFloat("moveY",(target.position.y - transform.position.y));
+        animator.SetFloat("moveX",(homePos.position.x - transform.position.x));
+        animator.SetFloat("moveY",(homePos.position.y - transform.position.y));
 
-        if (Vector3.Distance(transform.position, homePos.position) == 0)
+        if (Vector3.Distance(transform.position, homePos.position) < 0.05f)
         {
             animator.SetBool("isMoving", false);
+            rb.velocity = Vector2.zero;
+        }
+        else
+        {
+            Vector2 direction = (homePos.position - transform.position).normalized;
+            rb.MovePosition(rb.position + direction * speed * Time.fixedDeltaTime);
         }
     }
 }
