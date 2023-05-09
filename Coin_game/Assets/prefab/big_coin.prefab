@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 90598044129351147}
   - component: {fileID: 4285920647288515639}
   - component: {fileID: 8798097148195479448}
+  - component: {fileID: 8200619175408161430}
   m_Layer: 6
   m_Name: big_coin
   m_TagString: BigCoin
@@ -110,7 +111,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2202872099932000809}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51a3b5673fe25144cbc672c35e4b2bf9, type: 3}
   m_Name: 
@@ -118,6 +119,19 @@ MonoBehaviour:
   smallCoinValue: 1
   bigCoinValue: 2
   bigCoinRadius: 2
+--- !u!114 &8200619175408161430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2202872099932000809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4826d6021e6446a4ebb619106af64442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotButton: {fileID: 2733299649399916388, guid: 4d64b4b502001d74b8f7b95e6ff73681, type: 3}
 --- !u!1 &5758112219722661410
 GameObject:
   m_ObjectHideFlags: 0

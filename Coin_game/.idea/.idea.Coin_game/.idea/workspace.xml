@@ -2,31 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8f0f8b5-0022-4365-9417-f1a0b20ff392" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/Bag.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/Bag.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/Drop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/Drop.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Inventory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Inventory.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/PickUp.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/PickUp.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Slot.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Slot.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/prefab/BigCoinButton.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/prefab/BigCoinButton.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/prefab/SmoleCoinButton.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/prefab/SmoleCoinButton.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coin_game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coin_game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/Characters/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ART/Characters/Player/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/Characters/Slime/Slime.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ART/Characters/Slime/Slime.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resurse.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resurse/Icon.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resurse/Icon/BigCoinIcone.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resurse/Icon/BigCoinIcone.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resurse/Icon/SmoleCoinIcone.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resurse/Icon/SmoleCoinIcone.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resurse/Prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resurse/Prefab/big_coin.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resurse/Prefab/big_coin.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resurse/Prefab/smole_coin.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resurse/Prefab/smole_coin.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HealthNew.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HealthNew.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HurtPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HurtPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Item.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Item.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/Exit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/Exit.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefab/Item.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefab/Item.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefab/big_coin.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/big_coin.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefab/smole_coin.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/smole_coin.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +37,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/HealthNew.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/HurtEnemy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/HurtPlayer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory/DragDrop.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory/Inventory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MouseMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Munescene.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PauseMune.cs" root0="FORCE_HIGHLIGHTING" />
@@ -192,6 +190,7 @@
       <workItem from="1682444133915" duration="6451000" />
       <workItem from="1682568032711" duration="6099000" />
       <workItem from="1682647352254" duration="2557000" />
+      <workItem from="1683656103235" duration="5180000" />
     </task>
     <servers />
   </component>
