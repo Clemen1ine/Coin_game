@@ -2,81 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8f0f8b5-0022-4365-9417-f1a0b20ff392" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/Inventory.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/Inventory.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/MI.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/MI.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/Slot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/Slot.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/SlotUp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/SlotUp.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/TilePalet.aseprite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/TilePalet.aseprite.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/TilePalet_0.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/TilePalet_0.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/TilePalet_1.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/TilePalet_1.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/TilePalet_10.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/TilePalet_10.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/TilePalet_11.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/TilePalet_11.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/TilePalet_12.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/TilePalet_12.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/TilePalet_13.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/TilePalet_13.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/TilePalet_14.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/TilePalet_14.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/TilePalet_2.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/TilePalet_2.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/TilePalet_3.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/TilePalet_3.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/TilePalet_4.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/TilePalet_4.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/TilePalet_5.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/TilePalet_5.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/TilePalet_6.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/TilePalet_6.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/TilePalet_7.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/TilePalet_7.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/TilePalet_8.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/TilePalet_8.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/TilePalet_9.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/TilePalet_9.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/TilePalet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/TilePalet.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CoordinateSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CoordinateSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/prefab/Item.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/prefab/Item.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coin_game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coin_game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/Characters/Player/AnimationNew/Player_Attack_Down.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ART/Characters/Player/AnimationNew/Player_Attack_Down.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/Characters/Player/AnimationNew/Player_Attack_Left.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ART/Characters/Player/AnimationNew/Player_Attack_Left.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/Characters/Player/AnimationNew/Player_Attack_Right.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ART/Characters/Player/AnimationNew/Player_Attack_Right.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/Characters/Player/AnimationNew/Player_Attack_Up.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ART/Characters/Player/AnimationNew/Player_Attack_Up.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ART/Characters/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ART/Characters/Player/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ART/Characters/Slime/Slime.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ART/Characters/Slime/Slime.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/Sprite-0001.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/Sprite-0001.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/Dangeon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ART/sprites/tilesets/Tails/Dangeon.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resurse.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resurse/Icon.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resurse/Icon/BigCoinIcone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resurse/Icon/BigCoinIcone.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resurse/Icon/SmoleCoinIcone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resurse/Icon/SmoleCoinIcone.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resurse/Prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resurse/Prefab/big_coin.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resurse/Prefab/big_coin.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resurse/Prefab/smole_coin.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resurse/Prefab/smole_coin.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Changeroom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Changeroom.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CoinPickup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CoinPickup.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PauseMune.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PauseMune.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpawnerRooms.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpawnerRooms.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/Block.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/Block.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/D.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/D.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/DL.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/DL.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/DR.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/DR.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/L.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/L.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/LR.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/LR.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/MainRoom.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/MainRoom.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/TD.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/TD.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/TR.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/TR.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/big_coin.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/big_coin.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/smole_coin 1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/smole_coin 1.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HealthNew.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HealthNew.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HurtPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HurtPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Item.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Item.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefab/Exit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/Exit.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
@@ -93,7 +41,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/HealthNew.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/HurtEnemy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/HurtPlayer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Item.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MouseMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Munescene.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PauseMune.cs" root0="FORCE_HIGHLIGHTING" />

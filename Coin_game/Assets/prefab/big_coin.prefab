@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 90598044129351147}
   - component: {fileID: 4285920647288515639}
   - component: {fileID: 8798097148195479448}
-  - component: {fileID: 5694160277313873938}
   m_Layer: 6
   m_Name: big_coin
   m_TagString: BigCoin
@@ -119,25 +118,6 @@ MonoBehaviour:
   smallCoinValue: 1
   bigCoinValue: 2
   bigCoinRadius: 2
---- !u!114 &5694160277313873938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2202872099932000809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 061cd574034e1214e990b64e523d9235, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameItem: BigCoin
-  id: 0
-  countItem: 0
-  isStackable: 1
-  descriptionItem: 
-  pathIcon: Icone/BigCoinIcone
-  pathPrefab: Prefab/big_coin
 --- !u!1 &5758112219722661410
 GameObject:
   m_ObjectHideFlags: 0

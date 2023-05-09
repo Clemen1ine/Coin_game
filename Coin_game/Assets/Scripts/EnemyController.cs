@@ -38,16 +38,51 @@ public class EnemyController : MonoBehaviour
     public void FollowPlayer()
     {
         animator.SetBool("isMoving", true);
-        animator.SetFloat("moveX",(target.position.x - transform.position.x));
-        animator.SetFloat("moveY",(target.position.y - transform.position.y)); 
-        Vector2 direction = (target.position - transform.position).normalized;
-        rb.MovePosition(rb.position + direction * speed * Time.fixedDeltaTime);
-    }
 
+        // Calculate direction towards the player
+        Vector2 direction = (target.position - transform.position).normalized;
+
+        // Check if player is close to a collider with a rigidbody component
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, maxRange);
+        if (hit.collider != null && hit.distance < minRange && hit.rigidbody != null)
+        {
+            // Player is close to a collider with a rigidbody component, adjust direction of movement
+            Vector2 collisionNormal = hit.normal;
+            direction = Vector2.Reflect(direction, collisionNormal);
+        }
+
+        // Calculate next position
+        Vector2 nextPos = rb.position + direction * speed * Time.fixedDeltaTime;
+
+        // Check for collisions with colliders that have a rigidbody component
+        ContactFilter2D contactFilter = new ContactFilter2D();
+        contactFilter.SetLayerMask(LayerMask.GetMask("Default")); // Change "Default" to the layer that your colliders are on
+        Collider2D[] colliders = new Collider2D[10];
+        int numColliders = rb.OverlapCollider(contactFilter, colliders);
+        for (int i = 0; i < numColliders; i++)
+        {
+            if (colliders[i].attachedRigidbody != null)
+            {
+                Vector2 closestPoint = colliders[i].ClosestPoint(nextPos);
+                if (Vector2.Distance(nextPos, closestPoint) < 0.1f)
+                {
+                    // Next position is inside a collider with a rigidbody component, move enemy to just before the collider
+                    rb.MovePosition(closestPoint - direction * 0.1f);
+                    return;
+                }
+            }
+        }
+
+        // Set animator parameters and move enemy
+        animator.SetFloat("moveX", direction.x);
+        animator.SetFloat("moveY", direction.y);
+        rb.MovePosition(nextPos);
+    }
+    
     public void GoHome()
     {
-        animator.SetFloat("moveX",(homePos.position.x - transform.position.x));
-        animator.SetFloat("moveY",(homePos.position.y - transform.position.y));
+        animator.SetFloat("moveX",((Vector2)homePos.position - (Vector2)transform.position).x);
+        animator.SetFloat("moveY",((Vector2)homePos.position - (Vector2)transform.position).y);
 
         if (Vector3.Distance(transform.position, homePos.position) < 0.05f)
         {
@@ -56,7 +91,7 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            Vector2 direction = (homePos.position - transform.position).normalized;
+            Vector2 direction = ((Vector2)homePos.position - (Vector2)transform.position).normalized;
             rb.MovePosition(rb.position + direction * speed * Time.fixedDeltaTime);
         }
     }

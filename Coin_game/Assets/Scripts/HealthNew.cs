@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HealthNew : MonoBehaviour
 {
@@ -10,5 +11,9 @@ public class HealthNew : MonoBehaviour
     public void HurtPlayer(int damageTolive)
     {
         currentHealth -= damageTolive;
+        if (currentHealth <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 }

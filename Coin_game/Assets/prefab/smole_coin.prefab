@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 974385517091872874}
   - component: {fileID: 7240505678240967213}
   - component: {fileID: 5860973586455297692}
-  - component: {fileID: -2494621747176577928}
   m_Layer: 6
   m_Name: smole_coin
   m_TagString: SmallCoin
@@ -118,22 +117,3 @@ MonoBehaviour:
   smallCoinValue: 1
   bigCoinValue: 2
   bigCoinRadius: 2
---- !u!114 &-2494621747176577928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8155799080591454325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 061cd574034e1214e990b64e523d9235, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameItem: SmoleCoin
-  id: 1
-  countItem: 0
-  isStackable: 1
-  descriptionItem: 
-  pathIcon: Icon/SmoleCoinIcone
-  pathPrefab: Prefab/smole_coin

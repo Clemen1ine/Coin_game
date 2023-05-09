@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e891830f-4415-4295-b207-3e75d212d1a2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Coin_game/Assets/ART/sprites/UI/buttons/CellDownL.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Coin_game/Assets/ART/sprites/UI/buttons/CellDownL.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Coin_game/Assets/ART/sprites/UI/buttons/CellDownR.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Coin_game/Assets/ART/sprites/UI/buttons/CellDownR.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Coin_game/Assets/ART/sprites/UI/buttons/CellMidlle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Coin_game/Assets/ART/sprites/UI/buttons/CellMidlle.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Coin_game/Assets/ART/sprites/UI/buttons/CellUpL.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Coin_game/Assets/ART/sprites/UI/buttons/CellUpL.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Coin_game/Assets/ART/sprites/UI/buttons/CellUpR.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Coin_game/Assets/ART/sprites/UI/buttons/CellUpR.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Coin_game/Assets/Resources.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Coin_game/Assets/Resources/Icon.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Coin_game/Assets/Resources/Icon/BigCoinIcone.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Coin_game/Assets/Resources/Icon/BigCoinIcone.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Coin_game/Assets/Resources/Icon/SmoleCoinIcone.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Coin_game/Assets/Resources/Icon/SmoleCoinIcone.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Coin_game/Assets/Resources/Prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Coin_game/Assets/Resources/Prefab/Cell.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Coin_game/Assets/Resources/Prefab/Cell.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Coin_game/Assets/Resources/Prefab/big_coin.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Coin_game/Assets/Resources/Prefab/big_coin.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Coin_game/Assets/Resources/Prefab/smole_coin.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Coin_game/Assets/Resources/Prefab/smole_coin.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Coin_game/Assets/Scripts/Scripts.rar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Coin_game/Assets/Scripts/Scripts.rar.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coin_game/.idea/.idea.Coin_game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Coin_game/.idea/.idea.Coin_game/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coin_game/Assets/ART/sprites/UI/buttons/Inventory.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Coin_game/Assets/ART/sprites/UI/buttons/Inventory.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coin_game/Assets/ART/sprites/tilesets/Exit.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Coin_game/Assets/ART/sprites/tilesets/Exit.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coin_game/Assets/Resurse.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coin_game/Assets/Resurse/Icon.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coin_game/Assets/Resurse/Icon/BigCoinIcone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coin_game/Assets/Resurse/Icon/BigCoinIcone.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coin_game/Assets/Resurse/Icon/SmoleCoinIcone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coin_game/Assets/Resurse/Icon/SmoleCoinIcone.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coin_game/Assets/Resurse/Prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coin_game/Assets/Resurse/Prefab/big_coin.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coin_game/Assets/Resurse/Prefab/big_coin.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coin_game/Assets/Resurse/Prefab/smole_coin.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coin_game/Assets/Resurse/Prefab/smole_coin.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coin_game/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../Coin_game/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coin_game/Assets/Scripts/Inventory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coin_game/Assets/Scripts/Inventory.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coin_game/Assets/Scripts/Item.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coin_game/Assets/Scripts/Item.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coin_game/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/../Coin_game/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coin_game/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/../Coin_game/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="2PB2yNWgPKlc2sqTyamOXXbrUGL" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Discover.Launch.Via.Unity": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.19f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath &quot;C:\Users\HP\Documents\GitHub\Coin_game\My project&quot; -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\HP\Documents\GitHub\Coin_game\My project" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e891830f-4415-4295-b207-3e75d212d1a2" name="Changes" comment="" />
+      <created>1682916443245</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1682916443245</updated>
+      <workItem from="1682916540969" duration="781000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
