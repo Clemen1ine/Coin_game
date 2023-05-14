@@ -9,7 +9,8 @@ public class CoinPickup : MonoBehaviour
     public float bigCoinRadius = 2.0f; 
 
     private List<GameObject> bigCoinsInRange = new List<GameObject>(); 
-    private GameObject hintObject; 
+    private GameObject hintObject;
+    public Item item;
 
     private void Start()
     {
@@ -32,6 +33,7 @@ public class CoinPickup : MonoBehaviour
             {
                 GameManager.instance.AddScore(smallCoinValue);
                 Destroy(gameObject);
+                InventoryManager.inventoryManager.AddItem(item);
             }
             else if (gameObject.tag == "BigCoin")
             {
@@ -71,6 +73,7 @@ public class CoinPickup : MonoBehaviour
             {
                 coinsToDestroy.Add(coin);
                 GameManager.instance.AddScore(bigCoinValue);
+                InventoryManager.inventoryManager.AddItem(item);
             }
         }
 
