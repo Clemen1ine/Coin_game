@@ -6,20 +6,20 @@ public class SwordAttack : MonoBehaviour
 {
     public enum AttackDirection
     {
-        front
+        Front
     }
 
     public AttackDirection attackDirection;
     public float damage = 3;
-    private Vector2 frontAttackOffset;
+    private Vector2 _frontAttackOffset;
     public Collider2D swordCollider;
 
-    private Transform parentTransform;
+    private Transform _parentTransform;
 
     public void Start()
     {
-        frontAttackOffset = transform.localPosition;
-        parentTransform = transform.parent;
+        _frontAttackOffset = transform.localPosition;
+        _parentTransform = transform.parent;
     }
 
     public void AttackFront()
@@ -34,7 +34,7 @@ public class SwordAttack : MonoBehaviour
 
     private void LateUpdate()
     {
-        transform.position = parentTransform.position + (Vector3)frontAttackOffset;
+        transform.position = _parentTransform.position + (Vector3)_frontAttackOffset;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

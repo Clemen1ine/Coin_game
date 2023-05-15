@@ -16,15 +16,15 @@ public class SpawnPoint : MonoBehaviour
     }
     
     public bool spawned = false;
-    private SpawnerRooms variants;
-    private int rand;
+    private SpawnerRooms _variants;
+    private int _rand;
     
-    private float waitTime =4f;
+    private float _waitTime =4f;
 
     private void Start()
     {
-        variants = GameObject.FindGameObjectWithTag("Roome").GetComponent<SpawnerRooms>();
-        Destroy(gameObject, waitTime);
+        _variants = GameObject.FindGameObjectWithTag("Roome").GetComponent<SpawnerRooms>();
+        Destroy(gameObject, _waitTime);
         Invoke("Spawn", 0.2f);
     }
 
@@ -34,23 +34,23 @@ public class SpawnPoint : MonoBehaviour
         {
             if (direction == Direction.Top)
             {
-                rand = UnityEngine.Random.Range(0, variants.topRoom.Length);
-                Instantiate(variants.topRoom[rand], transform.position, variants.topRoom[rand].transform.rotation);
+                _rand = UnityEngine.Random.Range(0, _variants.topRoom.Length);
+                Instantiate(_variants.topRoom[_rand], transform.position, _variants.topRoom[_rand].transform.rotation);
             }
             else if (direction == Direction.Down)
             {
-                rand = UnityEngine.Random.Range(0, variants.downRoom.Length);
-                Instantiate(variants.downRoom[rand], transform.position, variants.downRoom[rand].transform.rotation);
+                _rand = UnityEngine.Random.Range(0, _variants.downRoom.Length);
+                Instantiate(_variants.downRoom[_rand], transform.position, _variants.downRoom[_rand].transform.rotation);
             }
             else if (direction == Direction.Right)
             {
-                rand = UnityEngine.Random.Range(0, variants.rightRoom.Length);
-                Instantiate(variants.rightRoom[rand], transform.position, variants.rightRoom[rand].transform.rotation);
+                _rand = UnityEngine.Random.Range(0, _variants.rightRoom.Length);
+                Instantiate(_variants.rightRoom[_rand], transform.position, _variants.rightRoom[_rand].transform.rotation);
             }
             else if (direction == Direction.Left)
             {
-                rand = UnityEngine.Random.Range(0, variants.leftRoom.Length);
-                Instantiate(variants.leftRoom[rand], transform.position, variants.leftRoom[rand].transform.rotation);
+                _rand = UnityEngine.Random.Range(0, _variants.leftRoom.Length);
+                Instantiate(_variants.leftRoom[_rand], transform.position, _variants.leftRoom[_rand].transform.rotation);
             }
 
             spawned = true;

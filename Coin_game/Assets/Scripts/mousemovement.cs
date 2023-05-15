@@ -8,20 +8,20 @@ public class MouseMovement : MonoBehaviour
     public Rigidbody2D rb;
     public Animator animator;
 
-    private Vector2 destination;
-    private bool isMoving = false;
-    private float attackTime = .25f;
-    private float attackCounter = .25f;
-    private bool IsAttacking;
-    private Vector2 startPosition;
-    private float minimumAttackDistance = 0.1f;
-    private Vector2 moveDirection = Vector2.zero;
-    private float LastMoveX;
-    private float LastMoveY;
+    private Vector2 _destination;
+    private bool _isMoving = false;
+    private float _attackTime = .25f;
+    private float _attackCounter = .25f;
+    private bool _isAttacking;
+    private Vector2 _startPosition;
+    private float _minimumAttackDistance = 0.1f;
+    private Vector2 _moveDirection = Vector2.zero;
+    private float _lastMoveX;
+    private float _lastMoveY;
 
     private void Start()
     {
-        startPosition = rb.position;
+        _startPosition = rb.position;
     }
 
     private void Update()
@@ -30,67 +30,67 @@ public class MouseMovement : MonoBehaviour
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePos.z = 0f;
-            destination = mousePos;
-            Vector2 direction = (destination - (Vector2)transform.position).normalized;
+            _destination = mousePos;
+            Vector2 direction = (_destination - (Vector2)transform.position).normalized;
 
             // Set moveDirection based on the difference between current position and destination
-            moveDirection = (destination - rb.position).normalized;
+            _moveDirection = (_destination - rb.position).normalized;
 
             // Set animator values based on moveDirection
-            animator.SetFloat("Horizontal", moveDirection.x);
-            animator.SetFloat("Vertical", moveDirection.y);
+            animator.SetFloat("Horizontal", _moveDirection.x);
+            animator.SetFloat("Vertical", _moveDirection.y);
             animator.SetFloat("Speed", 1f);
 
-            isMoving = true;
+            _isMoving = true;
         }
 
-        if (isMoving && Vector2.Distance(rb.position, destination) < 0.1f)
+        if (_isMoving && Vector2.Distance(rb.position, _destination) < 0.1f)
         {
-            isMoving = false;
+            _isMoving = false;
             animator.SetFloat("Speed", 0f);
         }
 
-        if (IsAttacking)
+        if (_isAttacking)
         {
             rb.velocity = Vector2.zero;
-            attackCounter -= Time.deltaTime;
-            if (attackCounter <= 0)
+            _attackCounter -= Time.deltaTime;
+            if (_attackCounter <= 0)
             {
                 animator.SetBool("IsAttacking", false);
-                IsAttacking = false;
+                _isAttacking = false;
             }
         }
 
         if (Input.GetKeyDown(KeyCode.T))
         {
-            if (Vector2.Distance(rb.position, startPosition) >= minimumAttackDistance)
+            if (Vector2.Distance(rb.position, _startPosition) >= _minimumAttackDistance)
             {
-                attackCounter = attackTime;
+                _attackCounter = _attackTime;
                 animator.SetBool("IsAttacking", true);
-                IsAttacking = true;
+                _isAttacking = true;
             }
         }
 
-        if (isMoving)
+        if (_isMoving)
         {
             // Update animator values based on moveDirection
-            animator.SetFloat("Horizontal", moveDirection.x);
-            animator.SetFloat("Vertical", moveDirection.y);
+            animator.SetFloat("Horizontal", _moveDirection.x);
+            animator.SetFloat("Vertical", _moveDirection.y);
 
             // Save the current moveDirection
-            LastMoveX = moveDirection.x;
-            LastMoveY = moveDirection.y;
+            _lastMoveX = _moveDirection.x;
+            _lastMoveY = _moveDirection.y;
 
             // Move the rigidbody in the direction of moveDirection
-            rb.MovePosition(rb.position + moveDirection * moveSpeed * Time.deltaTime);
+            rb.MovePosition(rb.position + _moveDirection * moveSpeed * Time.deltaTime);
         }
     }
     
     private void FixedUpdate()
     {
-        if (isMoving)
+        if (_isMoving)
         {
-            Vector2 direction = (destination - (Vector2)transform.position).normalized;
+            Vector2 direction = (_destination - (Vector2)transform.position).normalized;
             Vector2 movement = new Vector2(
                 direction.x * moveSpeed * Time.fixedDeltaTime,
                 direction.y * moveSpeed * Time.fixedDeltaTime
@@ -98,11 +98,11 @@ public class MouseMovement : MonoBehaviour
             rb.MovePosition(rb.position + movement);
 
             // Set animator values based on LastMoveX and LastMoveY
-            if (LastMoveX != 0f) {
-                animator.SetFloat("Horizontal", LastMoveX);
+            if (_lastMoveX != 0f) {
+                animator.SetFloat("Horizontal", _lastMoveX);
             }
-            if (LastMoveY != 0f) {
-                animator.SetFloat("Vertical", LastMoveY);
+            if (_lastMoveY != 0f) {
+                animator.SetFloat("Vertical", _lastMoveY);
             }
         }
     }

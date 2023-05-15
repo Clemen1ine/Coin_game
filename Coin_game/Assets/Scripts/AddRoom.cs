@@ -10,22 +10,22 @@ public class AddRoom : MonoBehaviour
 
     public List<GameObject> enemies;
 
-    private bool spawned;
-    private bool doorsDestroyed;
+    private bool _spawned;
+    private bool _doorsDestroyed;
 
-    private SpawnerRooms variants;
+    private SpawnerRooms _variants;
 
     void Start()
     {
-        variants = GameObject.FindGameObjectWithTag("Roome").GetComponent<SpawnerRooms>();
-        variants.roome.Add(this.gameObject);
+        _variants = GameObject.FindGameObjectWithTag("Roome").GetComponent<SpawnerRooms>();
+        _variants.roome.Add(this.gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && !spawned)
+        if (other.CompareTag("Player") && !_spawned)
         {
-            spawned = true;
+            _spawned = true;
 
             StartCoroutine(CheckEnemies());
 
@@ -55,12 +55,12 @@ public class AddRoom : MonoBehaviour
             }
         }
 
-        doorsDestroyed = true;
+        _doorsDestroyed = true;
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (doorsDestroyed && other.CompareTag("Door"))
+        if (_doorsDestroyed && other.CompareTag("Door"))
         {
             Destroy(other.gameObject);
         }

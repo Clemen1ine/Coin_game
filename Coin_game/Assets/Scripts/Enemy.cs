@@ -5,18 +5,18 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    private AddRoom room;
+    private AddRoom _room;
     
-    private float health = 1;
+    private float _health = 1;
 
     public float Health
     {
-        get { return health; }
+        get { return _health; }
         set
         {
-            health = value;
+            _health = value;
 
-            if (health <= 0)
+            if (_health <= 0)
             {
                 Defeated();
             }
@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        room = GetComponentInParent<AddRoom>();
+        _room = GetComponentInParent<AddRoom>();
     }
 
     public void Defeated()
@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour
     private void Removwenemy()
     {
         Destroy(gameObject);
-        room.enemies.Remove(gameObject);
+        _room.enemies.Remove(gameObject);
     }
 
 }

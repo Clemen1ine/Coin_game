@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,17 +6,18 @@ public class CoinPickup : MonoBehaviour
     public int smallCoinValue = 1; 
     public int bigCoinValue = 2; 
     public float bigCoinRadius = 2.0f; 
-
-    private List<GameObject> bigCoinsInRange = new List<GameObject>(); 
-    private GameObject hintObject;
     public Item item;
+    
+    private List<GameObject> _bigCoinsInRange = new List<GameObject>(); 
+    private GameObject _hintObject;
+    
 
     private void Start()
     {
         try
         {
-            hintObject = transform.GetChild(0).gameObject;
-            hintObject.SetActive(false);
+            _hintObject = transform.GetChild(0).gameObject;
+            _hintObject.SetActive(false);
         }
         catch (UnityException e)
         {
@@ -31,14 +31,14 @@ public class CoinPickup : MonoBehaviour
         {
             if (gameObject.tag == "SmallCoin")
             {
-                GameManager.instance.AddScore(smallCoinValue);
+                GameManager.Instance.AddScore(smallCoinValue);
                 Destroy(gameObject);
                 InventoryManager.inventoryManager.AddItem(item);
             }
             else if (gameObject.tag == "BigCoin")
             {
-                bigCoinsInRange.Add(gameObject);
-                hintObject.SetActive(true);
+                _bigCoinsInRange.Add(gameObject);
+                _hintObject.SetActive(true);
             }
         }
     }
@@ -49,8 +49,8 @@ public class CoinPickup : MonoBehaviour
         {
             if (gameObject.tag == "BigCoin")
             {
-                bigCoinsInRange.Remove(gameObject);
-                hintObject.SetActive(false);
+                _bigCoinsInRange.Remove(gameObject);
+                _hintObject.SetActive(false);
             }
         }
     }
@@ -67,23 +67,22 @@ public class CoinPickup : MonoBehaviour
     {
         List<GameObject> coinsToDestroy = new List<GameObject>();
 
-        foreach (GameObject coin in bigCoinsInRange)
+        foreach (GameObject coin in _bigCoinsInRange)
         {
             if (Vector2.Distance(transform.position, coin.transform.position) <= bigCoinRadius)
             {
                 coinsToDestroy.Add(coin);
-                GameManager.instance.AddScore(bigCoinValue);
-                InventoryManager.inventoryManager.AddItem(item);
+                GameManager.Instance.AddScore(bigCoinValue);
             }
         }
 
         foreach (GameObject coin in coinsToDestroy)
         {
-            bigCoinsInRange.Remove(coin);
+            _bigCoinsInRange.Remove(coin);
             Destroy(coin);
+            InventoryManager.inventoryManager.AddItem(item);
         }
-
-        hintObject.SetActive(false);
+        _hintObject.SetActive(false);
     }
-    
+
 }

@@ -1,9 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Net.Mime;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour, IDropHandler
 {

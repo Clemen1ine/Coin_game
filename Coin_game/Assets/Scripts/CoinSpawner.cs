@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,21 +11,21 @@ public class CoinSpawner : MonoBehaviour
     public int maxBigCoins = 50;
     public int coinsPerRoom = 5;
 
-    private List<Vector3> spawnPositions = new List<Vector3>();
+    private List<Vector3> _spawnPositions = new List<Vector3>();
 
-    private GameObject mainRoom;
+    private GameObject _mainRoom;
 
     void Start()
     {
         float delay = 4f; 
         Invoke("SpawnCoins", delay);
         
-        mainRoom = GameObject.FindGameObjectWithTag("mainRoom");
+        _mainRoom = GameObject.FindGameObjectWithTag("mainRoom");
     }
 
     private void SpawnCoins()
 {
-    spawnPositions.Clear();
+    _spawnPositions.Clear();
 
     SpawnCoinsOfType(smallCoinPrefab, maxSmallCoins);
 
@@ -38,11 +37,11 @@ public class CoinSpawner : MonoBehaviour
 
     foreach (GameObject room in rooms)
     {
-        if (room == mainRoom) continue;
+        if (room == _mainRoom) continue;
 
         Bounds roomBounds = new Bounds(room.transform.position, new Vector3(room.transform.localScale.x, room.transform.localScale.y, 0));
 
-        int coinsInRoom = Mathf.Min(coinsPerRoom, maxTotalCoins - spawnPositions.Count);
+        int coinsInRoom = Mathf.Min(coinsPerRoom, maxTotalCoins - _spawnPositions.Count);
         for (int i = 0; i < coinsInRoom; i++)
         {
             if (numRandomCoins > 0)
@@ -88,7 +87,7 @@ public class CoinSpawner : MonoBehaviour
 
                 // Check if there are any other coins within minDistance of the position
                 bool tooClose = false;
-                foreach (Vector3 spawnPos in spawnPositions)
+                foreach (Vector3 spawnPos in _spawnPositions)
                 {
                     if (Vector3.Distance(position, spawnPos) < minDistance)
                     {
@@ -108,18 +107,18 @@ public class CoinSpawner : MonoBehaviour
         }
 
         // Spawn the coin at the position if the maximum number of coins has not been reached
-        if (position != default && spawnPositions.Count < maxTotalCoins)
+        if (position != default && _spawnPositions.Count < maxTotalCoins)
         {
             Instantiate(coinPrefab, position, Quaternion.identity);
 
             // Add the position to the list of spawn positions
-            spawnPositions.Add(position);
+            _spawnPositions.Add(position);
         }
     }
     
 private void SpawnCoinsOfType(GameObject coinPrefab, int maxCoins)
     {
-        int numCoins = Mathf.Min(maxCoins, maxTotalCoins - spawnPositions.Count);
+        int numCoins = Mathf.Min(maxCoins, maxTotalCoins - _spawnPositions.Count);
         for (int i = 0; i < numCoins; i++)
         {
             SpawnCoin(coinPrefab);

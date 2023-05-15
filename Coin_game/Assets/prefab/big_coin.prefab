@@ -118,7 +118,7 @@ MonoBehaviour:
   smallCoinValue: 1
   bigCoinValue: 2
   bigCoinRadius: 2
-  item: {fileID: 11400000, guid: 0dababa0dde3b7241978ace0f708e372, type: 2}
+  item: {fileID: 11400000, guid: f090d3a87f4023842b0e9c60a433d3d7, type: 2}
 --- !u!1 &5758112219722661410
 GameObject:
   m_ObjectHideFlags: 0

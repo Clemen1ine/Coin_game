@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class EnemyHealthManager : MonoBehaviour
 {
-    private AddRoom room;
+    private AddRoom _room;
     public int currentHealth;
 
     public int maxHealth;
     // Start is called before the first frame update
     void Start()
     {
-        room = GetComponentInParent<AddRoom>();
+        _room = GetComponentInParent<AddRoom>();
     }
 
     // Update is called once per frame
@@ -26,7 +26,7 @@ public class EnemyHealthManager : MonoBehaviour
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
-            room.enemies.Remove(gameObject);
+            _room.enemies.Remove(gameObject);
         }
     }
 }

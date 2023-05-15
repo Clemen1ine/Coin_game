@@ -9,17 +9,17 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 {
     public Image image;
     public Text countText;
-    private Camera mainCamera;
-    private RectTransform rectTransform;
-    private Vector3 offset;
+    private Camera _mainCamera;
+    private RectTransform _rectTransform;
+    private Vector3 _offset;
 
     [HideInInspector] public Transform parentAfterDrag;
     [HideInInspector] public int count = 1;
     [HideInInspector] public Item item;
     private void Start()
     {
-        mainCamera = Camera.main;
-        rectTransform = GetComponent<RectTransform>();
+        _mainCamera = Camera.main;
+        _rectTransform = GetComponent<RectTransform>();
     }
 
     public void InitialiseItem(Item newItem)
@@ -41,14 +41,14 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         image.raycastTarget = false;
         parentAfterDrag = transform.parent;
         transform.SetParent(transform.root);
-        offset = rectTransform.position - mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        _offset = _rectTransform.position - _mainCamera.ScreenToWorldPoint(Input.mousePosition);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        Vector3 newPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition) + offset;
-        newPosition.z = rectTransform.position.z; // Retain the original z position
-        rectTransform.position = newPosition;
+        Vector3 newPosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition) + _offset;
+        newPosition.z = _rectTransform.position.z; // Retain the original z position
+        _rectTransform.position = newPosition;
     }
 
     public void OnEndDrag(PointerEventData eventData)

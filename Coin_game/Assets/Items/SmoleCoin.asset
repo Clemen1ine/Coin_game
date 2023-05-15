@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51510cad9c040e643adef8415e48a89e, type: 3}
-  m_Name: BigCoin
+  m_Name: SmoleCoin
   m_EditorClassIdentifier: 
   tile: {fileID: 0}
   image: {fileID: 0}

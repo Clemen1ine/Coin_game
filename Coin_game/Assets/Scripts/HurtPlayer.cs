@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class HurtPlayer : MonoBehaviour
 {
-  private float waitToload = 2f;
-  private bool reloading;
+  private float _waitToload = 2f;
+  private bool _reloading;
 
   private void Start()
   {
@@ -16,10 +16,10 @@ public class HurtPlayer : MonoBehaviour
 
   private void Update()
   {
-    if (reloading)
+    if (_reloading)
     {
-      waitToload -= Time.deltaTime;
-      if (waitToload <= 0)
+      _waitToload -= Time.deltaTime;
+      if (_waitToload <= 0)
       {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
       }

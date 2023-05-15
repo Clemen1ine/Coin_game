@@ -9,57 +9,57 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public Animator animator;
 
-    private Vector2 movement;
-    private float attackTime = .25f;
-    private float attackCounter = .25f;
-    private bool IsAttacking;
-    private Vector2 startPosition;
-    private float minimumAttackDistance = 0.1f;
+    private Vector2 _movement;
+    private float _attackTime = .25f;
+    private float _attackCounter = .25f;
+    private bool _isAttacking;
+    private Vector2 _startPosition;
+    private float _minimumAttackDistance = 0.1f;
 
     private void Start()
     {
-        startPosition = rb.position;    
+        _startPosition = rb.position;    
     }
 
     private void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        _movement.x = Input.GetAxisRaw("Horizontal");
+        _movement.y = Input.GetAxisRaw("Vertical");
         
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
+        animator.SetFloat("Horizontal", _movement.x);
+        animator.SetFloat("Vertical", _movement.y);
+        animator.SetFloat("Speed", _movement.sqrMagnitude);
 
-        if (movement.x == 1 || movement.x == -1 || movement.y == 1 || movement.y == -1)
+        if (_movement.x == 1 || _movement.x == -1 || _movement.y == 1 || _movement.y == -1)
         {
-            animator.SetFloat("LastMoveX", movement.x);
-            animator.SetFloat("LastMoveY", movement.y);
+            animator.SetFloat("LastMoveX", _movement.x);
+            animator.SetFloat("LastMoveY", _movement.y);
         }
 
-        if (IsAttacking)
+        if (_isAttacking)
         {
             rb.velocity = Vector2.zero;
-            attackCounter -= Time.deltaTime;
-            if (attackCounter <= 0)
+            _attackCounter -= Time.deltaTime;
+            if (_attackCounter <= 0)
             {
                 animator.SetBool("IsAttacking", false);
-                IsAttacking = false;
+                _isAttacking = false;
             }
         }
 
         if (Input.GetKeyDown(KeyCode.T))
         {
-            if (Vector2.Distance(rb.position, startPosition) >= minimumAttackDistance)
+            if (Vector2.Distance(rb.position, _startPosition) >= _minimumAttackDistance)
             {
-                attackCounter = attackTime;
+                _attackCounter = _attackTime;
                 animator.SetBool("IsAttacking", true);
-                IsAttacking = true;
+                _isAttacking = true;
             }
         }
     }
 
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime); 
+        rb.MovePosition(rb.position + _movement.normalized * moveSpeed * Time.fixedDeltaTime); 
     }
 }

@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class PauseMune : MonoBehaviour
 {
-    public bool PauseGame;
-    public GameObject PauseGameManu;
-    public GameObject MiniMap;
+    [FormerlySerializedAs("PauseGame")] public bool pauseGame;
+    [FormerlySerializedAs("PauseGameManu")] public GameObject pauseGameManu;
+    [FormerlySerializedAs("MiniMap")] public GameObject miniMap;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (PauseGame)
+            if (pauseGame)
             {
                 Resume();
             }
@@ -25,18 +26,18 @@ public class PauseMune : MonoBehaviour
 
     public void Resume()
     {
-        PauseGameManu.SetActive(false);
-        MiniMap.SetActive(true);
+        pauseGameManu.SetActive(false);
+        miniMap.SetActive(true);
         Time.timeScale = 1f;
-        PauseGame = false;
+        pauseGame = false;
     }
 
     public void Pause()
     {
-        PauseGameManu.SetActive(true);
-        MiniMap.SetActive(false);
+        pauseGameManu.SetActive(true);
+        miniMap.SetActive(false);
         Time.timeScale = 0f;
-        PauseGame = true;
+        pauseGame = true;
     }
 
     public void LoadMenu()

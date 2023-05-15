@@ -117,4 +117,4 @@ MonoBehaviour:
   smallCoinValue: 1
   bigCoinValue: 2
   bigCoinRadius: 2
-  item: {fileID: 11400000, guid: 00582a62fa0672240a530f599f655eb2, type: 2}
+  item: {fileID: 11400000, guid: c5043a97905deb64d9cbed514481aaa2, type: 2}
