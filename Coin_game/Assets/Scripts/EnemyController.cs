@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    private Animator animator;
-    private Transform target;
+    private Animator _animator;
+    private Transform _target;
     
     [SerializeField] private float speed;
     [SerializeField] private float maxRange;
@@ -13,23 +13,23 @@ public class EnemyController : MonoBehaviour
 
     public Transform homePos;
 
-    private Rigidbody2D rb;
+    private Rigidbody2D _rb;
 
     private void Start()
     {
         homePos.parent = null;
-        animator = GetComponent<Animator>();
-        target = FindObjectOfType<PlayerController>().transform;
-        rb = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
+        _target = FindObjectOfType<PlayerController>().transform;
+        _rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
-        if (Vector3.Distance(target.position, transform.position) <= maxRange && Vector3.Distance(target.position, transform.position) >= minRange)
+        if (Vector3.Distance(_target.position, transform.position) <= maxRange && Vector3.Distance(_target.position, transform.position) >= minRange)
         {
             FollowPlayer();
         }
-        else if(Vector3.Distance(target.position, transform.position) >= maxRange)
+        else if(Vector3.Distance(_target.position, transform.position) >= maxRange)
         {
             GoHome();
         }
@@ -37,10 +37,10 @@ public class EnemyController : MonoBehaviour
 
     public void FollowPlayer()
     {
-        animator.SetBool("isMoving", true);
+        _animator.SetBool("isMoving", true);
 
         // Calculate direction towards the player
-        Vector2 direction = (target.position - transform.position).normalized;
+        Vector2 direction = (_target.position - transform.position).normalized;
 
         // Check if player is close to a collider with a rigidbody component
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, maxRange);
@@ -52,13 +52,13 @@ public class EnemyController : MonoBehaviour
         }
 
         // Calculate next position
-        Vector2 nextPos = rb.position + direction * speed * Time.fixedDeltaTime;
+        Vector2 nextPos = _rb.position + direction * speed * Time.fixedDeltaTime;
 
         // Check for collisions with colliders that have a rigidbody component
         ContactFilter2D contactFilter = new ContactFilter2D();
         contactFilter.SetLayerMask(LayerMask.GetMask("Default")); // Change "Default" to the layer that your colliders are on
         Collider2D[] colliders = new Collider2D[10];
-        int numColliders = rb.OverlapCollider(contactFilter, colliders);
+        int numColliders = _rb.OverlapCollider(contactFilter, colliders);
         for (int i = 0; i < numColliders; i++)
         {
             if (colliders[i].attachedRigidbody != null)
@@ -67,32 +67,32 @@ public class EnemyController : MonoBehaviour
                 if (Vector2.Distance(nextPos, closestPoint) < 0.1f)
                 {
                     // Next position is inside a collider with a rigidbody component, move enemy to just before the collider
-                    rb.MovePosition(closestPoint - direction * 0.1f);
+                    _rb.MovePosition(closestPoint - direction * 0.1f);
                     return;
                 }
             }
         }
 
         // Set animator parameters and move enemy
-        animator.SetFloat("moveX", direction.x);
-        animator.SetFloat("moveY", direction.y);
-        rb.MovePosition(nextPos);
+        _animator.SetFloat("moveX", direction.x);
+        _animator.SetFloat("moveY", direction.y);
+        _rb.MovePosition(nextPos);
     }
     
     public void GoHome()
     {
-        animator.SetFloat("moveX",((Vector2)homePos.position - (Vector2)transform.position).x);
-        animator.SetFloat("moveY",((Vector2)homePos.position - (Vector2)transform.position).y);
+        _animator.SetFloat("moveX",((Vector2)homePos.position - (Vector2)transform.position).x);
+        _animator.SetFloat("moveY",((Vector2)homePos.position - (Vector2)transform.position).y);
 
         if (Vector3.Distance(transform.position, homePos.position) < 0.05f)
         {
-            animator.SetBool("isMoving", false);
-            rb.velocity = Vector2.zero;
+            _animator.SetBool("isMoving", false);
+            _rb.velocity = Vector2.zero;
         }
         else
         {
             Vector2 direction = ((Vector2)homePos.position - (Vector2)transform.position).normalized;
-            rb.MovePosition(rb.position + direction * speed * Time.fixedDeltaTime);
+            _rb.MovePosition(_rb.position + direction * speed * Time.fixedDeltaTime);
         }
     }
 }

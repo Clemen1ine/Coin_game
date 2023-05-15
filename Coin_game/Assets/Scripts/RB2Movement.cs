@@ -1,99 +1,99 @@
 using UnityEngine;
 
-public class RB2Movement : MonoBehaviour
+public class Rb2Movement : MonoBehaviour
 {
     public float speed;
 
-    private Rigidbody2D rb;
-    private Vector2 moveInput;
-    private Vector2 moveVelocity;
-    private Animator animator;
-    private SwordAttack swordAttack;
-    private bool canMove = true;
-    private SpriteRenderer spriteRenderer;
-    private Transform characterHeadTransform; // Separate transform for the character's head
+    private Rigidbody2D _rb;
+    private Vector2 _moveInput;
+    private Vector2 _moveVelocity;
+    private Animator _animator;
+    private SwordAttack _swordAttack;
+    private bool _canMove = true;
+    private SpriteRenderer _spriteRenderer;
+    private Transform _characterHeadTransform; // Separate transform for the character's head
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-        swordAttack = GetComponentInChildren<SwordAttack>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        characterHeadTransform = transform.Find("Character/Head"); // Update with the correct path to the character's head
+        _rb = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
+        _swordAttack = GetComponentInChildren<SwordAttack>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _characterHeadTransform = transform.Find("Character/Head"); // Update with the correct path to the character's head
     }
 
     private void Update()
     {
-        moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        moveVelocity = moveInput.normalized * speed;
+        _moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        _moveVelocity = _moveInput.normalized * speed;
 
-        if (moveVelocity != Vector2.zero)
+        if (_moveVelocity != Vector2.zero)
         {
-            animator.SetBool("isMoving", true);
+            _animator.SetBool("isMoving", true);
         }
         else
         {
-            animator.SetBool("isMoving", false);
+            _animator.SetBool("isMoving", false);
         }
 
-        if (moveInput.x > 0)
+        if (_moveInput.x > 0)
         {
-            animator.SetBool("isFacingRight", true);
-            spriteRenderer.flipX = false;
+            _animator.SetBool("isFacingRight", true);
+            _spriteRenderer.flipX = false;
         }
-        else if (moveInput.x < 0)
+        else if (_moveInput.x < 0)
         {
-            animator.SetBool("isFacingRight", false);
-            spriteRenderer.flipX = true;
+            _animator.SetBool("isFacingRight", false);
+            _spriteRenderer.flipX = true;
         }
 
-        if (Input.GetMouseButtonDown(0) && canMove)
+        if (Input.GetMouseButtonDown(0) && _canMove)
         {
-            animator.SetTrigger("SwordAttack");
+            _animator.SetTrigger("SwordAttack");
             LockMovement();
         }
     }
 
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
+        _rb.MovePosition(_rb.position + _moveVelocity * Time.fixedDeltaTime);
     }
 
     public void Attack()
     {
         print("attack");
-        animator.SetTrigger("SwordAttack");
+        _animator.SetTrigger("SwordAttack");
         LockMovement();
     }
 
     void OnFire()
     {
-        animator.SetTrigger("SwordAttack");
+        _animator.SetTrigger("SwordAttack");
     }
 
     public void EndAttack()
     {
         UnlockMovement();
         
-        if (swordAttack != null)
+        if (_swordAttack != null)
         {
-            swordAttack.StopAttack();
+            _swordAttack.StopAttack();
         }
     }
     public void LockMovement()
     {
-        canMove = false;
+        _canMove = false;
     }
 
     public void PerformSwordAttack()
     {
         print("attack");
         LockMovement();
-        swordAttack.AttackFront();
+        _swordAttack.AttackFront();
     }
 
     public void UnlockMovement()
     {
-        canMove = true;
+        _canMove = true;
     }
 }

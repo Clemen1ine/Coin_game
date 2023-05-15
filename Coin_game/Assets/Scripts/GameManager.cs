@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    public static GameManager Instance;
 
     public GameObject coinPrefab;
     public GameObject bigCoinPrefab;
@@ -11,22 +11,22 @@ public class GameManager : MonoBehaviour
     public int smallCoinScore = 1;
     public int bigCoinScore = 2;
 
-    private int smallCoinCount = 0;
-    private int bigCoinCount = 0;
-    private int totalCoinValue = 0;
+    private int _smallCoinCount = 0;
+    private int _bigCoinCount = 0;
+    private int _totalCoinValue = 0;
 
     public Text coinCounter;
 
-    private bool showCounter = false;
-    private float timeSinceLastPickup = 0f;
+    private bool _showCounter = false;
+    private float _timeSinceLastPickup = 0f;
 
     private void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
         }
-        else if (instance != this)
+        else if (Instance != this)
         {
             Destroy(gameObject);
         }
@@ -36,33 +36,33 @@ public class GameManager : MonoBehaviour
     {
         HideCoinCounter();
         
-        totalCoinValue = PlayerPrefs.GetInt("coinCount", 0);
-        coinCounter.text = "Coins: " + totalCoinValue.ToString();
+        _totalCoinValue = PlayerPrefs.GetInt("coinCount", 0);
+        coinCounter.text = "Coins: " + _totalCoinValue.ToString();
     }
 
     private void Update()
     {
-        if (timeSinceLastPickup > 3f)
+        if (_timeSinceLastPickup > 3f)
         {
             HideCoinCounter();
         }
-        else if (showCounter)
+        else if (_showCounter)
         {
             ShowCoinCounter();
         }
 
-        timeSinceLastPickup += Time.deltaTime;
+        _timeSinceLastPickup += Time.deltaTime;
     }
 
     private void HideCoinCounter()
     {
         coinCounter.gameObject.SetActive(false);
-        showCounter = false;
+        _showCounter = false;
     }
 
     private void ShowCoinCounter()
     {
-        coinCounter.text = "Coins: " + totalCoinValue.ToString();
+        coinCounter.text = "Coins: " + _totalCoinValue.ToString();
         coinCounter.gameObject.SetActive(true);
     }
 
@@ -70,23 +70,23 @@ public class GameManager : MonoBehaviour
     {
         if (value == smallCoinScore)
         {
-            smallCoinCount++;
-            totalCoinValue += 1;
+            _smallCoinCount++;
+            _totalCoinValue += 1;
         }
         else if (value == bigCoinScore)
         {
-            bigCoinCount++;
-            totalCoinValue += 2;
+            _bigCoinCount++;
+            _totalCoinValue += 2;
         }
 
-        if (!showCounter && totalCoinValue > 0)
+        if (!_showCounter && _totalCoinValue > 0)
         {
             ShowCoinCounter();
-            showCounter = true;
+            _showCounter = true;
         }
 
-        timeSinceLastPickup = 0f;
+        _timeSinceLastPickup = 0f;
         
-        PlayerPrefs.SetInt("coinCount", totalCoinValue);
+        PlayerPrefs.SetInt("coinCount", _totalCoinValue);
     }
 }

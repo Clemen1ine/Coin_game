@@ -5,16 +5,16 @@ public class CameraFollow : MonoBehaviour
     public Transform target;
     public float smoothing = 5f;
 
-    private Vector3 offset;
+    private Vector3 _offset;
 
     private void Start()
     {
-        offset = transform.position - target.position;
+        _offset = transform.position - target.position;
     }
 
     private void FixedUpdate()
     {
-        Vector3 targetCamPos = target.position + offset;
+        Vector3 targetCamPos = target.position + _offset;
         targetCamPos.y = transform.position.y;
         targetCamPos.z = transform.position.z;
 
