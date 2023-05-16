@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SmoleCoin
   m_EditorClassIdentifier: 
   tile: {fileID: 0}
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: ef3392fc247dd8742ac81eb6be77c12d, type: 3}
   type: 0
   actionType: 0
   range: {x: 5, y: 4}
