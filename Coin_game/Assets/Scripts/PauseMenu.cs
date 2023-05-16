@@ -4,11 +4,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
-public class PauseMune : MonoBehaviour
+public class PauseMenu : MonoBehaviour
 {
     [FormerlySerializedAs("PauseGame")] public bool pauseGame;
     [FormerlySerializedAs("PauseGameManu")] public GameObject pauseGameManu;
     [FormerlySerializedAs("MiniMap")] public GameObject miniMap;
+    [FormerlySerializedAs("InventoryMenu")] public GameObject inventoryMenu;
+
+    private bool inventoryOpen = false;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -20,6 +24,18 @@ public class PauseMune : MonoBehaviour
             else
             {
                 Pause();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            if (inventoryOpen)
+            {
+                CloseInventory();
+            }
+            else
+            {
+                OpenInventory();
             }
         }
     }
@@ -38,6 +54,18 @@ public class PauseMune : MonoBehaviour
         miniMap.SetActive(false);
         Time.timeScale = 0f;
         pauseGame = true;
+    }
+
+    public void OpenInventory()
+    {
+        inventoryMenu.SetActive(true);
+        inventoryOpen = true;
+    }
+
+    public void CloseInventory()
+    {
+        inventoryMenu.SetActive(false);
+        inventoryOpen = false;
     }
 
     public void LoadMenu()

@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -16,6 +13,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     [HideInInspector] public Transform parentAfterDrag;
     [HideInInspector] public int count = 1;
     [HideInInspector] public Item item;
+
     private void Start()
     {
         _mainCamera = Camera.main;
@@ -42,6 +40,9 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         parentAfterDrag = transform.parent;
         transform.SetParent(transform.root);
         _offset = _rectTransform.position - _mainCamera.ScreenToWorldPoint(Input.mousePosition);
+
+        // Disable the count text during drag to avoid blocking interactions
+        countText.gameObject.SetActive(false);
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -55,5 +56,8 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         image.raycastTarget = true;
         transform.SetParent(parentAfterDrag);
+
+        // Re-enable the count text after the drag ends
+        countText.gameObject.SetActive(true);
     }
 }

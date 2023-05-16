@@ -3,19 +3,22 @@ using UnityEngine.Serialization;
 
 public class InventoryManager : MonoBehaviour
 {
-    public static InventoryManager inventoryManager; 
+    public static InventoryManager inventoryManager;
     public int maxStackedItems = 20;
     public InventorySlot[] inventorySlots;
     public GameObject inventoryItemPrefab;
+
+    // Reference to the chest object
+    public Chest chest;
+    
 
     private void Awake()
     {
         inventoryManager = this;
     }
 
-    public bool AddItem(Item item)
+    public bool AddItemToInventory(Item item)
     {
-    
         for (int i = 0; i < inventorySlots.Length; i++)
         {
             InventorySlot slot = inventorySlots[i];
@@ -27,7 +30,7 @@ public class InventoryManager : MonoBehaviour
                 return true;
             }
         }
-    
+
         for (int i = 0; i < inventorySlots.Length; i++)
         {
             InventorySlot slot = inventorySlots[i];
@@ -43,8 +46,13 @@ public class InventoryManager : MonoBehaviour
 
     public void SpawnNewItem(Item item, InventorySlot slot)
     {
-        GameObject nrwItemGo = Instantiate(inventoryItemPrefab, slot.transform);
-        InventoryItem inventoryItem = nrwItemGo.GetComponent<InventoryItem>();
+        GameObject newItemGo = Instantiate(inventoryItemPrefab, slot.transform);
+        InventoryItem inventoryItem = newItemGo.GetComponent<InventoryItem>();
         inventoryItem.InitialiseItem(item);
+    }
+
+    public void AddItemToChest(Item item)
+    {
+        chest.AddItemToChest(item);
     }
 }

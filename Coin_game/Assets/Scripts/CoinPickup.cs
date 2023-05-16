@@ -33,7 +33,7 @@ public class CoinPickup : MonoBehaviour
             {
                 GameManager.Instance.AddScore(smallCoinValue);
                 Destroy(gameObject);
-                InventoryManager.inventoryManager.AddItem(item);
+                InventoryManager.inventoryManager.AddItemToInventory(item);
             }
             else if (gameObject.tag == "BigCoin")
             {
@@ -80,7 +80,7 @@ public class CoinPickup : MonoBehaviour
         {
             _bigCoinsInRange.Remove(coin);
             Destroy(coin);
-            InventoryManager.inventoryManager.AddItem(item);
+            InventoryManager.inventoryManager.AddItemToInventory(item);
         }
         _hintObject.SetActive(false);
     }
