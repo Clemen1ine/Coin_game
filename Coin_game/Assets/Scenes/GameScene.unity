@@ -19168,8 +19168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e921a9893959a804da8c302a748b52cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMoveSpeed: 5
-  shiftMultiplier: 5.2
+  moveSpeed: 1
   rb: {fileID: 1928021807}
   animator: {fileID: 1928021802}
 --- !u!95 &1928021802 stripped
