@@ -8,10 +8,6 @@ public class InventoryManager : MonoBehaviour
     public InventorySlot[] inventorySlots;
     public GameObject inventoryItemPrefab;
 
-    // Reference to the chest object
-    public Chest chest;
-    
-
     private void Awake()
     {
         inventoryManager = this;
@@ -49,10 +45,5 @@ public class InventoryManager : MonoBehaviour
         GameObject newItemGo = Instantiate(inventoryItemPrefab, slot.transform);
         InventoryItem inventoryItem = newItemGo.GetComponent<InventoryItem>();
         inventoryItem.InitialiseItem(item);
-    }
-
-    public void AddItemToChest(Item item)
-    {
-        chest.AddItemToChest(item);
     }
 }

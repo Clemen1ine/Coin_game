@@ -30,7 +30,7 @@ public class HurtPlayer : MonoBehaviour
   {
     if (other.gameObject.CompareTag("Player"))
     {
-      other.gameObject.GetComponent<HealthNew>().HurtPlayer(10);
+      other.gameObject.GetComponent<HealthDeath>().HurtPlayer(10);
       Health playerHealth = other.gameObject.GetComponent<Health>();
       playerHealth.health--;
     }

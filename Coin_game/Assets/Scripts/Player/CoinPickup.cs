@@ -21,7 +21,7 @@ public class CoinPickup : MonoBehaviour
         }
         catch (UnityException e)
         {
-            
+            Debug.Log(e);
         }
     }
 

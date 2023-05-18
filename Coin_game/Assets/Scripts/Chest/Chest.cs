@@ -1,51 +1,76 @@
-using UnityEngine;
+ using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Chest : MonoBehaviour
+public class Chest : MonoBehaviour, IDropHandler
 {
+    public int maxChestItems = 10;
     public InventorySlot[] chestSlots;
     public GameObject inventoryItemPrefab;
-    public GameObject UIChest;
-    
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            if (gameObject.tag == "Chest")
-            {
-                UIChest.SetActive(true);
-            }
-        }
-    }
-    
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            if (gameObject.tag == "Chest")
-            {
-                UIChest.SetActive(false);
-            }
-        }
-    }
 
-    public void AddItemToChest(Item item)
+    public void OnDrop(PointerEventData eventData)
     {
-        for (int i = 0; i < chestSlots.Length; i++)
+        Debug.Log("Item dropped on Chest");
+
+        // Get the dragged inventory item
+        InventoryItem inventoryItem = eventData.pointerDrag.GetComponent<InventoryItem>();
+
+        // Check if the item is being dropped on the same slot
+        if (inventoryItem.parentAfterDrag == transform)
+            return;
+
+        if (transform.childCount > 0)
         {
-            InventorySlot slot = chestSlots[i];
-            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
-            if (itemInSlot == null)
+            InventoryItem existingItem = transform.GetChild(0).GetComponent<InventoryItem>();
+
+            // Check if the items can stack
+            if (existingItem.item == inventoryItem.item && existingItem.count < maxChestItems)
             {
-                SpawnNewItem(item, slot);
-                break;
+                int spaceAvailable = maxChestItems - existingItem.count;
+                int itemCountToTransfer = Mathf.Min(inventoryItem.count, spaceAvailable);
+
+                existingItem.count += itemCountToTransfer;
+                existingItem.RefreshCount();
+
+                inventoryItem.count -= itemCountToTransfer;
+                inventoryItem.RefreshCount();
+
+                if (inventoryItem.count == 0)
+                {
+                    // The entire stack has been transferred, destroy the item object
+                    Destroy(inventoryItem.gameObject);
+                }
+            }
+            else
+            {
+                // Slot already has an item, swap positions
+                Transform currentItem = transform.GetChild(0);
+                currentItem.SetParent(inventoryItem.parentAfterDrag);
+                currentItem.position = inventoryItem.parentAfterDrag.position;
             }
         }
-    }
+        else
+        {
+            InventorySlot sourceSlot = inventoryItem.parentAfterDrag.GetComponent<InventorySlot>();
 
-    public void SpawnNewItem(Item item, InventorySlot slot)
-    {
-        GameObject newItemGo = Instantiate(inventoryItemPrefab, slot.transform);
-        InventoryItem inventoryItem = newItemGo.GetComponent<InventoryItem>();
-        inventoryItem.InitialiseItem(item);
+            // Move the entire stack to an empty slot
+            inventoryItem.transform.SetParent(transform);
+            inventoryItem.transform.position = transform.position;
+            inventoryItem.parentAfterDrag = transform;
+
+            // Swap items within the source slot to fill the empty space
+            if (sourceSlot != null && sourceSlot.transform != transform)
+            {
+                InventoryItem[] itemsInSourceSlot = sourceSlot.GetComponentsInChildren<InventoryItem>();
+                foreach (InventoryItem item in itemsInSourceSlot)
+                {
+                    if (item != inventoryItem && item.parentAfterDrag == transform)
+                    {
+                        item.parentAfterDrag = sourceSlot.transform;
+                        item.transform.SetParent(sourceSlot.transform);
+                        item.transform.position = sourceSlot.transform.position;
+                    }
+                }
+            }
+        }
     }
 }

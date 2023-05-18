@@ -11,7 +11,7 @@ public class PauseMenu : MonoBehaviour
     [FormerlySerializedAs("MiniMap")] public GameObject miniMap;
     [FormerlySerializedAs("InventoryMenu")] public GameObject inventoryMenu;
 
-    private bool inventoryOpen = false;
+    private bool _inventoryOpen = false;
 
     void Update()
     {
@@ -29,7 +29,7 @@ public class PauseMenu : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.I))
         {
-            if (inventoryOpen)
+            if (_inventoryOpen)
             {
                 CloseInventory();
             }
@@ -59,13 +59,13 @@ public class PauseMenu : MonoBehaviour
     public void OpenInventory()
     {
         inventoryMenu.SetActive(true);
-        inventoryOpen = true;
+        _inventoryOpen = true;
     }
 
     public void CloseInventory()
     {
         inventoryMenu.SetActive(false);
-        inventoryOpen = false;
+        _inventoryOpen = false;
     }
 
     public void LoadMenu()

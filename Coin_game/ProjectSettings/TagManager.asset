@@ -21,6 +21,7 @@ TagManager:
   - Wall
   - Trigger
   - Inventory Manager
+  - Chest
   layers:
   - Default
   - TransparentFX

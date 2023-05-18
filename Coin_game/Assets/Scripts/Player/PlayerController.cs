@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    public float baseMoveSpeed = 5f; // The base movement speed
+    public float shiftMultiplier = 2f; // Multiplier applied to moveSpeed when shift is held down
     public Rigidbody2D rb;
     public Animator animator;
 
@@ -18,14 +19,20 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        _startPosition = rb.position;    
+        _startPosition = rb.position;
     }
 
     private void Update()
     {
-        _movement.x = Input.GetAxisRaw("Horizontal");
-        _movement.y = Input.GetAxisRaw("Vertical");
-        
+        if (!_isAttacking)
+        {
+            _movement.x = Input.GetAxisRaw("Horizontal");
+            _movement.y = Input.GetAxisRaw("Vertical");
+
+            // Normalize the movement vector to prevent faster diagonal movement
+            _movement.Normalize();
+        }
+
         animator.SetFloat("Horizontal", _movement.x);
         animator.SetFloat("Vertical", _movement.y);
         animator.SetFloat("Speed", _movement.sqrMagnitude);
@@ -49,17 +56,32 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.T))
         {
-            if (Vector2.Distance(rb.position, _startPosition) >= _minimumAttackDistance)
+            if (!_isAttacking && Vector2.Distance(rb.position, _startPosition) >= _minimumAttackDistance)
             {
                 _attackCounter = _attackTime;
                 animator.SetBool("IsAttacking", true);
                 _isAttacking = true;
+
+                // Reset movement input while attacking
+                _movement.x = 0f;
+                _movement.y = 0f;
             }
         }
     }
 
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + _movement.normalized * moveSpeed * Time.fixedDeltaTime); 
+        if (!_isAttacking)
+        {
+            float currentMoveSpeed = baseMoveSpeed;
+
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+            {
+                currentMoveSpeed *= shiftMultiplier;
+            }
+
+            Vector2 movementVelocity = _movement * currentMoveSpeed * Time.fixedDeltaTime;
+            rb.MovePosition(rb.position + movementVelocity);
+        }
     }
 }
