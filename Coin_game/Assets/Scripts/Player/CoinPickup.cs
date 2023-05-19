@@ -14,15 +14,8 @@ public class CoinPickup : MonoBehaviour
 
     private void Start()
     {
-        try
-        {
-            _hintObject = transform.GetChild(0).gameObject;
-            _hintObject.SetActive(false);
-        }
-        catch (UnityException e)
-        {
-            Debug.Log(e);
-        }
+        _hintObject = transform.GetChild(0).gameObject;
+        _hintObject.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

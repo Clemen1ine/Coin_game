@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class InventorySlot : MonoBehaviour, IDropHandler
+public class ChestSlot : MonoBehaviour, IDropHandler
 {
     public void OnDrop(PointerEventData eventData)
     {
@@ -16,7 +16,8 @@ public class InventorySlot : MonoBehaviour, IDropHandler
             InventoryItem existingItem = transform.GetChild(0).GetComponent<InventoryItem>();
 
             // Check if the items can stack
-            if (existingItem.item == inventoryItem.item && existingItem.count < InventoryManager.inventoryManager.maxStackedItems)
+            if (existingItem.item == inventoryItem.item &&
+                existingItem.count < InventoryManager.inventoryManager.maxStackedItems)
             {
                 int spaceAvailable = InventoryManager.inventoryManager.maxStackedItems - existingItem.count;
                 int itemCountToTransfer = Mathf.Min(inventoryItem.count, spaceAvailable);
@@ -49,27 +50,30 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         }
         else
         {
-            // Move the entire stack to an empty slot
-            InventorySlot sourceSlot = inventoryItem.parentAfterDrag.GetComponent<InventorySlot>();
+            ChestSlot chestSlot = inventoryItem.parentAfterDrag.GetComponent<ChestSlot>();
 
+            // Move the entire stack to an empty slot
             inventoryItem.transform.SetParent(transform);
             inventoryItem.transform.position = transform.position;
             inventoryItem.parentAfterDrag = transform;
 
             // Swap items within the source slot to fill the empty space
-            if (sourceSlot != null && sourceSlot.transform != transform)
+            if (chestSlot != null && chestSlot.transform != transform)
             {
-                InventoryItem[] itemsInSourceSlot = sourceSlot.GetComponentsInChildren<InventoryItem>();
+                InventoryItem[] itemsInSourceSlot = chestSlot.GetComponentsInChildren<InventoryItem>();
                 foreach (InventoryItem item in itemsInSourceSlot)
                 {
                     if (item != inventoryItem && item.parentAfterDrag == transform)
                     {
-                        item.parentAfterDrag = sourceSlot.transform;
-                        item.transform.SetParent(sourceSlot.transform);
-                        item.transform.position = sourceSlot.transform.position;
+                        item.parentAfterDrag = chestSlot.transform;
+                        item.transform.SetParent(chestSlot.transform);
+                        item.transform.position = chestSlot.transform.position;
                     }
                 }
             }
-        }
+        } // After the item is dropped, refresh the item count in the chest
+
+        Chest chest = transform.GetComponentInParent<Chest>();
+        chest.RefreshItemCount();
     }
 }

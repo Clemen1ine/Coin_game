@@ -59,5 +59,17 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
         // Re-enable the count text after the drag ends
         countText.gameObject.SetActive(true);
+
+        // Check if the item was dropped on a chest slot
+        ChestSlot chestSlot = eventData.pointerEnter?.GetComponent<ChestSlot>();
+        if (chestSlot != null)
+        {
+            Debug.Log("Item dropped onto ChestSlot");
+            chestSlot.OnDrop(eventData);
+        }
+        else
+        {
+            Debug.Log("Item dropped outside of ChestSlot");
+        }
     }
 }

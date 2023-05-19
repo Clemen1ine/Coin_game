@@ -1,76 +1,104 @@
- using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine;
+using UnityEngine.UI;
 
-public class Chest : MonoBehaviour, IDropHandler
+public class Chest : MonoBehaviour
 {
-    public int maxChestItems = 10;
-    public InventorySlot[] chestSlots;
-    public GameObject inventoryItemPrefab;
+    public GameObject chestUI;
+    public int maxItems = 10; // Maximum number of items in the chest
+    private bool isPlayerInRange;
+    private bool isChestOpen;
+    private ChestSlot[] chestSlots; // Array of ChestSlot components representing the chest slots
 
-    public void OnDrop(PointerEventData eventData)
+    private void Start()
     {
-        Debug.Log("Item dropped on Chest");
+        // Initialize the chestSlots array with ChestSlot components from the children of the chestUI object
+        chestSlots = chestUI.GetComponentsInChildren<ChestSlot>();
 
-        // Get the dragged inventory item
-        InventoryItem inventoryItem = eventData.pointerDrag.GetComponent<InventoryItem>();
+        // Debug the chestSlots array
+        Debug.Log("ChestSlots Count: " + chestSlots.Length);
+    }
 
-        // Check if the item is being dropped on the same slot
-        if (inventoryItem.parentAfterDrag == transform)
-            return;
-
-        if (transform.childCount > 0)
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
         {
-            InventoryItem existingItem = transform.GetChild(0).GetComponent<InventoryItem>();
+            isPlayerInRange = true;
+        }
+    }
 
-            // Check if the items can stack
-            if (existingItem.item == inventoryItem.item && existingItem.count < maxChestItems)
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            isPlayerInRange = false;
+            CloseChest();
+        }
+    }
+
+    private void Update()
+    {
+        if (isPlayerInRange && Input.GetKeyDown(KeyCode.R))
+        {
+            if (isChestOpen)
             {
-                int spaceAvailable = maxChestItems - existingItem.count;
-                int itemCountToTransfer = Mathf.Min(inventoryItem.count, spaceAvailable);
-
-                existingItem.count += itemCountToTransfer;
-                existingItem.RefreshCount();
-
-                inventoryItem.count -= itemCountToTransfer;
-                inventoryItem.RefreshCount();
-
-                if (inventoryItem.count == 0)
-                {
-                    // The entire stack has been transferred, destroy the item object
-                    Destroy(inventoryItem.gameObject);
-                }
+                CloseChest();
             }
             else
             {
-                // Slot already has an item, swap positions
-                Transform currentItem = transform.GetChild(0);
-                currentItem.SetParent(inventoryItem.parentAfterDrag);
-                currentItem.position = inventoryItem.parentAfterDrag.position;
+                OpenChest();
             }
         }
-        else
+    }
+
+    private void OpenChest()
+    {
+        // Check the item count before opening the chest
+        int itemCount = GetItemCount();
+        if (itemCount > maxItems)
         {
-            InventorySlot sourceSlot = inventoryItem.parentAfterDrag.GetComponent<InventorySlot>();
+            Debug.Log("Cannot open the chest. Maximum item limit reached.");
+            return;
+        }
 
-            // Move the entire stack to an empty slot
-            inventoryItem.transform.SetParent(transform);
-            inventoryItem.transform.position = transform.position;
-            inventoryItem.parentAfterDrag = transform;
+        chestUI.SetActive(true);
+        isChestOpen = true;
 
-            // Swap items within the source slot to fill the empty space
-            if (sourceSlot != null && sourceSlot.transform != transform)
+        // Update the item count when the chest is opened
+        RefreshItemCount();
+    }
+
+    private void CloseChest()
+    {
+        chestUI.SetActive(false);
+        isChestOpen = false;
+    }
+
+    public int GetItemCount()
+    {
+        int itemCount = 0;
+
+        foreach (ChestSlot slot in chestSlots)
+        {
+            // Count the initial items in the chest
+            InventoryItem[] initialItems = slot.GetComponentsInChildren<InventoryItem>(false);
+            foreach (InventoryItem item in initialItems)
             {
-                InventoryItem[] itemsInSourceSlot = sourceSlot.GetComponentsInChildren<InventoryItem>();
-                foreach (InventoryItem item in itemsInSourceSlot)
+                Text textComponent = item.countText;
+                if (textComponent != null && int.TryParse(textComponent.text, out int value))
                 {
-                    if (item != inventoryItem && item.parentAfterDrag == transform)
-                    {
-                        item.parentAfterDrag = sourceSlot.transform;
-                        item.transform.SetParent(sourceSlot.transform);
-                        item.transform.position = sourceSlot.transform.position;
-                    }
+                    itemCount += value;
                 }
             }
         }
+
+        Debug.Log("Item count: " + itemCount);
+        return itemCount;
+    }
+
+    public void RefreshItemCount()
+    {
+        int itemCount = GetItemCount();
+        // Do something with the item count, such as displaying it in the UI
+        Debug.Log("Item count: " + itemCount);
     }
 }
