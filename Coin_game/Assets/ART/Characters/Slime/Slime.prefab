@@ -164,7 +164,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: -1
   m_Sprite: {fileID: -462259256, guid: 7b9ccadac9d105b4ca8dcb8dd9b5672f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -248,7 +248,8 @@ MonoBehaviour:
   speed: 0.4
   maxRange: 5
   minRange: 0.1
-  homePos: {fileID: 6782747874384200100}
+  attackCooldown: 0.1
+  moveAwayTime: 1
 --- !u!114 &2866889292023223183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,7 +257,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6782747873483955326}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0b200f426f2045439c5344c7f810593, type: 3}
   m_Name: 
