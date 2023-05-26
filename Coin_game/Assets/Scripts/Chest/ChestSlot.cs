@@ -71,9 +71,17 @@ public class ChestSlot : MonoBehaviour, IDropHandler
                     }
                 }
             }
-        } // After the item is dropped, refresh the item count in the chest
+        }
 
+        // After the item is dropped, refresh the item count in the chest
         Chest chest = transform.GetComponentInParent<Chest>();
         chest.RefreshItemCount();
+
+        // Check if the chest is full and return the item to the inventory if it is
+        if (chest.GetItemCount() > chest.maxItems)
+        {
+            InventoryManager.inventoryManager.AddItemToInventory(inventoryItem.item, inventoryItem.count);
+            Destroy(inventoryItem.gameObject);
+        }
     }
 }

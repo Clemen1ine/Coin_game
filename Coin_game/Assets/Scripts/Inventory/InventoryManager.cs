@@ -13,7 +13,7 @@ public class InventoryManager : MonoBehaviour
         inventoryManager = this;
     }
 
-    public bool AddItemToInventory(Item item)
+    public bool AddItemToInventory(Item item, int count = 1)
     {
         for (int i = 0; i < inventorySlots.Length; i++)
         {
@@ -21,9 +21,19 @@ public class InventoryManager : MonoBehaviour
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
             if (itemInSlot != null && itemInSlot.item == item && itemInSlot.count < maxStackedItems && itemInSlot.item.stackable == true)
             {
-                itemInSlot.count++;
+                int spaceAvailable = maxStackedItems - itemInSlot.count;
+                int itemCountToTransfer = Mathf.Min(count, spaceAvailable);
+
+                itemInSlot.count += itemCountToTransfer;
                 itemInSlot.RefreshCount();
-                return true;
+
+                count -= itemCountToTransfer;
+
+                if (count == 0)
+                {
+                    // All items transferred, exit the loop
+                    return true;
+                }
             }
         }
 
@@ -33,18 +43,30 @@ public class InventoryManager : MonoBehaviour
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
             if (itemInSlot == null)
             {
-                SpawnNewItem(item, slot);
-                return true;
+                int itemCountToTransfer = Mathf.Min(count, maxStackedItems);
+
+                SpawnNewItem(item, slot, itemCountToTransfer);
+
+                count -= itemCountToTransfer;
+
+                if (count == 0)
+                {
+                    // All items transferred, exit the loop
+                    return true;
+                }
             }
         }
+
+        // If execution reaches here, not all items were transferred, return false
         return false;
     }
 
-    public void SpawnNewItem(Item item, InventorySlot slot)
+    public void SpawnNewItem(Item item, InventorySlot slot, int count)
     {
-        Debug.Log("SpawnNewItem() called");
         GameObject newItemGo = Instantiate(inventoryItemPrefab, slot.transform);
         InventoryItem inventoryItem = newItemGo.GetComponent<InventoryItem>();
         inventoryItem.InitialiseItem(item);
+        inventoryItem.count = count;
+        inventoryItem.RefreshCount();
     }
 }

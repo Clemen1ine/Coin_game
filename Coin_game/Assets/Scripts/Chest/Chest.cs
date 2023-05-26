@@ -5,9 +5,11 @@ public class Chest : MonoBehaviour
 {
     public GameObject chestUI;
     public int maxItems = 10; // Maximum number of items in the chest
-    private bool isPlayerInRange;
-    private bool isChestOpen;
-    private ChestSlot[] chestSlots; // Array of ChestSlot components representing the chest slots
+    public ChestSlot[] chestSlots; // Array of ChestSlot components representing the chest slots
+    private bool _isPlayerInRange;
+    private bool _isChestOpen;
+
+    private int itemCount; // Total item count in the chest
 
     private void Start()
     {
@@ -16,13 +18,16 @@ public class Chest : MonoBehaviour
 
         // Debug the chestSlots array
         Debug.Log("ChestSlots Count: " + chestSlots.Length);
+        
+        // Count the initial items in the chest
+        RefreshItemCount();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            isPlayerInRange = true;
+            _isPlayerInRange = true;
         }
     }
 
@@ -30,16 +35,16 @@ public class Chest : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            isPlayerInRange = false;
+            _isPlayerInRange = false;
             CloseChest();
         }
     }
 
     private void Update()
     {
-        if (isPlayerInRange && Input.GetKeyDown(KeyCode.R))
+        if (_isPlayerInRange && Input.GetKeyDown(KeyCode.R))
         {
-            if (isChestOpen)
+            if (_isChestOpen)
             {
                 CloseChest();
             }
@@ -52,52 +57,41 @@ public class Chest : MonoBehaviour
 
     private void OpenChest()
     {
-        // Check the item count before opening the chest
-        int itemCount = GetItemCount();
-        if (itemCount > maxItems)
-        {
-            Debug.Log("Cannot open the chest. Maximum item limit reached.");
-            return;
-        }
-
         chestUI.SetActive(true);
-        isChestOpen = true;
+        _isChestOpen = true;
 
-        // Update the item count when the chest is opened
         RefreshItemCount();
     }
 
     private void CloseChest()
     {
         chestUI.SetActive(false);
-        isChestOpen = false;
+        _isChestOpen = false;
     }
 
     public int GetItemCount()
     {
-        int itemCount = 0;
+        int count = 0;
 
         foreach (ChestSlot slot in chestSlots)
         {
-            // Count the initial items in the chest
-            InventoryItem[] initialItems = slot.GetComponentsInChildren<InventoryItem>(false);
-            foreach (InventoryItem item in initialItems)
+            InventoryItem[] items = slot.GetComponentsInChildren<InventoryItem>(false);
+            foreach (InventoryItem item in items)
             {
                 Text textComponent = item.countText;
                 if (textComponent != null && int.TryParse(textComponent.text, out int value))
                 {
-                    itemCount += value;
+                    count += value;
                 }
             }
         }
 
-        Debug.Log("Item count: " + itemCount);
-        return itemCount;
+        return count;
     }
 
     public void RefreshItemCount()
     {
-        int itemCount = GetItemCount();
+        itemCount = GetItemCount();
         // Do something with the item count, such as displaying it in the UI
         Debug.Log("Item count: " + itemCount);
     }

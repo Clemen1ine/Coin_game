@@ -3695,6 +3695,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chestUI: {fileID: 344416108}
   maxItems: 1
+  chestSlots:
+  - {fileID: 731994125}
+  - {fileID: 167727406}
+  - {fileID: 1374237916}
+  - {fileID: 2033141787}
+  - {fileID: 2119931118}
+  - {fileID: 1405186540}
+  - {fileID: 46482813}
+  - {fileID: 1039618208}
+  - {fileID: 519465000}
+  - {fileID: 274211242}
+  - {fileID: 653471702}
+  - {fileID: 1755935089}
+  - {fileID: 1459293056}
+  - {fileID: 870367159}
+  - {fileID: 376115179}
+  - {fileID: 1242471492}
+  - {fileID: 157123693}
+  - {fileID: 1385100303}
+  - {fileID: 1667759067}
+  - {fileID: 85508381}
 --- !u!1 &344640518
 GameObject:
   m_ObjectHideFlags: 0
