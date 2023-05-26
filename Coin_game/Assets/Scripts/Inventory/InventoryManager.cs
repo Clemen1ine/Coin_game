@@ -15,6 +15,8 @@ public class InventoryManager : MonoBehaviour
 
     public bool AddItemToInventory(Item item, int count = 1)
     {
+        int remainingCount = count;
+
         for (int i = 0; i < inventorySlots.Length; i++)
         {
             InventorySlot slot = inventorySlots[i];
@@ -22,14 +24,14 @@ public class InventoryManager : MonoBehaviour
             if (itemInSlot != null && itemInSlot.item == item && itemInSlot.count < maxStackedItems && itemInSlot.item.stackable == true)
             {
                 int spaceAvailable = maxStackedItems - itemInSlot.count;
-                int itemCountToTransfer = Mathf.Min(count, spaceAvailable);
+                int itemCountToTransfer = Mathf.Min(remainingCount, spaceAvailable);
 
                 itemInSlot.count += itemCountToTransfer;
                 itemInSlot.RefreshCount();
 
-                count -= itemCountToTransfer;
+                remainingCount -= itemCountToTransfer;
 
-                if (count == 0)
+                if (remainingCount == 0)
                 {
                     // All items transferred, exit the loop
                     return true;
@@ -43,13 +45,13 @@ public class InventoryManager : MonoBehaviour
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
             if (itemInSlot == null)
             {
-                int itemCountToTransfer = Mathf.Min(count, maxStackedItems);
+                int itemCountToTransfer = Mathf.Min(remainingCount, maxStackedItems);
 
                 SpawnNewItem(item, slot, itemCountToTransfer);
 
-                count -= itemCountToTransfer;
+                remainingCount -= itemCountToTransfer;
 
-                if (count == 0)
+                if (remainingCount == 0)
                 {
                     // All items transferred, exit the loop
                     return true;
@@ -60,6 +62,7 @@ public class InventoryManager : MonoBehaviour
         // If execution reaches here, not all items were transferred, return false
         return false;
     }
+
 
     public void SpawnNewItem(Item item, InventorySlot slot, int count)
     {
