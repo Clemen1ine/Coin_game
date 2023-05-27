@@ -3694,6 +3694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chestUI: {fileID: 344416108}
+  rUI: {fileID: 0}
   maxItems: 10
   chestSlots:
   - {fileID: 731994125}
@@ -10463,6 +10464,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b092537159dd2e24ab2a1f5ede110347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1066736415 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8728741558018305514, guid: 456750a1f6b72a34f9928863926a7fce, type: 3}
+  m_PrefabInstance: {fileID: 3012454904144082662}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1068373473
 GameObject:
   m_ObjectHideFlags: 0
@@ -21524,6 +21530,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1649218385}
     m_Modifications:
+    - target: {fileID: 472267214795655030, guid: 456750a1f6b72a34f9928863926a7fce, type: 3}
+      propertyPath: rUI
+      value: 
+      objectReference: {fileID: 1066736415}
     - target: {fileID: 472267214795655030, guid: 456750a1f6b72a34f9928863926a7fce, type: 3}
       propertyPath: ChestUI
       value: 

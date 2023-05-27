@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class Chest : MonoBehaviour
 {
     public GameObject chestUI;
+    public GameObject rUI;
     public int maxItems = 10; // Maximum number of items in the chest
     public ChestSlot[] chestSlots; // Array of ChestSlot components representing the chest slots
     private bool _isPlayerInRange;
@@ -28,6 +29,7 @@ public class Chest : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             _isPlayerInRange = true;
+            rUI.SetActive(true);
         }
     }
 
@@ -36,6 +38,7 @@ public class Chest : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             _isPlayerInRange = false;
+            rUI.SetActive(false);
             CloseChest();
         }
     }
@@ -46,10 +49,12 @@ public class Chest : MonoBehaviour
         {
             if (_isChestOpen)
             {
+                rUI.SetActive(true);
                 CloseChest();
             }
             else
             {
+                rUI.SetActive(false);
                 OpenChest();
             }
         }
