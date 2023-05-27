@@ -16,8 +16,8 @@ public class Item : ScriptableObject
 
 public enum ItemType
 {
-    Coin,
-    Key
+    SmoleCoin,
+    BigCoin
 }
 
 public enum ActionType

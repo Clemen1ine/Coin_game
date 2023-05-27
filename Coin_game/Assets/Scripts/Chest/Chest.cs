@@ -9,7 +9,7 @@ public class Chest : MonoBehaviour
     private bool _isPlayerInRange;
     private bool _isChestOpen;
 
-    private int itemCount; // Total item count in the chest
+    private int _itemCount; // Total item count in the chest
 
     private void Start()
     {
@@ -72,6 +72,8 @@ public class Chest : MonoBehaviour
     public int GetItemCount()
     {
         int count = 0;
+        int type1ItemCount = 0;
+        int type2ItemCount = 0;
 
         foreach (ChestSlot slot in chestSlots)
         {
@@ -81,18 +83,28 @@ public class Chest : MonoBehaviour
                 Text textComponent = item.countText;
                 if (textComponent != null && int.TryParse(textComponent.text, out int value))
                 {
-                    count += value;
+                    if (item.item.type == ItemType.SmoleCoin)
+                    {
+                        type1ItemCount += value;
+                    }
+                    else if (item.item.type == ItemType.BigCoin)
+                    {
+                        type2ItemCount += value;
+                    }
                 }
             }
         }
+
+        // Calculate the total count based on the item types
+        count = type1ItemCount + (type2ItemCount * 2);
 
         return count;
     }
 
     public void RefreshItemCount()
     {
-        itemCount = GetItemCount();
+        _itemCount = GetItemCount();
         // Do something with the item count, such as displaying it in the UI
-        Debug.Log("Item count: " + itemCount);
+        Debug.Log("Item count: " + _itemCount);
     }
 }
