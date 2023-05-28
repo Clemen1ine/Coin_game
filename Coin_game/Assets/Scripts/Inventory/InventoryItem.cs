@@ -10,9 +10,15 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     private RectTransform _rectTransform;
     private Vector3 _offset;
 
-    [HideInInspector] public Transform parentAfterDrag;
-    [HideInInspector] public int count = 1;
-    [HideInInspector] public Item item;
+    [HideInInspector]
+    public Transform parentAfterDrag;
+    [HideInInspector]
+    public int count = 1;
+    [HideInInspector]
+    public Item item;
+
+    private bool isCtrlPressed;
+    private int selectedQuantity;
 
     private void Start()
     {
@@ -42,7 +48,12 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         _offset = _rectTransform.position - _mainCamera.ScreenToWorldPoint(Input.mousePosition);
 
         // Disable the count text during drag to avoid blocking interactions
-        countText.gameObject.SetActive(false);
+
+        // Check if the Ctrl key is pressed
+        isCtrlPressed = Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl);
+
+        // Set the selected quantity to the current item count
+        selectedQuantity = isCtrlPressed ? 1 : count;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -50,7 +61,27 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         Vector3 newPosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition) + _offset;
         newPosition.z = _rectTransform.position.z; // Retain the original z position
         _rectTransform.position = newPosition;
+
+        // Check for mouse wheel input
+        float scrollDelta = Input.GetAxis("Mouse ScrollWheel");
+
+        // Calculate the maximum allowed selected quantity
+        int maxQuantity = isCtrlPressed ? 1 : count;
+
+        // Increase or decrease the selected quantity based on mouse wheel input
+        if (scrollDelta > 0f)
+        {
+            selectedQuantity = Mathf.Min(selectedQuantity + 1, maxQuantity);
+        }
+        else if (scrollDelta < 0f)
+        {
+            selectedQuantity = Mathf.Max(selectedQuantity - 1, 1);
+        }
+
+        // Update the count text to display the selected quantity
+        countText.text = selectedQuantity.ToString();
     }
+
 
     public void OnEndDrag(PointerEventData eventData)
     {
@@ -66,6 +97,22 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         {
             Debug.Log("Item dropped onto ChestSlot");
             chestSlot.OnDrop(eventData);
+
+            // Transfer the selected quantity based on the Ctrl key press
+            int transferCount = isCtrlPressed ? Mathf.Min(selectedQuantity, count) : selectedQuantity;
+
+            // Reduce the item count in the inventory item
+            count -= (isCtrlPressed ? 1 : transferCount);
+            RefreshCount();
+
+            // Add the transferred items to the chest
+            InventoryManager.inventoryManager.AddItemToInventory(item, transferCount);
+
+            if (count == 0)
+            {
+                // The entire stack has been transferred, destroy the item object
+                Destroy(gameObject);
+            }
         }
         else
         {

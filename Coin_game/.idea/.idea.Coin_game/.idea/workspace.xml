@@ -3,29 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c8f0f8b5-0022-4365-9417-f1a0b20ff392" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coin_game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coin_game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/BigCoinIcone.aseprite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/BigCoinIcone.aseprite.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/Full_muse&amp;keyboard.aseprite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/Full_muse&amp;keyboard.aseprite.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/Inventory.aseprite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/Inventory.aseprite.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/Sprite-0001.aseprite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/Sprite-0001.aseprite.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/TilePalet.aseprite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/TilePalet.aseprite.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/emptyHert.aseprite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/emptyHert.aseprite.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/Камень1.aseprite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/Камень1.aseprite.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/Камень2.aseprite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/Камень2.aseprite.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/Спрайт-0003.aseprite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/Спрайт-0003.aseprite.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/Червь.aseprite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ART/sprites/UI/buttons/Червь.aseprite.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Chest/Chest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Chest/Chest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/Chest/Chest.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/Chest/Chest.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventorySlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventorySlot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
@@ -219,6 +200,10 @@
       <workItem from="1685122874484" duration="589000" />
       <workItem from="1685128918486" duration="7258000" />
       <workItem from="1685169661031" duration="9344000" />
+      <workItem from="1685225188820" duration="305000" />
+      <workItem from="1685234567296" duration="6571000" />
+      <workItem from="1685265192376" duration="6728000" />
+      <workItem from="1685294102261" duration="1109000" />
     </task>
     <servers />
   </component>

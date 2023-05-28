@@ -3694,7 +3694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chestUI: {fileID: 344416108}
-  rUI: {fileID: 0}
+  rUI: {fileID: 1066736415}
   maxItems: 10
   chestSlots:
   - {fileID: 731994125}
@@ -5322,7 +5322,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08cb2599fb255d94cbf1efa0e15431c0, type: 3}
   m_Name: 
