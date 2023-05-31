@@ -27,7 +27,7 @@ public class InventoryController : MonoBehaviour, IPointerDownHandler, IDragHand
             rectTransform.localPosition = pointerPosition - pointerOffset;
         }
     }
-
+                            
     private Vector2 ClampToWindow(PointerEventData eventData)
     {
         Vector2 rawPointerPosition = eventData.position;
