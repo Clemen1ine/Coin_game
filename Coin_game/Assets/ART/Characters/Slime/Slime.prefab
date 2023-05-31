@@ -248,8 +248,8 @@ MonoBehaviour:
   speed: 0.4
   maxRange: 5
   minRange: 0.1
-  attackCooldown: 0.1
-  moveAwayTime: 1
+  homePos: {fileID: 6782747874384200100}
+  attackCooldown: 2
 --- !u!114 &2866889292023223183
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,6 +11,9 @@ public class EnemyController : MonoBehaviour
 
     public Transform homePos;
 
+    private bool canAttack = true;
+    [SerializeField] private float attackCooldown = 2f;
+
     private void Start()
     {
         homePos.parent = null;
@@ -20,11 +23,11 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
-        if (Vector3.Distance(_target.position, transform.position) <= maxRange && Vector3.Distance(_target.position, transform.position) >= minRange )
+        if (Vector3.Distance(_target.position, transform.position) <= maxRange && Vector3.Distance(_target.position, transform.position) >= minRange)
         {
             FollowPlayer();
         }
-        else if(Vector3.Distance(_target.position, transform.position) >= maxRange)
+        else if (Vector3.Distance(_target.position, transform.position) >= maxRange)
         {
             GoHome();
         }
@@ -33,19 +36,48 @@ public class EnemyController : MonoBehaviour
     public void FollowPlayer()
     {
         _animator.SetBool("isMoving", true);
-        _animator.SetFloat("moveX",(_target.position.x - transform.position.x));
-        _animator.SetFloat("moveY",(_target.position.y - transform.position.y)); 
+        _animator.SetFloat("moveX", (_target.position.x - transform.position.x));
+        _animator.SetFloat("moveY", (_target.position.y - transform.position.y));
         transform.position = Vector3.MoveTowards(transform.position, _target.transform.position, speed * Time.deltaTime);
     }
 
     public void GoHome()
     {
-        _animator.SetFloat("moveX",(_target.position.x - transform.position.x));
-        _animator.SetFloat("moveY",(_target.position.y - transform.position.y));
+        _animator.SetFloat("moveX", (_target.position.x - transform.position.x));
+        _animator.SetFloat("moveY", (_target.position.y - transform.position.y));
 
         if (Vector3.Distance(transform.position, homePos.position) == 0)
         {
             _animator.SetBool("isMoving", false);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            AttackPlayer();
+        }
+    }
+
+    private void AttackPlayer()
+    {
+        if (canAttack)
+        {
+            HealthNew hurtPlayer = _target.GetComponent<HealthNew>();
+            if (hurtPlayer != null)
+            {
+                Health playerHealth = _target.GetComponent<Health>();
+                hurtPlayer.HurtPlayer(5);
+                playerHealth.health--;
+            }
+            canAttack = false;
+            Invoke(nameof(ResetAttack), attackCooldown);
+        }
+    }
+
+    private void ResetAttack()
+    {
+        canAttack = true;
     }
 }
