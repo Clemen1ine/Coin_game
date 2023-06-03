@@ -13,6 +13,7 @@ public class EnemyController : MonoBehaviour
 
     private bool canAttack = true;
     [SerializeField] private float attackCooldown = 2f;
+    [SerializeField] private int damageAmount = 5;
 
     private void Start()
     {
@@ -64,12 +65,10 @@ public class EnemyController : MonoBehaviour
     {
         if (canAttack)
         {
-            HealthNew hurtPlayer = _target.GetComponent<HealthNew>();
-            if (hurtPlayer != null)
+            Health playerHealth = _target.GetComponent<Health>();
+            if (playerHealth != null)
             {
-                Health playerHealth = _target.GetComponent<Health>();
-                hurtPlayer.HurtPlayer(5);
-                playerHealth.health--;
+                playerHealth.TakeDamage(damageAmount);
             }
             canAttack = false;
             Invoke(nameof(ResetAttack), attackCooldown);

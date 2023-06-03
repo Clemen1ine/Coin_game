@@ -57,7 +57,6 @@ public class HealthNew : MonoBehaviour
         }
     }
 
-
     public void HurtPlayer(int damageTolive)
     {
         currentHealth -= damageTolive;
@@ -67,6 +66,19 @@ public class HealthNew : MonoBehaviour
         if (currentHealth <= 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("HealthPotion"))
+        {
+            Health healthComponent = GetComponent<Health>();
+            if (healthComponent != null)
+            {
+                healthComponent.AddHealth(1);
+                Destroy(other.gameObject);
+            }
         }
     }
 }

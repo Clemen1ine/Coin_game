@@ -1,28 +1,32 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
-    public int health;
+    public int maxHealth;
+    private int currentHealth;
     public int numOfHearts;
 
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
+    private void Start()
+    {
+        currentHealth = maxHealth;
+    }
+
     private void Update()
     {
-        if (health > numOfHearts)
+        if (currentHealth > maxHealth)
         {
-            health = numOfHearts;
+            currentHealth = maxHealth;
         }
 
-        for(int i = 0; i < hearts.Length; i++)
+        for (int i = 0; i < hearts.Length; i++)
         {
-            if (i < health)
+            if (i < currentHealth)
             {
                 hearts[i].sprite = fullHeart;
             }
@@ -30,14 +34,41 @@ public class Health : MonoBehaviour
             {
                 hearts[i].sprite = emptyHeart;
             }
-            if (i < numOfHearts) 
+
+            if (i < numOfHearts)
             {
                 hearts[i].enabled = true;
-            } 
-            else 
+            }
+            else
             {
                 hearts[i].enabled = false;
             }
         }
+    }
+
+    public void AddHealth(int amount)
+    {
+        currentHealth += amount;
+
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        // Handle player death, such as restarting the level or showing a game over screen
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

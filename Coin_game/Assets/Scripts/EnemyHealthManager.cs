@@ -1,32 +1,38 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyHealthManager : MonoBehaviour
 {
     private AddRoom _room;
     public int currentHealth;
-
     public int maxHealth;
-    // Start is called before the first frame update
+    public GameObject dropObjectPrefab;
+    public float dropChance;
+
     void Start()
     {
         _room = GetComponentInParent<AddRoom>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void HurtEnemy(int damageToLive)
     {
-        
-    }
-
-    public void HurtEnemy(int damageTolive)
-    {
-        currentHealth -= damageTolive;
+        currentHealth -= damageToLive;
         if (currentHealth <= 0)
         {
+            if (Random.value <= dropChance)
+            {
+                DropObject();
+            }
+
             Destroy(gameObject);
             _room.enemies.Remove(gameObject);
+        }
+    }
+
+    private void DropObject()
+    {
+        if (dropObjectPrefab != null)
+        {
+            Instantiate(dropObjectPrefab, transform.position, Quaternion.identity);
         }
     }
 }

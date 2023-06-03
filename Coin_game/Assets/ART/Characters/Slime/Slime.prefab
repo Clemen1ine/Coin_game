@@ -98,7 +98,6 @@ GameObject:
   - component: {fileID: 6782747873483955323}
   - component: {fileID: 6782747873483955324}
   - component: {fileID: 6782747873483955325}
-  - component: {fileID: 2866889292023223183}
   - component: {fileID: 6001206102487266027}
   m_Layer: 0
   m_Name: Slime
@@ -250,18 +249,7 @@ MonoBehaviour:
   minRange: 0.1
   homePos: {fileID: 6782747874384200100}
   attackCooldown: 2
---- !u!114 &2866889292023223183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6782747873483955326}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0b200f426f2045439c5344c7f810593, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  damageAmount: 1
 --- !u!114 &6001206102487266027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,6 +264,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 2
   maxHealth: 2
+  dropObjectPrefab: {fileID: 5161920471385000244, guid: 92d3452836c055d4d94ff83b0e6ef401, type: 3}
+  dropChance: 0.3
 --- !u!1 &6782747874384200101
 GameObject:
   m_ObjectHideFlags: 0

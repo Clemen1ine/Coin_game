@@ -21,6 +21,7 @@ TagManager:
   - Wall
   - Trigger
   - Inventory Manager
+  - HealthPotion
   layers:
   - Default
   - TransparentFX
