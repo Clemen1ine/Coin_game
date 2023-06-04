@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
@@ -9,9 +7,12 @@ public class PauseMune : MonoBehaviour
     [FormerlySerializedAs("PauseGame")] public bool pauseGame;
     [FormerlySerializedAs("PauseGameManu")] public GameObject pauseGameManu;
     [FormerlySerializedAs("MiniMap")] public GameObject miniMap;
+
+    public GameObject deathMenu; // Reference to the death menu UI object
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (!deathMenu.activeSelf && Input.GetKeyDown(KeyCode.Escape))
         {
             if (pauseGame)
             {

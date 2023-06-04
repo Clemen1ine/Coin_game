@@ -12,6 +12,8 @@ public class Health : MonoBehaviour
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
+    public GameObject endGameMenu; // Reference to the end-of-game menu UI object
+
     private void Start()
     {
         currentHealth = maxHealth;
@@ -68,7 +70,7 @@ public class Health : MonoBehaviour
 
     private void Die()
     {
-        // Handle player death, such as restarting the level or showing a game over screen
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 0f; // Stop the game time
+        endGameMenu.SetActive(true); // Show the end-of-game menu
     }
 }
