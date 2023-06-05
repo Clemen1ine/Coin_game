@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6782747873483955320}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8541202722123658569
 SpriteRenderer:
@@ -99,6 +99,8 @@ GameObject:
   - component: {fileID: 6782747873483955324}
   - component: {fileID: 6782747873483955325}
   - component: {fileID: 6001206102487266027}
+  - component: {fileID: -2019333775700860923}
+  - component: {fileID: -874515017581139912}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Enemy
@@ -118,7 +120,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6782747874384200100}
   - {fileID: 8353898704177211040}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -244,10 +245,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb2b184ad054558498d01dab3f85ecc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.4
-  maxRange: 5
-  minRange: 0.1
-  homePos: {fileID: 6782747874384200100}
   attackCooldown: 2
   damageAmount: 1
 --- !u!114 &6001206102487266027
@@ -266,34 +263,33 @@ MonoBehaviour:
   maxHealth: 2
   dropObjectPrefab: {fileID: 5161920471385000244, guid: 92d3452836c055d4d94ff83b0e6ef401, type: 3}
   dropChance: 0.3
---- !u!1 &6782747874384200101
-GameObject:
+--- !u!114 &-2019333775700860923
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6782747874384200100}
-  m_Layer: 0
-  m_Name: homePos
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6782747874384200100
-Transform:
+  m_GameObject: {fileID: 6782747873483955326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b44907d404f93f64b86744631818cf02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aienemy:
+  - {fileID: 11400000, guid: d5aec007fb829594da6a2ec13c08ac15, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &-874515017581139912
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6782747874384200101}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6782747873483955320}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 6782747873483955326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9287ede43fd7a9488bacfc08b73af39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 6782747873483955322}
+  speed: 0.5
