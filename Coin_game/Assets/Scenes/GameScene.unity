@@ -5811,13 +5811,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2019333775700860923, guid: 14626a993c6874e42925707545de97f5, type: 3}
+      propertyPath: aienemy.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2019333775700860923, guid: 14626a993c6874e42925707545de97f5, type: 3}
+      propertyPath: aienemy.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: d5aec007fb829594da6a2ec13c08ac15, type: 2}
+    - target: {fileID: -2019333775700860923, guid: 14626a993c6874e42925707545de97f5, type: 3}
+      propertyPath: aienemy.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 967b07ea8630b554abeb96c58f38c272, type: 2}
     - target: {fileID: 6782747873483955320, guid: 14626a993c6874e42925707545de97f5, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6782747873483955320, guid: 14626a993c6874e42925707545de97f5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.46322352
+      value: 0.762
       objectReference: {fileID: 0}
     - target: {fileID: 6782747873483955320, guid: 14626a993c6874e42925707545de97f5, type: 3}
       propertyPath: m_LocalPosition.y

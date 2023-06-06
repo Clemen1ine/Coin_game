@@ -164,7 +164,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 1
   m_Sprite: {fileID: -462259256, guid: 7b9ccadac9d105b4ca8dcb8dd9b5672f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb2b184ad054558498d01dab3f85ecc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 2
+  attackCooldown: 1
   damageAmount: 1
 --- !u!114 &6001206102487266027
 MonoBehaviour:
@@ -275,10 +275,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b44907d404f93f64b86744631818cf02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aienemy:
+  aiEnemies:
   - {fileID: 11400000, guid: d5aec007fb829594da6a2ec13c08ac15, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 967b07ea8630b554abeb96c58f38c272, type: 2}
 --- !u!114 &-874515017581139912
 MonoBehaviour:
   m_ObjectHideFlags: 0

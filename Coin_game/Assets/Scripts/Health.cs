@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
+    public static Health health;
     public int maxHealth;
     private int currentHealth;
     public int numOfHearts;
@@ -61,6 +61,7 @@ public class Health : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        Debug.Log(currentHealth);
 
         if (currentHealth <= 0)
         {

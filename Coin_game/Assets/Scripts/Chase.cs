@@ -3,10 +3,10 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "AiEnemy/Chase")]
 public class Chase : AiEnemy
 {
-    public string TargetTeg;
+    public string TargetTag;
     public override void Ai(EnemyAiHelper aiHelper)
     {
-        GameObject target = GameObject.FindGameObjectWithTag(TargetTeg);
+        GameObject target = GameObject.FindGameObjectWithTag(TargetTag);
         if (target)
         {
             var movement = aiHelper.gameObject.GetComponent<Movement>();
@@ -15,6 +15,5 @@ public class Chase : AiEnemy
                 movement.MoveTowardTarget(target.transform.position);
             }
         }
-        
     }
 }

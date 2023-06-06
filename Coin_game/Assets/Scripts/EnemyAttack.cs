@@ -18,8 +18,14 @@ public class EnemyAttack : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Attack();
+            EnemyAiHelper aiHelper = FindObjectOfType<EnemyAiHelper>();
+            if (aiHelper != null)
+            {
+                aiHelper.SwitchAi();
+            }
         }
     }
+
 
     public void Attack()
     {

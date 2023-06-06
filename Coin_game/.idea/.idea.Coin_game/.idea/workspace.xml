@@ -2,26 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8f0f8b5-0022-4365-9417-f1a0b20ff392" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AiEnemy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AiEnemy.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chase.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyAiHelper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyAiHelper.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyAttack.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyAttack.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Movement.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Movement.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Retreat.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Retreat.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/StateforEnemy.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/StateforEnemy/PlayerChase.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/StateforEnemy/PlayerChase.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StateforEnemy/RetreatFromPlayer.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StateforEnemy/RetreatFromPlayer.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coin_game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coin_game/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ART/Characters/Slime/Slime.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ART/Characters/Slime/Slime.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyAiHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyAiHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Health.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Health.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Retreat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Retreat.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
@@ -215,6 +204,10 @@
       <workItem from="1685797659129" duration="12624000" />
       <workItem from="1685886684050" duration="4845000" />
       <workItem from="1685907774794" duration="4518000" />
+      <workItem from="1685967763847" duration="661000" />
+      <workItem from="1685978723079" duration="6040000" />
+      <workItem from="1686003316745" duration="281000" />
+      <workItem from="1686065024642" duration="5462000" />
     </task>
     <servers />
   </component>
