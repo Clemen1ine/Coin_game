@@ -22,6 +22,8 @@ public class ChestSlot : MonoBehaviour, IDropHandler
                 int spaceAvailable = InventoryManager.inventoryManager.maxStackedItems - existingItem.count;
                 int itemCountToTransfer = Mathf.Min(inventoryItem.count, spaceAvailable);
 
+                itemCountToTransfer = Mathf.Min(itemCountToTransfer, CalculateRemainingSpace());
+
                 existingItem.count += itemCountToTransfer;
                 existingItem.RefreshCount();
 
@@ -85,6 +87,7 @@ public class ChestSlot : MonoBehaviour, IDropHandler
                 // Return exceeding type 1 items to inventory
                 if (type1ItemCount > 0)
                 {
+                    type1ItemCount = Mathf.Min(type1ItemCount, CalculateRemainingSpace());
                     InventoryManager.inventoryManager.AddItemToInventory(inventoryItem.item, type1ItemCount);
                     inventoryItem.count -= type1ItemCount;
                     inventoryItem.RefreshCount();
@@ -93,6 +96,7 @@ public class ChestSlot : MonoBehaviour, IDropHandler
                 // Return exceeding type 2 items to inventory
                 if (type2ItemCount > 0)
                 {
+                    type2ItemCount = Mathf.Min(type2ItemCount, CalculateRemainingSpace());
                     InventoryManager.inventoryManager.AddItemToInventory(inventoryItem.item, type2ItemCount);
                     inventoryItem.count -= type2ItemCount;
                     inventoryItem.RefreshCount();
@@ -105,5 +109,20 @@ public class ChestSlot : MonoBehaviour, IDropHandler
                 }
             }
         }
+    }
+
+    private int CalculateRemainingSpace()
+    {
+        int remainingSpace = 0;
+        Chest chest = transform.GetComponentInParent<Chest>();
+
+        int itemCount = chest.GetItemCount();
+        int exceedingItemCount = itemCount - chest.maxItems;
+        int type2ItemCount = Mathf.FloorToInt(exceedingItemCount / 2f);
+        int type1ItemCount = exceedingItemCount - (type2ItemCount * 2);
+
+        remainingSpace = chest.maxItems - itemCount + type1ItemCount + (type2ItemCount * 2);
+
+        return remainingSpace;
     }
 }

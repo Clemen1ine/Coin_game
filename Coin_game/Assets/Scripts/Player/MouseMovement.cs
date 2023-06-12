@@ -1,22 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MouseMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    public float baseMoveSpeed = 5f; // The base movement speed
+    public float shiftMultiplier = 2f; // Multiplier applied to moveSpeed when shift is held down
     public Rigidbody2D rb;
     public Animator animator;
+    public float stoppingDistance = 0.1f;
 
-    private Vector2 destination;
-    private bool isMoving = false;
+    private Vector2 movement;
     private float attackTime = .25f;
     private float attackCounter = .25f;
-    private bool IsAttacking;
+    private bool isAttacking;
     private Vector2 startPosition;
     private float minimumAttackDistance = 0.1f;
-    private Vector2 moveDirection = Vector2.zero;
-    private Vector2 lastMoveDirection = Vector2.zero;
 
     private void Start()
     {
@@ -25,73 +22,135 @@ public class MouseMovement : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePos.z = 0f;
-            destination = mousePos;
-            moveDirection = (destination - rb.position).normalized;
-
-            animator.SetFloat("Horizontal", moveDirection.x);
-            animator.SetFloat("Vertical", moveDirection.y);
-            animator.SetFloat("Speed", 1f);
-
-            if (!isMoving)
-            {
-                lastMoveDirection = moveDirection;
-            }
-
-            isMoving = true;
-        }
-
-        if (isMoving && Vector2.Distance(rb.position, destination) < 0.1f)
-        {
-            isMoving = false;
-            animator.SetFloat("Speed", 0f);
-        }
-
-        if (IsAttacking)
+        if (isAttacking)
         {
             rb.velocity = Vector2.zero;
             attackCounter -= Time.deltaTime;
             if (attackCounter <= 0)
             {
                 animator.SetBool("IsAttacking", false);
-                IsAttacking = false;
+                isAttacking = false;
             }
         }
 
         if (Input.GetKeyDown(KeyCode.T))
         {
-            if (Vector2.Distance(rb.position, startPosition) >= minimumAttackDistance)
+            if (!isAttacking && Vector2.Distance(rb.position, startPosition) >= minimumAttackDistance)
             {
                 attackCounter = attackTime;
                 animator.SetBool("IsAttacking", true);
-                IsAttacking = true;
+                isAttacking = true;
+
+                // Reset movement input while attacking
+                movement = Vector2.zero;
             }
         }
-
-        if (isMoving)
+        else if (Input.GetMouseButton(0) || Input.GetMouseButton(1))
         {
-            animator.SetFloat("Horizontal", moveDirection.x);
-            animator.SetFloat("Vertical", moveDirection.y);
+            // Get mouse position in world space
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            rb.MovePosition(rb.position + moveDirection * moveSpeed * Time.deltaTime);
+            // Calculate movement direction based on the difference between mouse position and current position
+            movement = mousePosition - rb.position;
+
+            // Normalize the movement vector to prevent faster diagonal movement
+            movement.Normalize();
+        }
+        else
+        {
+            // Reset movement input when the mouse button is released
+            movement = Vector2.zero;
+        }
+
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
+
+        if (movement.x != 0 || movement.y != 0)
+        {
+            // Set the LastMoveX and LastMoveY based on the greater absolute value
+            if (Mathf.Abs(movement.x) >= Mathf.Abs(movement.y))
+            {
+                animator.SetFloat("LastMoveX", Mathf.Sign(movement.x));
+                animator.SetFloat("LastMoveY", 0);
+            }
+            else
+            {
+                animator.SetFloat("LastMoveX", 0);
+                animator.SetFloat("LastMoveY", Mathf.Sign(movement.y));
+            }
+        }
+        else
+        {
+            // Stop the character and make them face the side based on LastMoveX and LastMoveY
+            animator.SetFloat("Speed", 0);
         }
     }
-    
+
     private void FixedUpdate()
+{
+    float currentMoveSpeed = baseMoveSpeed;
+
+    if (Input.GetMouseButton(0) || Input.GetMouseButton(1))
     {
-        if (!isMoving)
+        // Get mouse position in world space
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        // Calculate movement direction based on the difference between mouse position and current position
+        movement = mousePosition - rb.position;
+
+        // Normalize the movement vector to prevent faster diagonal movement
+        movement.Normalize();
+
+        if (!isAttacking)
         {
-            if (lastMoveDirection.x != 0f)
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
             {
-                animator.SetFloat("Horizontal", lastMoveDirection.x);
+                currentMoveSpeed *= shiftMultiplier;
             }
-            if (lastMoveDirection.y != 0f)
+
+            if (movement.magnitude > stoppingDistance)
             {
-                animator.SetFloat("Vertical", lastMoveDirection.y);
+                Vector2 targetPosition = mousePosition - (movement.normalized * stoppingDistance);
+                Vector2 movementVelocity = (targetPosition - rb.position).normalized * currentMoveSpeed * Time.fixedDeltaTime;
+
+                // Check if the movement will overshoot the target
+                if (movementVelocity.magnitude > movement.magnitude)
+                {
+                    rb.MovePosition(mousePosition);
+                }
+                else
+                {
+                    rb.MovePosition(rb.position + movementVelocity);
+                }
+            }
+            else
+            {
+                rb.velocity = Vector2.zero;
+                animator.SetFloat("Speed", 0);
+                movement = Vector2.zero;
             }
         }
     }
+    else
+    {
+        // Reset movement input when the mouse button is released
+        movement = Vector2.zero;
+    }
+
+    animator.SetFloat("Horizontal", movement.x);
+    animator.SetFloat("Vertical", movement.y);
+    animator.SetFloat("Speed", movement.sqrMagnitude);
+
+    if (movement.x != 0 || movement.y != 0)
+    {
+        animator.SetFloat("LastMoveX", movement.x);
+        animator.SetFloat("LastMoveY", movement.y);
+    }
+    else
+    {
+        // Stop the character and make them face the side based on LastMoveX and LastMoveY
+        animator.SetFloat("Speed", 0);
+    }
+}
 }
