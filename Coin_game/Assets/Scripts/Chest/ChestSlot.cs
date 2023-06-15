@@ -118,11 +118,13 @@ public class ChestSlot : MonoBehaviour, IDropHandler
 
         int itemCount = chest.GetItemCount();
         int exceedingItemCount = itemCount - chest.maxItems;
-        int type2ItemCount = Mathf.FloorToInt(exceedingItemCount / 2f);
-        int type1ItemCount = exceedingItemCount - (type2ItemCount * 2);
 
-        remainingSpace = chest.maxItems - itemCount + type1ItemCount + (type2ItemCount * 2);
+        int type1ItemCount = Mathf.Clamp(exceedingItemCount / 2, 0, int.MaxValue);
+        int type2ItemCount = Mathf.Clamp(exceedingItemCount - (type1ItemCount * 2), 0, int.MaxValue);
+
+        remainingSpace = chest.maxItems - itemCount + type1ItemCount + type2ItemCount;
 
         return remainingSpace;
     }
+
 }
