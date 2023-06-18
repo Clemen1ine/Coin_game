@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8f0f8b5-0022-4365-9417-f1a0b20ff392" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/DualControl.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/DualControl.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coin_game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Coin_game/.idea/workspace.xml" afterDir="false" />
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Chest/ChestSlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Chest/ChestSlot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventorySlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventorySlot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/QuantitySelectionUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/QuantitySelectionUI.cs.meta" beforeDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Chest/ChestSlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Chest/ChestSlot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/MouseMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/MouseMovement.cs" afterDir="false" />
->>>>>>> parent of 3927ed8 (Transform quantity with CTRL UI(Ver.))
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,12 +14,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Chest/Chest.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Chest/ChestSlot.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory/InventorySlot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory/Item.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/DualControl.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Layout/CanvasScaler.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -184,51 +175,25 @@
       <workItem from="1684019847534" duration="790000" />
       <workItem from="1684060646626" duration="6385000" />
       <workItem from="1684081220700" duration="8116000" />
-      <workItem from="1684218969130" duration="428000" />
-      <workItem from="1684219533354" duration="17213000" />
-      <workItem from="1684252785961" duration="11594000" />
-      <workItem from="1684320030940" duration="1870000" />
-      <workItem from="1684322005701" duration="13723000" />
-      <workItem from="1684359846431" duration="4914000" />
-      <workItem from="1684401675698" duration="2321000" />
-      <workItem from="1684406336069" duration="6000" />
-      <workItem from="1684406823273" duration="4178000" />
-      <workItem from="1684419820524" duration="2976000" />
-      <workItem from="1684427361752" duration="2953000" />
-      <workItem from="1684456951722" duration="6123000" />
-      <workItem from="1684490877994" duration="15396000" />
-      <workItem from="1684519872686" duration="2122000" />
-      <workItem from="1684857784525" duration="4905000" />
-      <workItem from="1684884420341" duration="6791000" />
-      <workItem from="1684948649788" duration="2109000" />
-      <workItem from="1684974032948" duration="1184000" />
-      <workItem from="1685098618876" duration="9507000" />
-      <workItem from="1685122874484" duration="589000" />
-      <workItem from="1685128918486" duration="7258000" />
-      <workItem from="1685169661031" duration="9344000" />
-      <workItem from="1685225188820" duration="305000" />
-      <workItem from="1685234567296" duration="6571000" />
-      <workItem from="1685265192376" duration="6728000" />
-      <workItem from="1685294102261" duration="1109000" />
-      <workItem from="1685457243833" duration="4735000" />
-      <workItem from="1685476580582" duration="3016000" />
-      <workItem from="1685534366837" duration="591000" />
-      <workItem from="1685548869918" duration="635000" />
-      <workItem from="1686326843142" duration="1407000" />
-      <workItem from="1686354705711" duration="3643000" />
-      <workItem from="1686504689959" duration="595000" />
-      <workItem from="1686511133474" duration="1204000" />
-      <workItem from="1686536076086" duration="62000" />
-      <workItem from="1686541787348" duration="201000" />
-      <workItem from="1686567604090" duration="3967000" />
-<<<<<<< HEAD
-      <workItem from="1686583589064" duration="3619000" />
-      <workItem from="1686627177370" duration="4974000" />
-      <workItem from="1686755901409" duration="129000" />
-      <workItem from="1686784877277" duration="5909000" />
-=======
-      <workItem from="1686583589064" duration="2293000" />
->>>>>>> parent of 3927ed8 (Transform quantity with CTRL UI(Ver.))
+      <workItem from="1684576332878" duration="14690000" />
+      <workItem from="1684677708069" duration="1130000" />
+      <workItem from="1684766971387" duration="2477000" />
+      <workItem from="1685552984097" duration="2479000" />
+      <workItem from="1685727245955" duration="602000" />
+      <workItem from="1685735674411" duration="3986000" />
+      <workItem from="1685797659129" duration="12624000" />
+      <workItem from="1685886684050" duration="4845000" />
+      <workItem from="1685907774794" duration="4518000" />
+      <workItem from="1685967763847" duration="661000" />
+      <workItem from="1685978723079" duration="6040000" />
+      <workItem from="1686003316745" duration="281000" />
+      <workItem from="1686065024642" duration="6081000" />
+      <workItem from="1686178123882" duration="43000" />
+      <workItem from="1686178757350" duration="2165000" />
+      <workItem from="1686212837765" duration="728000" />
+      <workItem from="1686271022585" duration="2413000" />
+      <workItem from="1686307144882" duration="2275000" />
+      <workItem from="1687047780212" duration="2818000" />
     </task>
     <servers />
   </component>
