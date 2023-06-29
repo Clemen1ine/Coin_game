@@ -64,7 +64,35 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         ChestSlot chestSlot = eventData.pointerEnter?.GetComponent<ChestSlot>();
         if (chestSlot != null)
         {
-            Debug.Log("Item dropped onto ChestSlot");
+            // Calculate the number of items to drop
+            int dropCount = count / 2;
+
+            // If the Ctrl key is held down, drop half of the items
+            if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
+            {
+                dropCount = Mathf.Clamp(dropCount, 1, count - 1);
+            }
+            else
+            {
+                dropCount = Mathf.Clamp(dropCount, 0, count);
+            }
+
+            // Update the item count in the inventory
+            count -= dropCount;
+            RefreshCount();
+
+            // Create a new item object with the dropped count
+            if (dropCount > 0)
+            {
+                InventoryManager.inventoryManager.AddItemToInventory(item, dropCount);
+            }
+
+            // If the entire stack has been dropped, destroy the item object
+            if (count == 0)
+            {
+                Destroy(gameObject);
+            }
+
             chestSlot.OnDrop(eventData);
         }
         else

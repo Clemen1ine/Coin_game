@@ -31,7 +31,8 @@ public class DualControl : MonoBehaviour
                 isAttacking = false;
             }
         }
-
+        
+        // Mouse Movement
         if (Input.GetMouseButton(0) || Input.GetMouseButton(1))
         {
             // Get mouse position in world space
@@ -43,6 +44,7 @@ public class DualControl : MonoBehaviour
             // Normalize the movement vector to prevent faster diagonal movement
             movement.Normalize();
         }
+        // Keyboard Movement
         else
         {
             movement.x = Input.GetAxisRaw("Horizontal");

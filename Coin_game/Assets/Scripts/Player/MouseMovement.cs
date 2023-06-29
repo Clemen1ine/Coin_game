@@ -6,7 +6,6 @@ public class MouseMovement : MonoBehaviour
     public float shiftMultiplier = 2f; // Multiplier applied to moveSpeed when shift is held down
     public Rigidbody2D rb;
     public Animator animator;
-    public float stoppingDistance = 0.1f;
 
     private Vector2 movement;
     private float attackTime = .25f;
@@ -80,77 +79,55 @@ public class MouseMovement : MonoBehaviour
                 animator.SetFloat("LastMoveY", Mathf.Sign(movement.y));
             }
         }
-        else
-        {
-            // Stop the character and make them face the side based on LastMoveX and LastMoveY
-            animator.SetFloat("Speed", 0);
-        }
     }
 
     private void FixedUpdate()
-{
-    float currentMoveSpeed = baseMoveSpeed;
-
-    if (Input.GetMouseButton(0) || Input.GetMouseButton(1))
     {
-        // Get mouse position in world space
-        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        float currentMoveSpeed = baseMoveSpeed;
 
-        // Calculate movement direction based on the difference between mouse position and current position
-        movement = mousePosition - rb.position;
-
-        // Normalize the movement vector to prevent faster diagonal movement
-        movement.Normalize();
-
-        if (!isAttacking)
+        if (Input.GetMouseButton(0) || Input.GetMouseButton(1))
         {
-            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
-            {
-                currentMoveSpeed *= shiftMultiplier;
-            }
+            // Get mouse position in world space
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            if (movement.magnitude > stoppingDistance)
-            {
-                Vector2 targetPosition = mousePosition - (movement.normalized * stoppingDistance);
-                Vector2 movementVelocity = (targetPosition - rb.position).normalized * currentMoveSpeed * Time.fixedDeltaTime;
+            // Calculate movement direction based on the difference between mouse position and current position
+            movement = mousePosition - rb.position;
 
-                // Check if the movement will overshoot the target
-                if (movementVelocity.magnitude > movement.magnitude)
+            // Normalize the movement vector to prevent faster diagonal movement
+            movement.Normalize();
+
+            if (!isAttacking)
+            {
+                if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
                 {
-                    rb.MovePosition(mousePosition);
+                    currentMoveSpeed *= shiftMultiplier;
+                }
+
+                if (movement.magnitude > minimumAttackDistance)
+                {
+                    Vector2 movementVelocity = movement * currentMoveSpeed * Time.fixedDeltaTime;
+                    rb.MovePosition(rb.position + movementVelocity);
                 }
                 else
                 {
-                    rb.MovePosition(rb.position + movementVelocity);
+                    rb.velocity = Vector2.zero;
                 }
             }
-            else
-            {
-                rb.velocity = Vector2.zero;
-                animator.SetFloat("Speed", 0);
-                movement = Vector2.zero;
-            }
+        }
+        else
+        {
+            // Reset movement input when the mouse button is released
+            movement = Vector2.zero;
+        }
+
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
+
+        if (movement.x != 0 || movement.y != 0)
+        {
+            animator.SetFloat("LastMoveX", movement.x);
+            animator.SetFloat("LastMoveY", movement.y);
         }
     }
-    else
-    {
-        // Reset movement input when the mouse button is released
-        movement = Vector2.zero;
-    }
-
-    animator.SetFloat("Horizontal", movement.x);
-    animator.SetFloat("Vertical", movement.y);
-    animator.SetFloat("Speed", movement.sqrMagnitude);
-
-    if (movement.x != 0 || movement.y != 0)
-    {
-        animator.SetFloat("LastMoveX", movement.x);
-        animator.SetFloat("LastMoveY", movement.y);
-    }
-    else
-    {
-        // Stop the character and make them face the side based on LastMoveX and LastMoveY
-        animator.SetFloat("Speed", 0);
-    }
-}
 }
