@@ -19,7 +19,7 @@ public class Chest : MonoBehaviour
 
         // Debug the chestSlots array
         Debug.Log("ChestSlots Count: " + chestSlots.Length);
-        
+
         // Count the initial items in the chest
         RefreshItemCount();
     }

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\HP\AppData\Local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\HP\AppData\Local\JetBrains\Rider2020.1\resharper-host\Local\Transient\ReSharperHost\v201\SolutionCaches\_Coin_game.555099208.00" t="ExcludeRecursive" />
+    <e p="C:\Users\HP\AppData\Roaming\JetBrains\Rider2020.1\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\HP\Documents\GitHub\Coin_game\Coin_game" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="ART" t="Include">
+          <e p="Characters" t="Include">
+            <e p="Player" t="Include">
+              <e p="Animation" t="Include" />
+              <e p="AnimationNew" t="Include" />
+            </e>
+            <e p="Slime" t="Include">
+              <e p="Animation" t="Include" />
+              <e p="AnimationNew" t="Include" />
+            </e>
+          </e>
+          <e p="sprites" t="Include">
+            <e p="tilesets" t="Include">
+              <e p="Tails" t="Include" />
+            </e>
+            <e p="UI" t="Include">
+              <e p="bg" t="Include" />
+              <e p="buttons" t="Include" />
+              <e p="font" t="Include">
+                <e p="Ascii GB Studio" t="Include" />
+                <e p="OTF" t="Include" />
+                <e p="Specimen" t="Include" />
+                <e p="TTF" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="Items" t="Include" />
+        <e p="prefab" t="Include">
+          <e p="Chest" t="Include" />
+          <e p="Inventory" t="Include" />
+        </e>
+        <e p="Scenes" t="Include" />
+        <e p="Scripts" t="Include">
+          <e p="Chest" t="Include">
+            <e p="Chest.cs" t="Include" />
+            <e p="ChestSlot.cs" t="Include" />
+          </e>
+          <e p="Enemy" t="Include">
+            <e p="Enemy.cs" t="Include" />
+            <e p="EnemyController.cs" t="Include" />
+            <e p="EnemyHealthManager.cs" t="Include" />
+            <e p="HurtEnemy.cs" t="Include" />
+          </e>
+          <e p="Inventory" t="Include">
+            <e p="InventoryController.cs" t="Include" />
+            <e p="InventoryItem.cs" t="Include" />
+            <e p="InventoryManager.cs" t="Include" />
+            <e p="InventorySlot.cs" t="Include" />
+            <e p="Item.cs" t="Include" />
+          </e>
+          <e p="Player" t="Include">
+            <e p="CoinPickup.cs" t="Include" />
+            <e p="ControlSwitcher.cs" t="Include" />
+            <e p="DualControl.cs" t="Include" />
+            <e p="Health.cs" t="Include" />
+            <e p="HealthDeath.cs" t="Include" />
+            <e p="HurtPlayer.cs" t="Include" />
+            <e p="MouseMovement.cs" t="Include" />
+            <e p="PlayerController.cs" t="Include" />
+          </e>
+          <e p="Room" t="Include">
+            <e p="AddRoom.cs" t="Include" />
+            <e p="Changeroom.cs" t="Include" />
+            <e p="CoinSpawner.cs" t="Include" />
+            <e p="ExitTrigger.cs" t="Include" />
+            <e p="SpawnerRooms.cs" t="Include" />
+            <e p="SpawnPoint.cs" t="Include" />
+          </e>
+          <e p="UI" t="Include">
+            <e p="CameraFollow.cs" t="Include" />
+            <e p="CameraZoom.cs" t="Include" />
+            <e p="CoinHint.cs" t="Include" />
+            <e p="CoordinateSystem.cs" t="Include" />
+            <e p="GameManager.cs" t="Include" />
+            <e p="Munescene.cs" t="Include" />
+            <e p="PauseMenu.cs" t="Include" />
+            <e p="SceneSwitcher.cs" t="Include" />
+            <e p="Settings.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="Coin_game.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\Bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
