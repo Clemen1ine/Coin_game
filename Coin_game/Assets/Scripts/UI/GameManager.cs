@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
         HideCoinCounter();
         
         _totalCoinValue = PlayerPrefs.GetInt("coinCount", 0);
-        coinCounter.text = "Coins: " + _totalCoinValue.ToString();
+        coinCounter.text = _totalCoinValue.ToString();
     }
 
     private void Update()
@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
 
     private void ShowCoinCounter()
     {
-        coinCounter.text = "Coins: " + _totalCoinValue.ToString();
+        coinCounter.text = _totalCoinValue.ToString();
         coinCounter.gameObject.SetActive(true);
     }
 
